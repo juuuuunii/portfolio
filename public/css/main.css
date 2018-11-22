@@ -1,0 +1,30 @@
+/*************** 초기화 ****************/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+
+
+html, body {margin: 0; padding: 0; font-size: 14px; color:#222; box-sizing: border-box; font-family:'Noto Sans KR', sans-serif; height:100%; font-weight:300;}
+div, ul, li, ol, dl, dd, dt, span {margin: 0; padding: 0; box-sizing: border-box; list-style: none;}
+
+/*** 게시판 만들때 설명 ***/
+table {margin:0; padding:0; border-collapse:collapse;}
+th, td {margin:0; padding:0;}
+
+a {text-decoration:none; color: inherit;}
+
+.hand {cursor:pointer;}
+.clear {clear:both;}
+.clear:after {clear:both; content:""; display: block;}
+.img {width:100%;}
+.hover:hover {opacity:0.8;}
+.hover_rev {opacity:0.8;}
+.hover_rev:hover {opacity:1.0;}
+
+/*************** intro ****************/
+.mainbanner{background-image:url("../img/intro/sky.png");background-repeat:no-repeat; background-size:cover; background-position:center center; width:100%;height:100%; position:relative;}
+.banner{position:absolute; z-index:111111;}
+.intro .title {width: 60px; height: 90px; border: 1px solid #333; display: table; margin: 0 auto;}
+.intro .title > .caption {display: table-cell; vertical-align: middle; text-align: center;}
+.intro .title > .caption > span {display: block; color: #333}
+.intro .iphone {max-width: 300px; position:absolute; z-index:111;}
+.cloud{top:0; left:0; width:100%; height:100%; background-image:url("../img/intro/could.png");}
+
