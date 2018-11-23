@@ -68,22 +68,27 @@ var WheelScroll = (function() {
 
 var pages = new WheelScroll({
 	page: ".page", 
+	nav: ".nav",
 	speed: 700
 });
 
 /*************** cloud ****************/
-$(".cloud").animate({left:"-5440px"}, 80000);
-
-/*
-var cloud = new Cloud;
-var Cloud = (function(){
-	function Cloud(){
-		$(".cloud").animate({left:"-5440px"}, 70000);
-	}
-}());
-*/
-
+function cloudAni() {
+	$(".cloud").animate({"left":"-5440px"}, 300000, "linear", function(){
+	   $(this).css({"left":"100%"});
+	   cloudAni();
+	});
+ }
+ cloudAni();
 /*************** next ****************/
 $("button").click(function() {
 
 });
+
+/*************** nav locaion ****************/
+function iphoneAni() {
+	$(".iphone").animate({"top":"60px"}, 3000, "linear", function() {
+		$(".iphone").animate({"left":"80%"}, 3000, "linear")
+	});
+};
+iphoneAni();
