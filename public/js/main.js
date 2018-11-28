@@ -80,6 +80,7 @@ function cloudAni() {
 	});
  }
  cloudAni();
+
 /*************** next ****************/
 $("button").click(function() {
 
@@ -87,8 +88,16 @@ $("button").click(function() {
 
 /*************** nav locaion ****************/
 function iphoneAni() {
-	$(".iphone").animate({"top":"60px"}, 3000, "linear", function() {
-		$(".iphone").animate({"left":"80%"}, 3000, "linear")
+	$(".iphone_nav").animate({"top":"70px"}, 3000, "linear", function() {
+		$(".iphone_nav").animate({"left":"80%"}, 3000, "linear")
 	});
 };
 iphoneAni();
+
+/*************** nav ****************/
+function navShow() {
+	$(".iphone").click(function() {
+		$(".nav").slideDown(800);
+	})
+}
+navShow();
