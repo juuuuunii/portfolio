@@ -86,18 +86,30 @@ $("button").click(function() {
 
 });
 
-/*************** nav locaion ****************/
+/*************** nav ****************/
 function iphoneAni() {
 	$(".iphone_nav").animate({"top":"70px"}, 3000, "linear", function() {
 		$(".iphone_nav").animate({"left":"80%"}, 3000, "linear")
 	});
+	$(".iphone").click(function() {
+		$(".nav").stop().slideToggle(800);
+	})
 };
 iphoneAni();
 
-/*************** nav ****************/
-function navShow() {
-	$(".iphone").click(function() {
-		$(".nav").slideDown(800);
-	})
-}
-navShow();
+
+
+/*************** portfolio ****************/
+var lineNum = 0
+
+$(".tit_line").hover(function() {
+	if($(this).index() !== lineNum) {
+		$(this).children("h4").css({"color":"#3e95ce"});
+		//$(this).stop().animate({"width":"100%"},100);
+	}
+}, function(){
+	if($(this).index() !== lineNum) {
+		$(this).children("h4").css({"color":"#222"});
+		//$(this).stop().animate({"width":"0"},100);
+	}
+});

@@ -22,7 +22,7 @@ a {text-decoration:none; color: inherit;}
 .wrap {width: 100%; height: 100%;}
 
 /*************** nav ****************/
-.nav {width: 384px; height: 100%; color: #fff; background-color: rgba(82, 68, 62, .7);position: absolute; z-index: 99; top: 765px; left: 0; display: none;}
+.nav {width: 384px; height: 100%; color: #fff; background-color: rgba(82, 68, 62, .7);position: absolute; z-index: 9999; top: 797px; left: 0; display: none;}
 .nav > div {width: 75%; height: 78%; margin: 0 auto; position: relative; top: 14rem;}
 .nav > div > :nth-child(1) {background-color: #ffcd16; width: 4.5rem; height: 0.2rem; float: left; position: absolute; top: 1.25rem; left: 0;}
 .nav > div > :nth-child(2) {float: right; position: absolute; right: 4rem;}
@@ -62,6 +62,7 @@ a {text-decoration:none; color: inherit;}
 	z-index:9;
 }
 .banner .iphone_nav {	
+	width: 400px;
 	position: absolute;
 	bottom: -20%; 
 	left: 50%;
@@ -71,7 +72,7 @@ a {text-decoration:none; color: inherit;}
 	transform:translate(-50%, 20%);
 	z-index: 999;
 }
-.iphone_nav .iphone {max-width: 400px; z-index: 1111;}
+.iphone_nav .iphone {z-index: 1111;}
 .sign_bt {
 	position: absolute;
 	left: 50%;
@@ -92,20 +93,33 @@ a {text-decoration:none; color: inherit;}
 .simple_txt {width: 100%; height: 100%; }
 .simple_txt > h1 {font-size: 5rem; color: #ffcd16; position: absolute; top: 5%; left: 20%; z-index: 1111;}
 .simple_txt > div {width: 70%; height: 80%; background-color: #000; position: absolute; top: 12%; left: 15%;; z-index: 111;}
-.main .climing {width: 50%; position:absolute; right: 0; bottom: 0; z-index: 99;}
+.main .climing {width: 50%; position:absolute; right: 0; bottom: 0; z-index: 11;}
 .main .summit_bott {position: absolute; left: 0; bottom: 0; z-index: 1;}
 
 /*************** portfolio ****************/
 .portfolio {background-color: #fff; position: relative;}
-.portfolio .port_left {width: 50%; height: 100%; float: left; text-align: center; display: table;}
-.port_left > div {display: table-cell; vertical-align: middle;}
-.port_left > div > h4 {margin-bottom: 1.5rem; font-weight: 400;}
-.portfolio .port_mid {width: 100%; height: 100%; position: absolute;}
-.portfolio .port_mid > div {border-radius: 5%; position: absolute; z-index: 999;}
-.portfolio .port_mid > div:nth-child(1) {width:25%; height: 38%; background-color: red; top: 50%; left: 50%; -webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%); transform:translate(-50%, -50%);}
-.portfolio .port_mid > div:nth-child(2) {width: 7%; height: 10%; background-color: #000;top: 31%; right: 29.5%;}
-.portfolio .port_mid > div:nth-child(3) {width: 7%; height: 10%; background-color: #ccc;top: 43%; right: 29.5%;}
-.portfolio .port_mid > div:nth-child(4) {width: 7%; height: 10%; background-color: #666;top: 55.5%; right: 29.5%;}
-.portfolio .port_mid > h5 {font-weight: 500; color: #fff; position: absolute; right: 32%; top: 67%; z-index: 999; letter-spacing: 2px;}
+.portfolio .port_left {width: 50%; height: 100%; float: left; display: table;}
+.port_left > ul {display: table-cell; vertical-align: middle;}
+.port_left .tit_line {width: 100%; border-top: 1px solid #3e95ce;}
+.port_left > ul h4 {padding-bottom: 1.5rem; font-weight: 400; background-color: #fff; position: relative; width: 100px; margin: 0 auto; top: -10px; padding-left: 1.5rem;}
+
+.portfolio .port_mid {width: 60%; height: 100%; position: absolute; border: 1px solid #ccc; left: 70%; transform:translateX(-70%); z-index: 999;}
+.portfolio .port_mid > div {border-radius: 5%; position: absolute;}
+.portfolio .port_mid > div:nth-child(1) {
+	width:50%; 
+	height: 45%; 
+	background-color: red; 
+	top: 50%; 
+	left: 40%;
+	-webkit-transform:translate(-40%, -55%);
+	-moz-transform:translate(-40%, -50%); 
+	-o-transform:translate(-40%, -50%); 
+	transform:translate(-40%, -50%);
+}
+.portfolio .port_mid > div:nth-child(2) {width: 15%; height: 12%; background-color: violet; top: 27.5%; right: 13.2%;}
+.portfolio .port_mid > div:nth-child(3) {width: 15%; height: 12%; background-color: #ccc; top: 41.5%; right: 13.2%;}
+.portfolio .port_mid > div:nth-child(4) {width: 15%; height: 12%; background-color: #666; top: 55.5%; right: 13.2%;}
+.portfolio .port_mid > h5 {font-weight: 500; color: #fff; position: absolute; right: 20.5%; top: 71%; z-index: 999; letter-spacing: 2px;}
+
 .portfolio .port_right {width: 50%; height: 110%; background-color: #3e95ce; border-radius: 1%; float: right; position: absolute; top: -5%; right: 0; z-index: 99;}
 .portfolio .port_right > h5 {color: #fff; font-size: 1rem; font-weight: 400; letter-spacing: 2px; line-height: 3.4rem; margin-left: 2rem;}
