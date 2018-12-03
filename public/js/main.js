@@ -1,4 +1,4 @@
-/*************** scroll ****************/
+// scroll
 var WheelScroll = (function() {
 	function WheelScroll(_opt) {
 		var obj = this;  //this = function
@@ -72,7 +72,7 @@ var pages = new WheelScroll({
 	speed: 700
 });
 
-/*************** cloud ****************/
+// cloud 
 function cloudAni() {
 	$(".cloud").animate({"left":"-5440px"}, 300000, "linear", function(){
 	   $(this).css({"left":"100%"});
@@ -81,35 +81,33 @@ function cloudAni() {
  }
  cloudAni();
 
-/*************** next ****************/
-$("button").click(function() {
-
-});
-
-/*************** nav ****************/
+// nav
 function iphoneAni() {
 	$(".iphone_nav").animate({"top":"70px"}, 3000, "linear", function() {
-		$(".iphone_nav").animate({"left":"80%"}, 3000, "linear")
+		$(".iphone_nav").animate({"left":"80%"}, 3000, "linear", function() {
+			$(".iphone_nav").css({"position":"fixed"});
+		});
 	});
 	$(".iphone").click(function() {
 		$(".nav").stop().slideToggle(800);
-	})
+	});
 };
 iphoneAni();
 
-
-
-/*************** portfolio ****************/
+// portfolio
 var lineNum = 0
 
 $(".tit_line").hover(function() {
 	if($(this).index() !== lineNum) {
+		$(this).css({"border-top":"1px solid #3e95ce"});
 		$(this).children("h4").css({"color":"#3e95ce"});
 		//$(this).stop().animate({"width":"100%"},100);
 	}
 }, function(){
 	if($(this).index() !== lineNum) {
+		$(this).css({"border-top":"0"});
 		$(this).children("h4").css({"color":"#222"});
-		//$(this).stop().animate({"width":"0"},100);
+		//$(this).stop().animate({"width":"100%"},100);
 	}
 });
+$(".tit_line").eq(0).trigger("hover");
