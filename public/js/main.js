@@ -83,15 +83,19 @@ function cloudAni() {
 
 // nav
 function iphoneAni() {
-	$(".iphone_nav").stop().animate({"bottom":"100%"}, 500, "linear", function() {
+	$(".iphone_nav").stop().animate({"bottom":"107%"}, 500, "linear", function() {
 		$(".iphone_nav").stop().animate({"left":"80%"}, 500, "linear");
 		$(".sign_bt").hide();
 	});
 };
 
 $(".iphone").click(function(e) {
-	$(this).parent().stop().animate({"bottom":"60%"}, 600, function(){
-		$(".nav").stop().slideDown(300);
+	$(this).parent().stop().animate({"bottom":"60%"}, 1000, function(){
+		$(".nav").stop().slideDown(300)
+	});
+	$(".iphone").click(function(e){
+		$(".nav").stop().slideUp(300, function(){
+			$(this).parent().stop().animate({"bottom":"107%"}, 1000)		
 	});
 });
 
@@ -117,4 +121,4 @@ $(".tit_line").hover(function() {
 		//$(this).stop().animate({"width":"100%"},100);
 	}
 });
-$(".tit_line").eq(0).trigger("hover");
+//$(".tit_line").eq(0).trigger("hover");
