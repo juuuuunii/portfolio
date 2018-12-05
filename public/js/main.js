@@ -68,7 +68,7 @@ var WheelScroll = (function() {
 
 var pages = new WheelScroll({
 	page: ".page", 
-	nav: ".nav",
+	nav: ".nav_bt",
 	speed: 700
 });
 
@@ -83,16 +83,23 @@ function cloudAni() {
 
 // nav
 function iphoneAni() {
-	$(".iphone_nav").animate({"top":"70px"}, 3000, "linear", function() {
-		$(".iphone_nav").animate({"left":"80%"}, 3000, "linear", function() {
-			$(".iphone_nav").css({"position":"fixed"});
-		});
-	});
-	$(".iphone").click(function() {
-		$(".nav").stop().slideToggle(800);
+	$(".iphone_nav").stop().animate({"bottom":"100%"}, 500, "linear", function() {
+		$(".iphone_nav").stop().animate({"left":"80%"}, 500, "linear");
+		$(".sign_bt").hide();
 	});
 };
-iphoneAni();
+
+$(".iphone").click(function(e) {
+	$(this).parent().stop().animate({"bottom":"60%"}, 600, function(){
+		$(".nav").stop().slideDown(300);
+	});
+});
+
+$(".sign_bt").click(function(){
+	iphoneAni();
+	$(".nav_bt").eq(1).trigger("click");
+});
+
 
 // portfolio
 var lineNum = 0
