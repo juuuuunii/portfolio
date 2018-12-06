@@ -83,19 +83,20 @@ function cloudAni() {
 
 // nav
 function iphoneAni() {
-	$(".iphone_nav").stop().animate({"bottom":"107%"}, 500, "linear", function() {
-		$(".iphone_nav").stop().animate({"left":"80%"}, 500, "linear");
+	$(".iphone_nav").stop().animate({"bottom":"107%"}, 2000, "linear", function() {
+		$(".iphone_nav").stop().animate({"left":"80%"}, 2000, "linear");
 		$(".sign_bt").hide();
 	});
 };
 
 $(".iphone").click(function(e) {
 	$(this).parent().stop().animate({"bottom":"60%"}, 1000, function(){
-		$(".nav").stop().slideDown(300)
+		$(".nav").stop().slideDown(700)
 	});
 	$(".iphone").click(function(e){
-		$(".nav").stop().slideUp(300, function(){
-			$(this).parent().stop().animate({"bottom":"107%"}, 1000)		
+		$(".nav").stop().slideUp(700, function(){
+			$(this).parent().stop().animate({"bottom":"107%"}, 700)		
+		});
 	});
 });
 

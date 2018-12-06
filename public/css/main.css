@@ -36,13 +36,30 @@ a {text-decoration:none; color: inherit;}
 	-o-transform:translate(-50%, 0);
 	transform:translate(-50%, 0);
 	display: none;}
-.nav > div {width: 75%; height: 78%; margin: 0 auto; position: relative; top: 14rem;}
+.nav > div {width: 75%; height: 78%; margin: 0 auto; position: relative; top:  24rem;}
 .nav > div > :nth-child(1) {background-color: #ffcd16; width: 4.5rem; height: 0.2rem; float: left; position: absolute; top: 1.25rem; left: 0;}
-.nav > div > :nth-child(2) {float: right; position: absolute; right: 4rem;}
-.nav > div > :nth-child(2) > h2 {font-size: 1.8rem; margin-bottom: 8rem;}
-.nav > div > :nth-child(2) > h3 {font-size: 1.3rem; font-weight: 300; margin-bottom: 4rem;}
-.nav > h4 {text-align: center; margin-bottom: 1.5rem; font-weight: 300;} 
-.nav > h4 > strong {font-size: 1.2em; margin-right: 1rem;} 
+.nav > div > :nth-child(2) {float: right; position: absolute; right: 4.5rem;line-height: 2.5rem; z-index:2;	box-sizing:border-box; cursor: pointer;}
+.nav > div > :nth-child(2) > h2 {font-size: 1.8rem; margin-bottom: 5rem;}
+.nav > div > :nth-child(2) > h3 {font-size: 1.3rem; font-weight: 300; margin-bottom: 4rem; width: 100%; position: relative; z-index: 2; box-sizing: border-box;}
+.nav > div > :nth-child(2) > h3:after{
+	width: 0;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content:"";
+	/*장면전환을 주기 위한 애니메이션 부분*/
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	-o-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+	/*a 안에서의 애니메이션 부분은 오브젝트보다*/
+	z-index:-1;
+}
+/*마우스가 올라갔을 때 발생되는 애니메이션 화면을 rn조 안에서 다른 색으로 변경한 부분*/
+.nav > div > :nth-child(2) > h3:hover:after{width:100%; background-color: #ffcd16;}
+/*.nav > h4 {text-align: center; margin-bottom: 1.5rem; font-weight: 300;} 
+.nav > h4 > strong {font-size: 1.2em; margin-right: 1rem;} */
 
 /*************** intro ****************/
 .mainbanner{background-image:url("../img/intro/sky.png");background-repeat:no-repeat; background-size:cover; background-position:center center;}
