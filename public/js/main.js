@@ -91,9 +91,7 @@ function iphoneAni() {
 
 $(".iphone").click(function(e) {
 	$(this).parent().stop().animate({"bottom":"60%"}, 1000, function(){
-		$(".nav").stop().slideDown(700)
-	});
-	$(".iphone").click(function(e){
+		$(".nav").stop().slideDown(700)		
 		$(".nav").stop().slideUp(700, function(){
 			$(this).parent().stop().animate({"bottom":"107%"}, 700)		
 		});

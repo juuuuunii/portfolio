@@ -57,7 +57,9 @@ a {text-decoration:none; color: inherit;}
 	z-index:-1;
 }
 /*마우스가 올라갔을 때 발생되는 애니메이션 화면을 rn조 안에서 다른 색으로 변경한 부분*/
-.nav > div > :nth-child(2) > h3:hover:after{width:100%; background-color: #ffcd16;}
+.nav > div > :nth-child(2) > h3:nth-child(2):hover:after{width:100%; background-color: #ffcd16;}
+.nav > div > :nth-child(2) > h3:nth-child(3):hover:after{width:100%; background-color: #3e95ce;}
+.nav > div > :nth-child(2) > h3:last-child:hover:after{width:100%; background-color: #00be65;}
 /*.nav > h4 {text-align: center; margin-bottom: 1.5rem; font-weight: 300;} 
 .nav > h4 > strong {font-size: 1.2em; margin-right: 1rem;} */
 
