@@ -153,5 +153,14 @@ a {text-decoration:none; color: inherit;}
 .portfolio .port_mid > div:nth-child(5) {width: 15%; height: 12%; background-color: #00be65; top: 55.5%; right: 13.2%;}
 .portfolio .port_mid > h5 {font-weight: 500; color: #fff; position: absolute; right: 20.5%; top: 71%; z-index: 999; letter-spacing: 2px;}
 
-.portfolio .port_right {width: 50%; height: 110%; background-color: #3e95ce; border-radius: 1%; float: right; position: absolute; top: -5%; right: 0; z-index: 16;}
+.portfolio .port_right {width: 50%; height: 105%; background-color: #3e95ce; border-radius: 1%; float: right; position: absolute; top: -5%; right: 0; z-index: 16;}
 .portfolio .port_right > h5 {color: #fff; font-size: 1rem; font-weight: 400; letter-spacing: 2px; line-height: 3.4rem; margin-left: 2rem;}
+
+/*************** about ****************/
+.about {position: relative;}
+.about > div {width: 100%; height: 100%; position: absolute;}
+.about > :first-child {background-color: lightcoral;}
+.about > :nth-child(2) {background-color: goldenrod;}
+.about > :nth-child(3) {background-color: lightseagreen;}
+.about > :nth-child(4) {background-color: lightblue;}
+.about > :last-child {background-color: lightgreen;}
