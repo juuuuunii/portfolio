@@ -91,12 +91,34 @@ function iphoneAni() {
 
 $(".iphone").click(function(e) {
 	$(this).parent().stop().animate({"bottom":"60%"}, 1000, function(){
-		$(".nav").stop().slideDown(700)		
-		$(".nav").stop().slideUp(700, function(){
-			$(this).parent().stop().animate({"bottom":"107%"}, 700)		
+		$(".nav").stop().slideDown(700);
+	});	
+	$(".iphone").click(function(e) {
+		$(".nav").stop().slideUp(700, function() {
+			$(this).parent().stop().animate({"bottom":"107%"}, 1000)
 		});
-	});
+	});	
 });
+$(".nav").trigger("slideDown");
+
+/*
+$(".iphone_ani").click(function(e) {
+	$(this).parent().stop().animate({"bottom":"60%"}, 1000, function(){
+		$(".nav").stop().slideDown(700);
+		$(".iphone").addClass("iphone_back");
+		$(".iphone").removeClass("iphone_ani");
+	});	
+	$(".iphone_back").click(function(e) {
+		$(this).parent().stop().animate({"bottom":"107%"}, 1000, function(){
+			$(".nav").hide();	
+			$(".iphone").removeClass("iphone_back");
+		$(".iphone").addClass("iphone_ani");
+		});
+	});	
+});
+*/
+
+	
 
 $(".sign_bt").click(function(){
 	iphoneAni();
@@ -105,19 +127,13 @@ $(".sign_bt").click(function(){
 
 
 // portfolio
-var lineNum = 0
-
 $(".tit_line").hover(function() {
-	if($(this).index() !== lineNum) {
-		$(this).css({"border-top":"1px solid #3e95ce"});
+	$(this).css({"border-top":"1px solid #3e95ce"});
 		$(this).children("h4").css({"color":"#3e95ce"});
 		//$(this).stop().animate({"width":"100%"},100);
-	}
-}, function(){
-	if($(this).index() !== lineNum) {
+	}, function(){
 		$(this).css({"border-top":"0"});
 		$(this).children("h4").css({"color":"#222"});
 		//$(this).stop().animate({"width":"100%"},100);
-	}
 });
 //$(".tit_line").eq(0).trigger("hover");

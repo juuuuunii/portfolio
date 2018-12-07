@@ -36,7 +36,7 @@ a {text-decoration:none; color: inherit;}
 	-o-transform:translate(-50%, 0);
 	transform:translate(-50%, 0);
 	display: none;}
-.nav > div {width: 75%; height: 78%; margin: 0 auto; position: relative; top:  24rem;}
+.nav > div {width: 75%; height: 50%; margin: 0 auto; position: relative; top:  24rem;}
 .nav > div > :nth-child(1) {background-color: #ffcd16; width: 4.5rem; height: 0.2rem; float: left; position: absolute; top: 1.25rem; left: 0;}
 .nav > div > :nth-child(2) {float: right; position: absolute; right: 4.5rem;line-height: 2.5rem; z-index:2;	box-sizing:border-box; cursor: pointer;}
 .nav > div > :nth-child(2) > h2 {font-size: 1.8rem; margin-bottom: 5rem;}
@@ -131,8 +131,8 @@ a {text-decoration:none; color: inherit;}
 .portfolio {background-color: #fff; position: relative;}
 .portfolio .port_left {width: 50%; height: 100%; float: left; display: table;}
 .port_left > ul {display: table-cell; vertical-align: middle;}
-.port_left .tit_line {width: 100%; cursor: pointer;}
-.port_left > ul h4 {padding-bottom: 1.5rem; font-weight: 400; background-color: #fff; position: relative; width: 100px; margin: 0 auto; top: -10px; padding-left: 1.5rem;}
+.port_left .tit_line {width: 100%; cursor: pointer; padding-bottom: 1.5rem; box-sizing: border-box;}
+.port_left > ul h4 {font-weight: 400; background-color: #fff; position: relative; width: 100px; margin: 0 auto; top: -10px; padding-left: 1.5rem;}
 
 .portfolio .port_mid {width: 60%; height: 100%; position: absolute; left: 70%; transform:translateX(-70%); z-index: 20;}
 .portfolio .port_mid > div {border-radius: 5%; position: absolute;}
