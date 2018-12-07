@@ -53,10 +53,10 @@ a {text-decoration:none; color: inherit;}
 	-moz-transition:all 0.5s ease;
 	-o-transition:all 0.5s ease;
 	transition:all 0.5s ease;
-	/*a 안에서의 애니메이션 부분은 오브젝트보다*/
+	/*a 안엝서의 애니메이션 부분은 오브젝트보다*/
 	z-index:-1;
 }
-/*마우스가 올라갔을 때 발생되는 애니메이션 화면을 rn조 안에서 다른 색으로 변경한 부분*/
+/*마우스가 올라갔을 때 발생띘는 애니메이션 화면을 rn조 안엝서 다른 색으로 변경한 부분*/
 .nav > div > :nth-child(2) > h3:nth-child(2):hover:after{width:100%; background-color: #ffcd16;}
 .nav > div > :nth-child(2) > h3:nth-child(3):hover:after{width:100%; background-color: #3e95ce;}
 .nav > div > :nth-child(2) > h3:last-child:hover:after{width:100%; background-color: #00be65;}
@@ -135,7 +135,7 @@ a {text-decoration:none; color: inherit;}
 .port_left > ul h4 {font-weight: 400; background-color: #fff; position: relative; width: 100px; margin: 0 auto; top: -10px; padding-left: 1.5rem;}
 
 .portfolio .port_mid {width: 60%; height: 100%; position: absolute; left: 70%; transform:translateX(-70%); z-index: 20;}
-.portfolio .port_mid > div {border-radius: 5%; position: absolute;}
+.portfolio .port_mid > div {border-radius: 5%; position: absolute; }
 .portfolio .port_mid > div:nth-child(1) {
 	width:50%; 
 	height: 45%; 
@@ -150,6 +150,7 @@ a {text-decoration:none; color: inherit;}
 .portfolio .port_mid > div:nth-child(2) {width: 15%; height: 12%; background-color: violet; top: 27.5%; right: 13.2%;}
 .portfolio .port_mid > div:nth-child(3) {width: 15%; height: 12%; background-color: #ccc; top: 41.5%; right: 13.2%;}
 .portfolio .port_mid > div:nth-child(4) {width: 15%; height: 12%; background-color: #666; top: 55.5%; right: 13.2%;}
+.portfolio .port_mid > div:nth-child(5) {width: 15%; height: 12%; background-color: #00be65; top: 55.5%; right: 13.2%;}
 .portfolio .port_mid > h5 {font-weight: 500; color: #fff; position: absolute; right: 20.5%; top: 71%; z-index: 999; letter-spacing: 2px;}
 
 .portfolio .port_right {width: 50%; height: 110%; background-color: #3e95ce; border-radius: 1%; float: right; position: absolute; top: -5%; right: 0; z-index: 16;}

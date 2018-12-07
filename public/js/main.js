@@ -66,11 +66,11 @@ var WheelScroll = (function() {
 	return WheelScroll;
 }());
 
-var pages = new WheelScroll({
+/* var pages = new WheelScroll({
 	page: ".page", 
 	nav: ".nav_bt",
 	speed: 700
-});
+}); */
 
 // cloud 
 function cloudAni() {
@@ -84,21 +84,31 @@ function cloudAni() {
 // nav
 function iphoneAni() {
 	$(".iphone_nav").stop().animate({"bottom":"107%"}, 2000, "linear", function() {
-		$(".iphone_nav").stop().animate({"left":"80%"}, 2000, "linear");
+		$(".iphone_nav").stop().animate({"left":"80%"}, 2000, "linear", function(){
+			$(".iphone").trigger("click");
+		});
 		$(".sign_bt").hide();
 	});
 };
 
+var iphoneChk = false;
 $(".iphone").click(function(e) {
-	$(this).parent().stop().animate({"bottom":"60%"}, 1000, function(){
-		$(".nav").stop().slideDown(700);
-	});	
-	$(".iphone").click(function(e) {
+	if(iphoneChk) {
+		//내려와 있다면
 		$(".nav").stop().slideUp(700, function() {
-			$(this).parent().stop().animate({"bottom":"107%"}, 1000)
+			$(this).parent().stop().animate({"bottom":"107%"}, 1000);
+			iphoneChk = false;
 		});
-	});	
+	}
+	else {
+		//올라가 있다면
+		$(this).parent().stop().animate({"bottom":"60%"}, 1000, function(){
+			$(".nav").stop().slideDown(700);
+			iphoneChk = true;
+		});
+	}
 });
+
 $(".nav").trigger("slideDown");
 
 /*
@@ -127,13 +137,21 @@ $(".sign_bt").click(function(){
 
 
 // portfolio
-$(".tit_line").hover(function() {
+
+var portNum = 0;
+var portNumOld = 0;
+$(".tit_line").mouseenter(function() {
+	portNumOld = portNum;
+	portNum = $(this).index();
+	$(".tit_line").css({"border-top":"0"});
+	$(".tit_line").children("h4").css({"color":"#222"});
 	$(this).css({"border-top":"1px solid #3e95ce"});
-		$(this).children("h4").css({"color":"#3e95ce"});
-		//$(this).stop().animate({"width":"100%"},100);
-	}, function(){
-		$(this).css({"border-top":"0"});
-		$(this).children("h4").css({"color":"#222"});
-		//$(this).stop().animate({"width":"100%"},100);
+	$(this).children("h4").css({"color":"#3e95ce"});
+	$(".cards").eq(portNumOld).stop().animate({"margin-top":"-200px", "opacity":0}, 300);
+	$(".cards").eq(portNum).css({"margin-top":"200px", "opacity":0}).stop().animate({"margin-top":0, "opacity":1}, 300);
 });
 //$(".tit_line").eq(0).trigger("hover");
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
