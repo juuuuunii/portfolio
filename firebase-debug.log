@@ -104,3 +104,32 @@
 [debug] [2018-12-07T00:45:24.532Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2018-12-10T00:53:35.807Z] ----------------------------------------------------------------------
+[debug] [2018-12-10T00:53:35.811Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-12-10T00:53:35.811Z] CLI Version:   6.1.1
+[debug] [2018-12-10T00:53:35.811Z] Platform:      win32
+[debug] [2018-12-10T00:53:35.811Z] Node Version:  v8.12.0
+[debug] [2018-12-10T00:53:35.812Z] Time:          Mon Dec 10 2018 09:53:35 GMT+0900 (대한민국 표준시)
+[debug] [2018-12-10T00:53:35.812Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-12-10T00:53:35.835Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-10T00:53:35.836Z] > authorizing via signed-in user
+[debug] [2018-12-10T00:53:35.836Z] [iam] checking project juuuuunii-portfolio for permissions ["firebase.projects.get"]
+[debug] [2018-12-10T00:53:35.839Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-12-10T00:53:35.839Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-12-10T00:53:36.210Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-10T00:53:36.225Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/juuuuunii-portfolio:testIamPermissions  
+
+[debug] [2018-12-10T00:53:37.489Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-10T00:53:37.493Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/juuuuunii-portfolio  
+ 
+[debug] [2018-12-10T00:53:38.657Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\portfolio'...
+[info] 
+[debug] [2018-12-10T00:53:38.673Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/793722252437/clients/_:getWebAppConfig  
+ 
+[debug] [2018-12-10T00:53:39.360Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000

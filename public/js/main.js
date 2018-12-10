@@ -114,6 +114,173 @@ $(".sign_bt").click(function(){
 	$(".nav_bt").eq(1).trigger("click");
 });
 
+// chart
+var data = [{
+	labels: ["PHOTOSHOP"],
+	datasets: [{
+		label: '# of Votes',
+		data: [85],
+		backgroundColor: [
+			'rgba(255, 99, 132, 0.2)'
+		],
+		borderColor: [
+			'rgba(255, 99, 132, 1)'
+		],
+		hoverBackgroundColor: [
+			'rgba(255, 99, 132, 0.6)'
+		],
+		borderWidth: 1
+	}]
+}, {
+	labels: ["ILLUSTRATOR"],
+	datasets: [{
+		label: '# of Votes',
+		data: [80],
+		backgroundColor: [
+			'rgba(255, 206, 86, 0.2)'
+		],
+		borderColor: [
+			'rgba(255, 206, 86, 1)'
+		],
+		hoverBackgroundColor: [
+			'rgba(255, 206, 86, 0.6)'
+		],
+		borderWidth: 1
+	}]
+}, {
+	labels: ["HTML5"],
+	datasets: [{
+		label: '# of Votes',
+		data: [85],
+		backgroundColor: [
+			'rgba(54, 162, 235, 0.2)'
+		],
+		borderColor: [
+			'rgba(54, 162, 235, 1)'
+		],
+		hoverBackgroundColor: [
+			'rgba(54, 162, 235, 0.6)'
+		],
+		borderWidth: 1
+	}]
+}, {
+	labels: ["CSS"],
+	datasets: [{
+		label: '# of Votes',
+		data: [85],
+		backgroundColor: [
+			'rgba(0, 180, 76, 0.2)'
+		],
+		borderColor: [
+			'rgba(0, 180, 76, 1)'
+		],
+		hoverBackgroundColor: [
+			'rgba(0, 180, 76, 0.6)'
+		],
+		borderWidth: 1
+	}]
+}, {
+	labels: ["Javascript"],
+	datasets: [{
+		label: '# of Votes',
+		data: [75],
+		backgroundColor: [
+			'rgba(222, 222, 222, 0.2)'
+		],
+		borderColor: [
+			'rgba(222, 222, 222, 1)'
+		],
+		hoverBackgroundColor: [
+			'rgba(222, 222, 222, 0.6)'
+		],
+		borderWidth: 1
+	}]
+}, {
+	labels: ["ILLUSTRATOR"],
+	datasets: [{
+		label: '# of Votes',
+		data: [80],
+		backgroundColor: [
+			'rgba(255, 206, 86, 0.2)'
+		],
+		borderColor: [
+			'rgba(255, 206, 86, 1)'
+		],
+		hoverBackgroundColor: [
+			'rgba(255, 206, 86, 0.6)'
+		],
+		borderWidth: 1
+	}]
+}];
+var option = [{
+	legend: {
+		display: false //차트 분류
+	}, 
+	cutoutPercentage: 30, //두께
+	rotation: -0.5 * Math.PI, //돌아가는 시작점의 각도
+	circumference: 1.6 * Math.PI,
+	animation: {
+		animateRotate: false, //차트가 나올 때 돌아가는 애니메이션을 막음
+		animateScale: true //차트가 나올 때 작아졌다 커짐
+	}
+}, {
+	legend: {
+		display: false
+	}, 
+	cutoutPercentage: 30,
+	circumference: 1.4 * Math.PI,
+	animation: {
+		animateRotate: false
+	}
+}, {
+	legend: {
+		display: false
+	}, 
+	cutoutPercentage: 30,
+	circumference: 1.6 * Math.PI,
+	animation: {
+		animateRotate: false
+	}
+}, {
+	legend: {
+		display: false
+	}, 
+	cutoutPercentage: 30,
+	circumference: 1.6 * Math.PI,
+	animation: {
+		animateRotate: false
+	}
+}, {
+	legend: {
+		display: false
+	}, 
+	cutoutPercentage: 30,
+	circumference: 1.3 * Math.PI,
+	animation: {
+		animateRotate: false
+	}
+}, {
+	legend: {
+		display: false
+	}, 
+	cutoutPercentage: 30,
+	circumference: 1.4 * Math.PI,
+	animation: {
+		animateRotate: false
+	}
+}];
+var chart = [];
+
+var ctx = $(".chart");
+ctx.each(function (i) {
+	chart[i] = new Chart($(this), {
+		type: 'doughnut',
+		data: data[i],
+		options: option[i]
+	})
+});
+
+
 // portfolio
 var portNum = 0;
 var portNumOld = 0;

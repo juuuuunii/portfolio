@@ -4,8 +4,8 @@
 
 
 html, body {margin: 0; padding: 0; font-size: 14px; color:#222; box-sizing: border-box; font-family:'Noto Sans KR', sans-serif; height:100%; font-weight:300;}
-h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; font-weight: 0;}
-div, ul, li, ol, dl, dd, dt, span {margin: 0; padding: 0; box-sizing: border-box; list-style: none;}
+h1, h2, h3, h4, h5, h6, p, span  {margin: 0; padding: 0; font-weight: 300;}
+div, ul, li, ol, dl, dd, dt{margin: 0; padding: 0; box-sizing: border-box; list-style: none;}
 table {margin:0; padding:0; border-collapse:collapse;}
 th, td {margin:0; padding:0;}
 
@@ -64,7 +64,7 @@ a {text-decoration:none; color: inherit;}
 .nav > h4 > strong {font-size: 1.2em; margin-right: 1rem;} */
 
 /*************** intro ****************/
-.mainbanner{background-image:url("../img/intro/sky.png");background-repeat:no-repeat; background-size:cover; background-position:center center;}
+.mainbanner{background-image:url("../img/intro/sky.png");background-repeat:no-repeat; background-size:cover; background-position:center center; overflow: hidden;}
 .banner{width:100%; height: 100%; position: relative;; z-index:11; }
 .banner > div, .banner > img {position: absolute;}
 .banner .title {
@@ -122,10 +122,26 @@ a {text-decoration:none; color: inherit;}
 .simple_about {width:100%; height: 100%; position: relative;}
 .simple_about > .about_left {width: 50%; height: 100%; float: left; position: relative;}
 .simple_txt {width: 100%; height: 100%; }
-.simple_txt > h1 {font-size: 5rem; color: #ffcd16; position: absolute; top: 5%; left: 20%; z-index: 1111;}
-.simple_txt > div {width: 70%; height: 80%; background-color: #000; position: absolute; top: 12%; left: 15%;; z-index: 111;}
+.simple_txt > h1 {font-size: 5rem; font-weight: bold; color: #ffcd16; position: absolute; top: 5%; left: 20%; z-index: 1111;}
+
+.simple_txt > div {width: 70%; height: 80%; position: absolute; top: 18%; left: 20%;; z-index: 111; overflow: hidden;}
+.chart_txt > div {color: #fff; float: left;}
+.chart_txt > div > h3 {margin-bottom: 5px;}
+.chart_txt > :first-child {width: 14%;}
+.chart_txt > :first-child > h3 {font-weight: 400;}
+.chart_about {margin-bottom: 5px; color: #fff}
+.chart_about > p {margin-left: 7%;}
+.chart_box {overflow: hidden; color: #fff;}
+.chart_box > h3 {margin-bottom: 3%; font-weight: 400;}
+.chart_box > h3 > :last-child {font-size: 1rem; font-weight: 500; text-decoration: underline; padding-bottom: 5%;}
+.charts {margin-top: 5%;}
+.chart_wrap {width: 31.33333333333333%; padding-right: 3%; float: left; z-index: 1111;}
+.chart_wrap:nth-child(4), .chart_wrap:nth-child(5), .chart_wrap:last-child {margin-top: 5%;}
+
+.chart_wrap:nth-child(3), .chart_wrap:last-child {padding-left: 0;}
 .main .climing {width: 50%; position:absolute; right: 0; bottom: 0; z-index: 15;}
 .main .summit_bott {position: absolute; left: 0; bottom: 0; z-index: 1;}
+
 
 /*************** portfolio ****************/
 .portfolio {background-color: #fff; position: relative;}

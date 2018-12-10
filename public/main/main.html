@@ -17,6 +17,8 @@
 	<link rel="stylesheet" href="../css/main.css">
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- chart -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
 </head>
 
@@ -31,7 +33,7 @@
 					<span>페이지</span>
 				</div>
 			</div>
-			<img src="../img/intro/summit.png" class="summit img" alt="summit" />			
+			<img src="../img/intro/summit.png" class="summit img" alt="summit" />
 			<div class="cloud"></div>
 		</div>
 	</section>
@@ -42,24 +44,80 @@
 				<div class="simple_txt">
 					<h1>Say hello</h1>
 					<div>
-
+						<div class="chart_txt clear">
+							<div>
+								<h3>name</h3>
+								<h3>birth</h3>
+								<h3>mobile</h3>
+								<h3>email</h3>
+								<h3>residence</h3>
+							</div>
+							<div>
+								<h3>이 준희</h3>
+								<h3>햅삐해피 94년 4월 10일</h3>
+								<h3>010 - 7172 - 0722</h3>
+								<h3>01071720722s@gmail.com</h3>
+								<h3>인천 1호선 작전역</h3>
+							</div>							
+						</div>
+						<div class="chart_about">
+							<h3>character</h3>
+							<p>
+								aaa
+							</p>
+						</div>
+						<div class="chart_box">
+							<h3>
+								<span>skills -</span>
+								<span> hover those!</span>
+							</h3>
+							<div class="charts claer">
+								<div class="chart_wrap">
+									<canvas id="chart1" class="chart"></canvas>
+								</div>
+								<div class="chart_wrap">
+									<canvas id="chart2" class="chart"></canvas>
+								</div>
+								<div class="chart_wrap">
+									<canvas id="chart3" class="chart"></canvas>
+								</div>
+								<div class="chart_wrap">
+									<canvas id="chart4" class="chart"></canvas>
+								</div>
+								<div class="chart_wrap">
+									<canvas id="chart5" class="chart"></canvas>
+								</div>
+								<div class="chart_wrap">
+									<canvas id="chart6" class="chart"></canvas>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<img src="../img/main/climing.png" class="climing img" alt="climing"></img>
-
-			<img src="../img/main/summit_bott.png" class="summit_bott img" alt="climing"></img>
+		<img src="../img/main/climing.png" class="climing img" alt="climing"></img>
+		<img src="../img/main/summit_bott.png" class="summit_bott img" alt="climing"></img>
 		</div>
 	</section>
 
 	<section id="portfolio" class="portfolio wrap page" data-now="2">
 		<li class="port_left">
 			<ul>
-				<li class="tit_line"><h4>MAIN</h4></li>
-				<li class="tit_line"><h4>RENEWER</h4></li>
-				<li class="tit_line"><h4>WEATHER</h4></li>
-				<li class="tit_line"><h4>ADMIN</h4></li>
-				<li class="tit_line"><h4>GNUBORD</h4></li>
+				<li class="tit_line">
+					<h4>MAIN</h4>
+				</li>
+				<li class="tit_line">
+					<h4>RENEWER</h4>
+				</li>
+				<li class="tit_line">
+					<h4>WEATHER</h4>
+				</li>
+				<li class="tit_line">
+					<h4>ADMIN</h4>
+				</li>
+				<li class="tit_line">
+					<h4>GNUBORD</h4>
+				</li>
 			</ul>
 		</li>
 		<div id="cards0" class="port_mid cards">
@@ -99,11 +157,21 @@
 	</section>
 
 	<section id="about" class="about wrap page" data-now="3">
-		<div><h2>안녕하세요</h2></div>
-		<div><h2>이준희입니다</h2></div>
-		<div><h2>반갑습니다</h2></div>
-		<div><h2>즐거웠습니다</h2></div>
-		<div><h2>잘가세요</h2></div>
+		<div>
+			<h2>안녕하세요</h2>
+		</div>
+		<div>
+			<h2>이준희입니다</h2>
+		</div>
+		<div>
+			<h2>반갑습니다</h2>
+		</div>
+		<div>
+			<h2>즐거웠습니다</h2>
+		</div>
+		<div>
+			<h2>잘가세요</h2>
+		</div>
 	</section>
 
 	<!-- 아이폰 네비게이션.시작 -->
@@ -122,10 +190,10 @@
 					<h3 class="nav_bt" data-now="3">· About</h3>
 				</div>
 			</div>
-			<!--h4><strong>P</strong>010.7172.0722</h4>
+			<!--h4><strong>P</strong>010.7172.0722</h3>
 			<h4><strong>M</strong>01071720722s@gmail.com</h4>
 			<h4-><strong>H</strong>juuuuunii.firebaseapp.com</h4-->
-		</div>				
+		</div>
 	</div>
 	<!-- 아이폰 네비게이션.종료 -->
 	<script src="../js/main.js"></script>
