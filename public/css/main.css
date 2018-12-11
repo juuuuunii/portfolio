@@ -16,8 +16,7 @@ a {text-decoration:none; color: inherit;}
 .clear:after {clear:both; content:""; display: block;}
 .img {width:100%;}
 .hover:hover {opacity:0.8;}
-.hover_rev {opacity:0.8;}
-.hover_rev:hover {opacity:1.0;}
+.bold {font-weight: 500;}
 .eng {font-family: 'Montserrat', sans-serif;}
 .wrap {width: 100%; height: 100%;}
 
@@ -64,7 +63,7 @@ a {text-decoration:none; color: inherit;}
 .nav > h4 > strong {font-size: 1.2em; margin-right: 1rem;} */
 
 /*************** intro ****************/
-.mainbanner{background-image:url("../img/intro/sky.png");background-repeat:no-repeat; background-size:cover; background-position:center center; overflow: hidden;}
+.mainbanner{background-image:url("../img/ejunhee/intro/sky.png");background-repeat:no-repeat; background-size:cover; background-position:center center; overflow: hidden;}
 .banner{width:100%; height: 100%; position: relative;; z-index:11; }
 .banner > div, .banner > img {position: absolute;}
 .banner .title {
@@ -116,24 +115,25 @@ a {text-decoration:none; color: inherit;}
 }
 .sign_bt > button {width: 7rem; height: 2.5rem; border: 0; border-radius: 10px; background-color: #ffcd16; }
 .sign_bt > button:hover {background-color: #333; color: #ffcd16; font-weight: bold;}
-.banner .cloud{top:0; left:0; width:5440px; height:100%; background-image:url("../img/intro/could.png"); z-index:9;}
+.banner .cloud{top:0; left:0; width:5440px; height:100%; background-image:url("../img/ejunhee/intro/could.png"); z-index:9;}
 
 /*************** main ****************/
+.main {overflow: hidden;}
 .simple_about {width:100%; height: 100%; position: relative;}
 .simple_about > .about_left {width: 50%; height: 100%; float: left; position: relative;}
 .simple_txt {width: 100%; height: 100%; }
 .simple_txt > h1 {font-size: 5rem; font-weight: bold; color: #ffcd16; position: absolute; top: 5%; left: 20%; z-index: 1111;}
 
-.simple_txt > div {width: 70%; height: 80%; position: absolute; top: 18%; left: 20%;; z-index: 111; overflow: hidden;}
+.simple_txt > div {width: 70%; height: 80%; position: absolute; top: 20%; left: 20%;; z-index: 111; overflow: hidden;}
 .chart_txt > div {color: #fff; float: left;}
 .chart_txt > div > h3 {margin-bottom: 5px;}
 .chart_txt > :first-child {width: 14%;}
-.chart_txt > :first-child > h3 {font-weight: 400;}
 .chart_about {margin-bottom: 5px; color: #fff}
-.chart_about > p {margin-left: 7%;}
+.chart_about > p {width: 90%; font-size: 1rem; padding: 2%;}
+.chart_about > p > span {display: block;}
 .chart_box {overflow: hidden; color: #fff;}
-.chart_box > h3 {margin-bottom: 3%; font-weight: 400;}
-.chart_box > h3 > :last-child {font-size: 1rem; font-weight: 500; text-decoration: underline; padding-bottom: 5%;}
+.chart_box > h3 {margin-bottom: 3%;}
+.chart_box > h3 > :last-child {font-size: 1rem; text-decoration: underline; padding-bottom: 5%;}
 .charts {margin-top: 5%;}
 .chart_wrap {width: 31.33333333333333%; padding-right: 3%; float: left; z-index: 1111;}
 .chart_wrap:nth-child(4), .chart_wrap:nth-child(5), .chart_wrap:last-child {margin-top: 5%;}
@@ -148,14 +148,12 @@ a {text-decoration:none; color: inherit;}
 .portfolio .port_left {width: 50%; height: 100%; float: left; display: table;}
 .port_left > ul {display: table-cell; vertical-align: middle;}
 .port_left .tit_line {width: 100%; cursor: pointer; padding-bottom: 1.5rem; box-sizing: border-box;}
-.port_left > ul h4 {font-weight: 400; background-color: #fff; position: relative; width: 100px; margin: 0 auto; top: -10px; padding-left: 1.5rem;}
+.port_left > ul h4 {background-color: #fff; position: relative; width: 100px; margin: 0 auto; top: -10px; padding-left: 1.5rem;}
 
 .portfolio .port_mid {width: 60%; height: 100%; position: absolute; left: 70%; transform:translateX(-70%); z-index: 20;}
-.portfolio .port_mid > div {border-radius: 5%; position: absolute; }
+.portfolio .port_mid > .card {position: absolute;}
+.portfolio .port_mid > .card > img {border-radius: 5px;}
 .portfolio .port_mid > div:nth-child(1) {
-	width:50%; 
-	height: 45%; 
-	background-color: red; 
 	top: 50%; 
 	left: 40%;
 	-webkit-transform:translate(-40%, -55%);
@@ -163,14 +161,15 @@ a {text-decoration:none; color: inherit;}
 	-o-transform:translate(-40%, -50%); 
 	transform:translate(-40%, -50%);
 }
-.portfolio .port_mid > div:nth-child(2) {width: 15%; height: 12%; background-color: violet; top: 27.5%; right: 13.2%;}
-.portfolio .port_mid > div:nth-child(3) {width: 15%; height: 12%; background-color: #ccc; top: 41.5%; right: 13.2%;}
-.portfolio .port_mid > div:nth-child(4) {width: 15%; height: 12%; background-color: #666; top: 55.5%; right: 13.2%;}
-.portfolio .port_mid > div:nth-child(5) {width: 15%; height: 12%; background-color: #00be65; top: 55.5%; right: 13.2%;}
-.portfolio .port_mid > h5 {font-weight: 500; color: #fff; position: absolute; right: 20.5%; top: 71%; z-index: 999; letter-spacing: 2px;}
+.portfolio .port_mid > div:nth-child(1) > img {width: 90%;}
+.portfolio .port_mid > div:nth-child(2) {width: 15%; height: 12%; top: 27.5%; right: 13.2%;}
+.portfolio .port_mid > div:nth-child(3) {width: 15%; height: 12%; top: 41.5%; right: 13.2%;}
+.portfolio .port_mid > div:nth-child(4) {width: 15%; height: 12%; top: 55.5%; right: 13.2%;}
+.portfolio .port_mid > div:nth-child(5) {width: 15%; height: 12%; top: 55.5%; right: 13.2%;}
+.portfolio .port_mid > h5 > a {color: #fff; position: absolute;right: 20.5%; top: 71%; z-index: 999; letter-spacing: 2px;}
 
 .portfolio .port_right {width: 50%; height: 105%; background-color: #3e95ce; border-radius: 1%; float: right; position: absolute; top: -5%; right: 0; z-index: 16;}
-.portfolio .port_right > h5 {color: #fff; font-size: 1rem; font-weight: 400; letter-spacing: 2px; line-height: 3.4rem; margin-left: 2rem;}
+.portfolio .port_right > h5 {color: #fff; font-size: 1rem; letter-spacing: 2px; line-height: 3.4rem; margin-left: 2rem;}
 
 /*************** about ****************/
 .about {position: relative;}

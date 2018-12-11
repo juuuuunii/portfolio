@@ -137,22 +137,6 @@ var data = [{
 		label: '# of Votes',
 		data: [80],
 		backgroundColor: [
-			'rgba(255, 206, 86, 0.2)'
-		],
-		borderColor: [
-			'rgba(255, 206, 86, 1)'
-		],
-		hoverBackgroundColor: [
-			'rgba(255, 206, 86, 0.6)'
-		],
-		borderWidth: 1
-	}]
-}, {
-	labels: ["HTML5"],
-	datasets: [{
-		label: '# of Votes',
-		data: [85],
-		backgroundColor: [
 			'rgba(54, 162, 235, 0.2)'
 		],
 		borderColor: [
@@ -164,18 +148,34 @@ var data = [{
 		borderWidth: 1
 	}]
 }, {
+	labels: ["HTML5"],
+	datasets: [{
+		label: '# of Votes',
+		data: [85],
+		backgroundColor: [
+			'rgba(255, 205, 86, 0.2)'
+		],
+		borderColor: [
+			'rgba(255, 205, 86, 1)'
+		],
+		hoverBackgroundColor: [
+			'rgba(255, 205, 86, 0.6)'
+		],
+		borderWidth: 1
+	}]
+}, {
 	labels: ["CSS"],
 	datasets: [{
 		label: '# of Votes',
 		data: [85],
 		backgroundColor: [
-			'rgba(0, 180, 76, 0.2)'
+			'rgba(75, 192, 192, 0.2)'
 		],
 		borderColor: [
-			'rgba(0, 180, 76, 1)'
+			'rgba(75, 192, 192, 1)'
 		],
 		hoverBackgroundColor: [
-			'rgba(0, 180, 76, 0.6)'
+			'rgba(75, 192, 192, 0.6)'
 		],
 		borderWidth: 1
 	}]
@@ -185,29 +185,13 @@ var data = [{
 		label: '# of Votes',
 		data: [75],
 		backgroundColor: [
-			'rgba(222, 222, 222, 0.2)'
+			'rgba(255, 159, 64, 0.2)'
 		],
 		borderColor: [
-			'rgba(222, 222, 222, 1)'
+			'rgba(255, 159, 64, 1)'
 		],
 		hoverBackgroundColor: [
-			'rgba(222, 222, 222, 0.6)'
-		],
-		borderWidth: 1
-	}]
-}, {
-	labels: ["ILLUSTRATOR"],
-	datasets: [{
-		label: '# of Votes',
-		data: [80],
-		backgroundColor: [
-			'rgba(255, 206, 86, 0.2)'
-		],
-		borderColor: [
-			'rgba(255, 206, 86, 1)'
-		],
-		hoverBackgroundColor: [
-			'rgba(255, 206, 86, 0.6)'
+			'rgba(255, 159, 64, 0.6)'
 		],
 		borderWidth: 1
 	}]
@@ -256,15 +240,6 @@ var option = [{
 	}, 
 	cutoutPercentage: 30,
 	circumference: 1.3 * Math.PI,
-	animation: {
-		animateRotate: false
-	}
-}, {
-	legend: {
-		display: false
-	}, 
-	cutoutPercentage: 30,
-	circumference: 1.4 * Math.PI,
 	animation: {
 		animateRotate: false
 	}

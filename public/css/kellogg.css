@@ -1,0 +1,82 @@
+/*************** 초기화 ****************/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+html, body {margin: 0; padding: 0; font-size: 14px; color:#222; box-sizing: border-box; font-family:'Noto Sans KR', sans-serif; height:100%; font-weight:300;}
+h1, h2, h3, h4, h5, h6, p, span  {margin: 0; padding: 0; font-weight: 300;}
+div, ul, li, ol, dl, dd, dt{margin: 0; padding: 0; box-sizing: border-box; list-style: none;}
+table {margin:0; padding:0; border-collapse:collapse;}
+th, td {margin:0; padding:0;}
+
+a {text-decoration:none; color: inherit;}
+
+.hand {cursor:pointer;}
+.clear {clear:both;}
+.clear:after {clear:both; content:""; display: block;}
+.img {width:100%;}
+.hover:hover {opacity:0.8;}
+.eng {font-family: 'Montserrat', sans-serif;}
+.tit {font-size: 1.2rem; font-weight: 500; color: #222; margin-bottom: 0.5rem;}
+
+/*************** header ****************/
+html, body {width: 100%; height: 100%;}
+.wrap {width: 1260px; height: 100%; margin: 0 auto;}
+.head_wrap {position: relative; padding: 2rem 0;}
+.head_wrap > .logo {max-width: 200px; margin: 0 auto;}
+.head_wrap > .head_nav {position: absolute; top: 17%; right: 0;}
+.head_wrap > .head_nav > li {display: inline-block; margin-right: 1rem;}
+.head_wrap > .head_nav > :last-child {margin-right: 0;}
+.head_wrap > .head_nav > li > a {font-size: 1rem; font-weight: 400; color: #c80136;}
+.nav {text-align: center;}
+.nav > li {display: inline-block; margin-right: 2rem; margin-bottom: 1rem;}
+.nav > :last-child {margin-right: 0;}
+.nav > li > a {font-size: 1.2rem; font-weight: 400; color: #222;}
+.banner {overflow: hidden;}
+.banner > img {width: 60%; float: left;}
+.banner > .banner_txt {width: 40%; background-image: url("../img/kellogg/banner/banner_txtbg.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; float: right;}
+.banner > .banner_txt h1 {font-size: 3.5rem; color: #fff;}
+.banner > .banner_txt h1 > span {display: block;}
+
+/*************** section ****************/
+section {padding: 4rem 0;}
+/*sub_banners*/
+.sub_banners {overflow: hidden;}
+.sub_banners > li {width: 49%; float: left;}
+.sub_banners > :first-child {margin-right: 2%;}
+.sub_banners > :first-child > div {background-image: url("../img/kellogg/banner/sub_banner01.png"); background-repeat: no-repeat;}
+.sub_banners > :first-child > div > .sub_txt {width: 60%; color: #222; padding: 4rem 0 7rem 2rem; text-align: right;}
+.sub_banners > :first-child > div > .sub_txt span {display: block; font-size: 1rem;}
+.sub_banners > :last-child > div {background-image: url("../img/kellogg/banner/sub_banner02.png"); background-repeat: no-repeat;}
+.sub_banners > :last-child > div > .sub_txt > div {width: 38%; background-color: rgba(235, 235, 235, .8); padding: 2rem;}
+.sub_banners > :last-child > div > .sub_txt > div > span {display: block;}
+
+/*new_prds*/
+.new_prds {overflow: hidden; padding: 3rem 0;}
+.new_prds > ul > li {width: 25%; height: 450px; float: left; padding: 2rem;}
+.new_prds > ul > li > p {background-color: #fff; display: inline-block; padding: 0.2rem 0.5rem;}
+/*.new_prds > ul > li > a:hover {font-weight: 500;}*/
+.new_prds > ul > li > h2 {margin: 1rem 0;}
+.new_prds > ul > li > h2 > span {display: block; font-weight: 500;}
+.new_prds > ul > :first-child {background-color: #8ce4f2; color: #4c9df8;}
+.new_prds > ul > :nth-child(2) {background-color: #bfde62; color: #36a54d;}
+.new_prds > ul > :nth-child(3) {background-color: #ffbf96; color: #f96d14;}
+.new_prds > ul > :last-child {background-color: #e16687; color: #a4143b;}
+
+/*products*/
+.products {overflow: hidden;}
+.products > ul > li {width: 20%; float: left; margin: 2rem 0;}
+.products > ul > li > div {width: 70%; margin: 0 auto;}
+.products > ul > li > h3 {font-weight: 400; text-align: center; margin-top: 1.5rem;}
+
+/*youtube*/
+.you_box {width: 100%; padding: 2rem; background-color: #fff; box-shadow: 2px 2px 5px rgba(0, 0, 0, .5); overflow: hidden;}
+.you_box > .you_video {float: left; width: 60%;}
+.you_box > .you_txt {float: right; width: 40%;}
+.you_box > .you_txt > :first-child > span {color: #3bd0d6;}
+.you_box > .you_txt > :nth-child(2) > span {color: #c80136;}
+.you_box > .you_txt > h2 {margin-top: 2rem;}
+.you_box > .you_txt > h2 > :nth-of-type(1) {color: #20790c; margin-right: 1rem;}
+.you_box > .you_txt > h2 > :nth-of-type(2) {color: #ff6401;}
+.you_box > .you_txt > h1 {font-size: 5rem; font-weight: bold; color: #c80136;}
+.you_box > .you_txt > button {background-color: #222; border: 0; color: #fff; padding: 0.2rem 0.5rem; margin-top: 2.5rem;}

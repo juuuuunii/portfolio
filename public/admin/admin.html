@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>admin page</title>
+
+	<!-- 파이어베이스 -->
+	<script defer src="/__/firebase/5.5.9/firebase-app.js"></script>
+	<script defer src="/__/firebase/5.5.9/firebase-auth.js"></script>
+	<script defer src="/__/firebase/5.5.9/firebase-database.js"></script>
+	<script defer src="/__/firebase/5.5.9/firebase-messaging.js"></script>
+	<script defer src="/__/firebase/5.5.9/firebase-storage.js"></script>
+	<script defer src="/__/firebase/init.js"></script>
+	<!-- css -->
+	<link rel="stylesheet" href="../css/main.css">
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<ul class="header clear">
+		<li><img src="../img/main/logo.svg" class="logo img"></li>
+		<li>
+			<button class="btn btn-primary">로그인</button>
+			<button class="btn btn-default">로그아웃</button>
+			<button class="btn btn-warning">사이트 바로가기</button>
+		</li>
+	</ul>
+	<ul class="navs">
+		<li class="nav">
+			<span class="fa fa-home"></span><br>HOME
+		</li>
+		<li class="nav">
+			<span class="fa fa-shopping-basket"></span><br>SHOP
+		</li>
+		<li class="nav">
+			<span class="fa fa-clipboard"></span><br>BLOG
+		</li>
+	</ul>
+	<div class="section clear" id="home">
+		<div class="title">HOME 관리</div>
+		<div class="wrap" id="home_wrap">
+			<!-- ul.list>li>img.img^li>input.title+input.link^li>button.btn.btn-danger+button.btn.btn-warning -->
+			<div class="home_title">신규등록</div>
+			<ul class="list clear row" id="home_wr">
+				<li class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+					<div>
+						<input type="text" class="tit_img form-control" placeholder="이미지">
+					</div>
+				</li>
+				<li class="col-xs-4 col-sm-6 col-md-7 col-lg-8">
+					<div>
+						<input type="text" class="title form-control" placeholder="타이틀">
+						<input type="text" class="link form-control" style="margin-top:5px;" placeholder="링크주소">
+					</div>
+				</li>
+				<li class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+					<div>
+						<!--button class="btn btn-danger">삭제</button>
+						<button-- class="btn btn-warning">수정</button-->
+						<button class="btn btn-primary" id="home_save">등록</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="section clear" id="shop">
+		<div class="title">SHOP 관리</div>
+		<div class="wrap clear" id="shop_wrap">
+			<div class="shop_li0 clear">
+				<div>
+					<input type="text" class="title form-control" placeholder="제목">
+					<input type="text" class="icon form-control" placeholder="아이콘">
+					<input type="text" class="color form-control" placeholder="아이콘컬러">
+					<input type="text" class="link form-control" placeholder="링크">
+				</div>
+				<div>
+					<button class="btn btn-primary shop_wr">등록</button>
+				</div>				
+			</div>
+		</div>
+		<div class="grid">
+			<div class="grid-sizer"></div>
+			
+		</div>
+			
+			<!--
+			<ul>				
+				<li class="shop_li1 clear">
+					<div>
+						<input type="text" class="title form-control" placeholder="제목">
+						<input type="text" class="icon form-control" placeholder="아이콘">
+						<input type="text" class="color form-control" placeholder="아이콘컬러">
+					</div>
+					<div>
+						<button class="btn btn-danger shop_del1">삭제</button>
+						<button class="btn btn-warning shop_up1">수정</button>
+					</div>
+				</li>
+				<li class="shop_li2 clear">
+					<div>
+						<input type="text" class="title form-control" placeholder="제목">
+						<input type="text" class="icon form-control" placeholder="아이콘">
+						<input type="text" class="color form-control" placeholder="아이콘컬러">
+					</div>
+					<div>
+						<button class="btn btn-danger shop_del1">삭제</button>
+						<button class="btn btn-warning shop_up1">수정</button>
+					</div>
+				</li>
+				<li class="shop_li2 clear">
+					<div>
+						<input type="text" class="title form-control" placeholder="제목">
+						<input type="text" class="icon form-control" placeholder="아이콘">
+						<input type="text" class="color form-control" placeholder="아이콘컬러">
+					</div>
+					<div>
+						<button class="btn btn-danger">삭제</button>
+						<button class="btn btn-warning">수정</button>
+					</div>
+				</li>				
+			</ul>
+			-->
+		</div>
+	</div>
+	<div class="section clear" id="blog">
+		<div class="title">BLOG 관리</div>
+		<div class="wrap">
+
+		</div>
+	</div>
+	<div class="footer clear">
+		Copyright ⓒ booldook. Allright reserved.
+	</div>
+
+	<script defer src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+	<script defer src="../js/admin.js"></script>
+</body>
+
+</html>
