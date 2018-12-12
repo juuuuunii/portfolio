@@ -13,8 +13,11 @@
 	<script defer src="/__/firebase/5.5.9/firebase-messaging.js"></script>
 	<script defer src="/__/firebase/5.5.9/firebase-storage.js"></script>
 	<script defer src="/__/firebase/init.js"></script>
+	
 	<!-- css -->
 	<link rel="stylesheet" href="../css/kellogg.css">
+	<!-- w3schools -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -32,7 +35,7 @@
 					<li><a href="#">회사사이트</a></li>
 					<li><a href="#">나라선택</a></li>
 					<li><a href="#">고객문의</a></li>
-					<li><a href="#">돋보기</a></li>
+					<li><a href="#"><i class="fa fa-search"></i></a></li>
 				</ul>
 			</div>
 			<ul class="nav clear">
@@ -40,6 +43,23 @@
 				<li><a href="#">켈로그 브랜드</a></li>
 				<li><a href="#">켈로그 영양</a></li>
 				<li><a href="#">이벤트</a></li>
+			</ul>
+			<ul class="nav_hover clear">
+				<li class="nav_list">
+					<a href="#">공지사항</a>
+					<a href="#">회사개요</a>
+					<a href="#">회사연혁</a>
+					<a href="#">켈로그의 약속</a>
+					<a href="#">켈로그의 가치</a>
+					<a href="#">찾아오시는 길</a>
+				</li>
+				<li class="nav_ban">
+					<img src="../img/kellogg/banner/nav_ban01.png" class="img" alt="nav_banner"/>
+					<img src="../img/kellogg/banner/nav_ban02.png" class="img" alt="nav_banner"/>
+					<img src="../img/kellogg/banner/nav_ban03.png" class="img" alt="nav_banner"/>
+					<img src="../img/kellogg/banner/nav_ban04.png" class="img" alt="nav_banner"/>
+				</li>
+				
 			</ul>
 		</div>
 		<div class="banner">
@@ -186,24 +206,73 @@
 				</li>
 			</ul>
 		</div>
-
 		<div class="youtube">
 			<h3 class="tit">YOUTUBE</h3>
 			<div class="you_box clear">
 				<div class="you_video">
-					<iframe src="https://youtu.be/gKq0k3Vy3x0" frameborder="0"></iframe>
+					<iframe width="670" height="318" src="https://www.youtube.com/embed/JGHQM0613Ec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="you_txt">
-					<h3><span>여름</span>이 코앞이니까</h3>
-					<h3>당신의 여름은 더 <span>가</span>벼워지니까</h3>
-					<h2><span>시작하자!</span><span>좋은선택!</span></h2>
-					<h1>#스페셜K</h1>
-					<button class="you_bt">다른영상보기+</button>
+					<h3>건강하면서도 맛있고, 간편한 아침식사를 찾으셨나요?</h3>
+					<h3>
+						<span>바삭하고 고소한 통곡물</span> 
+						<span>O~그래놀라!</span>
+					</h3>
+					<h2>
+						<span>상큼!</span>
+						<span>달콤!</span>
+						사과와 라즈베리
+					</h2>
+					<h1>
+						<span>리얼그래놀라!</span> 
+						<span># 애플 & 라즈베리</span>
+					</h1>
+					<h3>이제 <u>지퍼백</u>으로 더 간편하게 즐겨보세요.</h3>
+					<button class="you_bt" onClick="www.youtube.com/watch?v=JGHQM0613Ec">다른영상보기+</button>
 				</div>
 			</div>
 		</div>
+		<div class="sns">
+			<h3 class="tit">SNS</h3>
+			<ul class="sns_list clear">
+				<li><i class="fa fa-facebook"></i></li>
+				<li><i class="fa fa-twitter"></i></li>
+				<li><i class="fa fa-google"></i></li>
+				<li><i class="fa fa-instagram"></i></li>				
+			</ul>
+			<div class="sns_pic">
+				<h3 class="tit"># 켈로그</h3>
+				<ul class="sns_pic_list clear">
+					<li><img src="../img/kellogg/sns/sns01.png" class="img" alt="sns_pic"/></li>
+					<li><img src="../img/kellogg/sns/sns02.png" class="img" alt="sns_pic"/></li>
+					<li><img src="../img/kellogg/sns/sns03.png" class="img" alt="sns_pic"/></li>
+					<li><img src="../img/kellogg/sns/sns04.png" class="img" alt="sns_pic"/></li>
+					<li><img src="../img/kellogg/sns/sns05.png" class="img" alt="sns_pic"/></li>
+					<li><img src="../img/kellogg/sns/sns06.png" class="img" alt="sns_pic"/></li>
+					<li><img src="../img/kellogg/sns/sns07.png" class="img" alt="sns_pic"/></li>
+					<li><img src="../img/kellogg/sns/sns08.png" class="img" alt="sns_pic"/></li>
+					<li><img src="../img/kellogg/sns/sns09.png" class="img" alt="sns_pic"/></li>
+					<li><img src="../img/kellogg/sns/sns10.png" class="img" alt="sns_pic"/></li>
+				</ul>
+			</div>
+		</div>
 	</section>
-	<footer></footer>
+	<footer>
+		<div class="footer wrap">
+			<div class="foot_logo">
+				<img src="../img/kellogg/common/foot_logo.png" class="img" alt="foot_logo"/>
+			</div>
+			<p>
+				<span>서울 강남구 테헤란로 134 포스코 p&s타워 15층(우편번호 06235)</span>
+				<span>Copyright &copy; KELLOGG.Co.Ltd.All rights reserved.</span>
+			</p>
+			<ul class="clear">
+				<li><a href="#">개인정보취급방침(Trems and Conditions)</a></li>
+				<li><a href="#">이용약관</a></li>
+				<li><a href="#">사이트맵</a></li>
+			</ul>
+		</div>
+	</footer>
 
 
 

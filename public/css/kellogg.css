@@ -21,18 +21,34 @@ a {text-decoration:none; color: inherit;}
 
 /*************** header ****************/
 html, body {width: 100%; height: 100%;}
-.wrap {width: 1260px; height: 100%; margin: 0 auto;}
+.wrap {width: 1260px; margin: 0 auto;}
 .head_wrap {position: relative; padding: 2rem 0;}
 .head_wrap > .logo {max-width: 200px; margin: 0 auto;}
 .head_wrap > .head_nav {position: absolute; top: 17%; right: 0;}
 .head_wrap > .head_nav > li {display: inline-block; margin-right: 1rem;}
 .head_wrap > .head_nav > :last-child {margin-right: 0;}
 .head_wrap > .head_nav > li > a {font-size: 1rem; font-weight: 400; color: #c80136;}
-.nav {text-align: center;}
-.nav > li {display: inline-block; margin-right: 2rem; margin-bottom: 1rem;}
+.nav > li {float: left; position: relative;}
 .nav > :last-child {margin-right: 0;}
-.nav > li > a {font-size: 1.2rem; font-weight: 400; color: #222;}
-.banner {overflow: hidden;}
+.nav > li > a {font-size: 1.2rem; font-weight: 400; color: #222; padding: 0.5rem 2rem 0.5rem 0.5rem;}
+/*
+.nav > li > a:hover {animation-name: nav_Ani; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out;}
+@keyframes nav_Ani {
+	0% {background-color: #c80136; color: #fff;}
+	100% {background-color: #c80136; color: #fff;}
+}
+*/
+.nav_hover {width: 30.5%; height: 265px; background-color: #fff; position: absolute; left: 56%; transform: translate(-56%); overflow: hidden; display: none;}
+.nav_hover > .nav_list {float: left; width: 55%}
+.nav_hover > .nav_list > a {display: block; width: 120px; font-size: 1.1rem; padding: 0.5rem 0 0.5rem 0.2rem;}
+.nav_hover > .nav_list > a:hover {animation-name: nav_listAni; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out; color: #fff; font-weight: 400;}
+@keyframes nav_listAni {
+	0% {background-color: #c80136; padding-left: 0; }
+	100% {background-color: #c80136; padding-left: 0.5rem;}
+}
+.nav_hover > .nav_ban {float: right; width: 45%; position: relative;}
+.nav_hover > .nav_ban > img {position: absolute; cursor: pointer;}
+.banner {overflow: hidden; margin-top: 0.5rem;}
 .banner > img {width: 60%; float: left;}
 .banner > .banner_txt {width: 40%; background-image: url("../img/kellogg/banner/banner_txtbg.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; float: right;}
 .banner > .banner_txt h1 {font-size: 3.5rem; color: #fff;}
@@ -46,13 +62,14 @@ section {padding: 4rem 0;}
 .sub_banners > :first-child {margin-right: 2%;}
 .sub_banners > :first-child > div {background-image: url("../img/kellogg/banner/sub_banner01.png"); background-repeat: no-repeat;}
 .sub_banners > :first-child > div > .sub_txt {width: 60%; color: #222; padding: 4rem 0 7rem 2rem; text-align: right;}
+.sub_banners > :first-child > div > .sub_txt h3 {text-decoration: underline; font-weight: 400;}
 .sub_banners > :first-child > div > .sub_txt span {display: block; font-size: 1rem;}
 .sub_banners > :last-child > div {background-image: url("../img/kellogg/banner/sub_banner02.png"); background-repeat: no-repeat;}
 .sub_banners > :last-child > div > .sub_txt > div {width: 38%; background-color: rgba(235, 235, 235, .8); padding: 2rem;}
 .sub_banners > :last-child > div > .sub_txt > div > span {display: block;}
 
 /*new_prds*/
-.new_prds {overflow: hidden; padding: 3rem 0;}
+.new_prds {overflow: hidden; padding: 5rem 0;}
 .new_prds > ul > li {width: 25%; height: 450px; float: left; padding: 2rem;}
 .new_prds > ul > li > p {background-color: #fff; display: inline-block; padding: 0.2rem 0.5rem;}
 /*.new_prds > ul > li > a:hover {font-weight: 500;}*/
@@ -70,13 +87,39 @@ section {padding: 4rem 0;}
 .products > ul > li > h3 {font-weight: 400; text-align: center; margin-top: 1.5rem;}
 
 /*youtube*/
-.you_box {width: 100%; padding: 2rem; background-color: #fff; box-shadow: 2px 2px 5px rgba(0, 0, 0, .5); overflow: hidden;}
-.you_box > .you_video {float: left; width: 60%;}
-.you_box > .you_txt {float: right; width: 40%;}
-.you_box > .you_txt > :first-child > span {color: #3bd0d6;}
-.you_box > .you_txt > :nth-child(2) > span {color: #c80136;}
-.you_box > .you_txt > h2 {margin-top: 2rem;}
-.you_box > .you_txt > h2 > :nth-of-type(1) {color: #20790c; margin-right: 1rem;}
-.you_box > .you_txt > h2 > :nth-of-type(2) {color: #ff6401;}
-.you_box > .you_txt > h1 {font-size: 5rem; font-weight: bold; color: #c80136;}
-.you_box > .you_txt > button {background-color: #222; border: 0; color: #fff; padding: 0.2rem 0.5rem; margin-top: 2.5rem;}
+.youtube {overflow: hidden; padding: 5rem 0;}
+.you_box {width: 100%; padding: 3rem; background-color: #fff; box-shadow: 2px 2px 5px rgba(0, 0, 0, .5); overflow: hidden;}
+.you_box > .you_video {float: left; width: 60%; height: 100%;}
+.you_box > .you_txt {float: right; width: 40%; transform: translateY(-6px);}
+.you_box > .you_txt > :first-child {margin-bottom: 1rem;}
+.you_box > .you_txt > :nth-child(2) > :nth-of-type(2) {color: #c80136; font-size: 1.5rem; font-weight: 400;}
+.you_box > .you_txt > h2 > :nth-of-type(1) {color: #20790c; font-weight: 400;}
+.you_box > .you_txt > h2 > :nth-of-type(2) {color: #ff6401; font-weight: 400;}
+.you_box > .you_txt > h1 > span {display: block;}
+.you_box > .you_txt > h1 > :first-child {font-size: 4rem; font-weight: bold; color: #c80136;}
+.you_box > .you_txt > h1 > :last-child {font-size: 2rem; font-weight: 500; color: #c80136;}
+.you_box > .you_txt > :nth-child(5) {margin-top: 1rem;}
+.you_box > .you_txt > button {background-color: #222; border: 0; color: #fff; padding: 0.2rem 0.5rem; margin-top: 2.5rem; cursor: pointer;}
+
+/*sns*/
+.sns {overflow: hidden;}
+.sns > .tit {text-align: center;}
+.sns_list {text-align: center;}
+.sns_list > li {display: inline-block; width: 45px; height: 45px; line-height: 50px; margin: 1.2rem; margin-left: 0; border: 1px solid #c80136; border-radius: 40px; cursor: pointer;}
+.sns_list > li > i {font-size: 1.8rem; color: #c80136; margin: 0 auto;}
+.sns_pic {margin-bottom: 4rem;}
+.sns_pic_list > li {width: 20%; float: left; cursor: pointer; overflow: hidden;}
+.sns_pic_list > li > img {width: 100%;}
+.sns_pic_list > li > img:hover {animation-name: picAni; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out}
+@keyframes picAni {
+	0% {transform: scale(1);}
+	100% {transform: scale(1.2);}
+}
+
+/*************** footer ****************/
+footer {background-color: #1f3950; padding: 4rem 0; overflow: hidden;}
+.footer > .foot_logo {width: 150px; cursor: pointer;}
+.footer > p {color: #fff; margin: 1.5rem 0;}
+.footer > p > span {display: block; letter-spacing: 1px;}
+.footer > ul > li {float: left; margin-right: 1.5rem; color: #777; font-weight: 500;}
+.footer > ul > li:hover {text-decoration: underline;}
