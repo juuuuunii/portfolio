@@ -41,7 +41,7 @@ html, body {width: 100%; height: 100%;}
 	100% {background-color: #c80136; color: #fff;}
 }
 */
-.nav_hover {width: 120%; height: 305px; background-color: #fff; position: absolute;; display: none; padding: 1rem 0;}
+.nav_hover {width: 120%; height: 305px; background-color: #fff; position: absolute; display: none; padding: 1rem 0; left:0; top:31px;}
 .nav_hover > .nav_list {float: left; width: 55%}
 .nav_hover > .nav_list > ul {float: left; width: 50%;}
 .nav_hover > .nav_list > ul > h2 {font-size: 1.3rem; font-weight: 400; color: #c80136; margin-bottom: 0.5rem;}
