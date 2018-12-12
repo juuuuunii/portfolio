@@ -1,6 +1,7 @@
 /*************** 초기화 ****************/
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Yeon+Sung');
 
 
 html, body {margin: 0; padding: 0; font-size: 14px; color:#222; box-sizing: border-box; font-family:'Noto Sans KR', sans-serif; height:100%; font-weight:300;}
@@ -18,6 +19,7 @@ a {text-decoration:none; color: inherit;}
 .hover:hover {opacity:0.8;}
 .eng {font-family: 'Montserrat', sans-serif;}
 .tit {font-size: 1.2rem; font-weight: 500; color: #222; margin-bottom: 0.5rem;}
+.ani_tit {font-family: 'Yeon Sung', cursive;}
 
 /*************** header ****************/
 html, body {width: 100%; height: 100%;}
@@ -28,9 +30,10 @@ html, body {width: 100%; height: 100%;}
 .head_wrap > .head_nav > li {display: inline-block; margin-right: 1rem;}
 .head_wrap > .head_nav > :last-child {margin-right: 0;}
 .head_wrap > .head_nav > li > a {font-size: 1rem; font-weight: 400; color: #c80136;}
-.nav > li {float: left; position: relative;}
+.nav {position: relative; width: 465px; margin: 0 auto;}
+.nav > li {float: left;}
 .nav > :last-child {margin-right: 0;}
-.nav > li > a {font-size: 1.2rem; font-weight: 400; color: #222; padding: 0.5rem 2rem 0.5rem 0.5rem;}
+.nav > li > a {font-size: 1.2rem; font-weight: 400; color: #222; padding: 0.5rem 1rem;}
 /*
 .nav > li > a:hover {animation-name: nav_Ani; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out;}
 @keyframes nav_Ani {
@@ -38,10 +41,12 @@ html, body {width: 100%; height: 100%;}
 	100% {background-color: #c80136; color: #fff;}
 }
 */
-.nav_hover {width: 30.5%; height: 265px; background-color: #fff; position: absolute; left: 56%; transform: translate(-56%); overflow: hidden; display: none;}
+.nav_hover {width: 120%; height: 305px; background-color: #fff; position: absolute;; display: none; padding: 1rem 0;}
 .nav_hover > .nav_list {float: left; width: 55%}
-.nav_hover > .nav_list > a {display: block; width: 120px; font-size: 1.1rem; padding: 0.5rem 0 0.5rem 0.2rem;}
-.nav_hover > .nav_list > a:hover {animation-name: nav_listAni; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out; color: #fff; font-weight: 400;}
+.nav_hover > .nav_list > ul {float: left; width: 50%;}
+.nav_hover > .nav_list > ul > h2 {font-size: 1.3rem; font-weight: 400; color: #c80136; margin-bottom: 0.5rem;}
+.nav_hover > .nav_list a {display: block; width: 135px; font-size: 1rem; padding: 0.3rem 0 0.3rem 0.2rem;}
+.nav_hover > .nav_list a:hover {animation-name: nav_listAni; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out; color: #fff; font-weight: 400;}
 @keyframes nav_listAni {
 	0% {background-color: #c80136; padding-left: 0; }
 	100% {background-color: #c80136; padding-left: 0.5rem;}
@@ -92,9 +97,9 @@ section {padding: 4rem 0;}
 .you_box > .you_video {float: left; width: 60%; height: 100%;}
 .you_box > .you_txt {float: right; width: 40%; transform: translateY(-6px);}
 .you_box > .you_txt > :first-child {margin-bottom: 1rem;}
-.you_box > .you_txt > :nth-child(2) > :nth-of-type(2) {color: #c80136; font-size: 1.5rem; font-weight: 400;}
-.you_box > .you_txt > h2 > :nth-of-type(1) {color: #20790c; font-weight: 400;}
-.you_box > .you_txt > h2 > :nth-of-type(2) {color: #ff6401; font-weight: 400;}
+.you_box > .you_txt > :nth-child(2) > :nth-of-type(2) {color: #c80136; font-size: 2.3rem; font-weight: 400; margin-left: 0.5rem;}
+.you_box > .you_txt > :nth-child(3) > :nth-of-type(1) {font-size: 1.5rem; color: #20790c; font-weight: 400;}
+.you_box > .you_txt > :nth-child(3) > :nth-of-type(2) {font-size: 1.5rem; color: #ff6401; font-weight: 400;}
 .you_box > .you_txt > h1 > span {display: block;}
 .you_box > .you_txt > h1 > :first-child {font-size: 4rem; font-weight: bold; color: #c80136;}
 .you_box > .you_txt > h1 > :last-child {font-size: 2rem; font-weight: 500; color: #c80136;}

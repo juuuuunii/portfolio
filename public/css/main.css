@@ -93,7 +93,7 @@ a {text-decoration:none; color: inherit;}
 	z-index:1;
 }
 .iphone_nav {	
-	width: 400px;
+	width: 22%;
 	position: fixed;
 	bottom: -20%; 
 	left: 50%;
@@ -118,7 +118,7 @@ a {text-decoration:none; color: inherit;}
 .banner .cloud{top:0; left:0; width:5440px; height:100%; background-image:url("../img/ejunhee/intro/could.png"); z-index:9;}
 
 /*************** main ****************/
-.main {overflow: hidden;}
+.main {overflow: hidden; background-image:url("../img/ejunhee/main/summit_bott.png");background-repeat:no-repeat; background-size:cover; background-position:center center; overflow: hidden;}
 .simple_about {width:100%; height: 100%; position: relative;}
 .simple_about > .about_left {width: 50%; height: 100%; float: left; position: relative;}
 .simple_txt {width: 100%; height: 100%; }
