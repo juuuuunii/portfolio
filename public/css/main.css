@@ -168,6 +168,34 @@ a {text-decoration:none; color: inherit;}
 .portfolio .port_mid > div:nth-child(5) {width: 15%; height: 12%; top: 55.5%; right: 13.2%;}
 .portfolio .port_mid > h5 > a {color: #fff; position: absolute;right: 20.5%; top: 71%; z-index: 999; letter-spacing: 2px;}
 
+#cards2 > .card {width: 71%; height: 45%; margin-left: 3.6rem; background-color: #f30;}
+#cards2 .weather > :first-child {color: #fff; font-size: 1.5rem; text-align: center; font-weight: 400; padding: 1.5rem 0;}
+.tabs > li{float: left; width: 50%;}
+.daily, .weekly{width: 50%; float: left; padding: 5%; text-align: center;}
+.daily{display: table; border-right: 1px solid #ccc; }
+.daily > div{display: table-cell; text-align: center; vertical-align: middle;}
+.weekly{overflow: auto;}
+.weekly > li{padding: 3%; border-bottom: 1px solid #ccc; text-align: left;}
+.weekly ul{width: 80%; float: left; padding-left: 10%; }
+
+.dl_icon{width: 80%; max-width: 250px;}
+.dl_area > span {display: block;}
+.dl_area > :first-child {font-size: 1.2em; color: #fff;}
+.dl_area button {margin-top: 1rem; border: 0; background-color: #fff; color: #222;}
+.dl_date{font-size: 1.5em; color: rgb(66, 66, 66);}
+.dl_temp{font-size: 2em; color: rgb(8, 52, 102);}
+.dl_desc{font-size: 1.5em; color: rgb(177, 177, 177);}
+
+
+.wk_area{font-size: 1.25em;  color: rgb(2, 39, 95); font-weight: bold;}
+.wk_date{font-size: 1.25em;  color: rgb(66, 66, 66);}
+.wk_temp{font-size: 1.5em;  color: rgb(8, 52, 102);}
+.wk_desc{font-size: 1.25em;  color: rgb(177, 177, 177);}
+
+.tab_active{background-color: rgb(3, 112, 185); color: #fff;}
+.tab_disable{background-color: rgb(202, 216, 226); color: #666;}
+
+
 .portfolio .port_right {width: 50%; height: 105%; background-color: #3e95ce; border-radius: 1%; float: right; position: absolute; top: -5%; right: 0; z-index: 16;}
 .portfolio .port_right > h5 {color: #fff; font-size: 1rem; letter-spacing: 2px; line-height: 3.4rem; margin-left: 2rem;}
 

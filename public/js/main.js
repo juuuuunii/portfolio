@@ -72,6 +72,8 @@ var pages = new WheelScroll({
 	speed: 700
 });
 
+
+//////// intro
 // cloud 
 function cloudAni() {
 	$(".cloud").animate({"left":"-5440px"}, 300000, "linear", function(){
@@ -91,6 +93,9 @@ function iphoneAni() {
 	});
 };
 
+
+//////// main
+// toogle
 var iphoneChk = false;
 $(".iphone").click(function(e) {
 	if(iphoneChk) {
@@ -256,7 +261,7 @@ ctx.each(function (i) {
 });
 
 
-// portfolio
+//////// portfolio
 var portNum = 0;
 var portNumOld = 0;
 $(".tit_line").mouseenter(function() {
@@ -266,11 +271,99 @@ $(".tit_line").mouseenter(function() {
 	$(".tit_line").children("h4").css({"color":"#222"});
 	$(this).css({"border-top":"1px solid #3e95ce"});
 	$(this).children("h4").css({"color":"#3e95ce"});
-	$(".cards").eq(portNumOld).stop().animate({"margin-top":"-200px", "opacity":0}, 600);
-	$(".cards").eq(portNum).css({"margin-top":"200px", "opacity":0}).stop().animate({"margin-top":0, "opacity":1}, 600);
+	$(".cards").eq(portNumOld).stop().animate({"margin-top":"-200px", "opacity":0}, 600).hide();
+	$(".cards").eq(portNum).css({"margin-top":"200px", "opacity":0}).stop().animate({"margin-top":0, "opacity":1}, 600).show();
+});
+//weather
+$.ajax({
+	url: "../json/city.json",
+	type: "get",
+	dataType: "json",
+	success: function(data){
+		var city = data.cities;
+		var html = '';
+		for(i=0; i<city.length; i++){
+			html = '<option value="'+city[i].id+'">'+city[i].name+'</option>';
+			$("#area").append(html);
+		}
+		$("#area").trigger("change");
+	},
+	error: function(xhr, status, error){
+		console.log(xhr, status, error);
+	}
+});
+//오늘의 날씨
+$("#area").change(function(){
+	var id = $(this).val();
+	var city = $(this).find('option:selected').text();
+	var appid = "9850c950c6a3c3a3ca7a04a13d867c1a";
+	var units = "metric";
+	var dt = new Date();
+	var date = dt.getFullYear()+"년 "+(dt.getMonth()+1)+"월 "+dt.getDate()+"일";
+	$.ajax({
+		url: "https://api.openweathermap.org/data/2.5/weather",
+		type: "get",
+		dataType: "json",
+		data: {
+			id: id,
+			appid: appid,
+			units: units
+		},
+		success: function(data){
+			
+			$(".dl_area > span").html(city);
+			$(".dl_date").html(date);
+			$(".dl_temp").html(data.main.temp+'℃(최고: '+data.main.temp_max+'℃/최저: '+data.main.temp_min+'℃)');
+			$(".dl_desc").html(data.weather[0].description);
+			//console.log(data.main.temp);
+			//console.log(data.main.temp_max);
+			//console.log(data.main.temp_min);
+			//console.log(data.weather[0].description);
+			//console.log(data.weather[0].icon);
+			$("#modal").hide();
+		},
+		error: function(xhr, status, error){
+			console.log(xhr, status, error);
+		}
+	});
+});
+//기상정보: 주간날씨(forecast)
+$("#area").change(function(){
+    var id = $(this).val();
+	var city = $(this).find('option:selected').text();
+	var appid = "9850c950c6a3c3a3ca7a04a13d867c1a";
+	var units = "metric";
+	$.ajax({
+		url: "https://api.openweathermap.org/data/2.5/forecast",
+		type: "get",
+		dataType: "json",
+		data: {
+			id: id,
+			appid: appid,
+			units: units
+		},
+		success: function(data){
+			console.log(data);
+			$(".weekly").empty();
+			for(i=0; i<data.cnt; i++){
+				html = '<li class="clear">';
+				html += '<ul>';
+				html += '<li class="wk_area">'+city+'</li>';
+				html += '<li class="wk_date">'+data.list[i].dt_txt+'</li>';
+				html += '<li class="wk_temp">'+data.list[i].main.temp+'℃</li>';
+				html += '<li class="wk_desc">'+data.list[i].weather[0].description+'</li>';
+				html += '</ul>';
+				html += '</li>'
+				$(".weekly").append(html);
+			}
+		},
+		error: function(xhr, status, error){
+			console.log(xhr, status, error);
+		}
+	});
 });
 
-// about
+//////// about
 
 // reset
 window.onbeforeunload = function () {

@@ -13,6 +13,9 @@
 	<script defer src="/__/firebase/5.5.9/firebase-messaging.js"></script>
 	<script defer src="/__/firebase/5.5.9/firebase-storage.js"></script>
 	<script defer src="/__/firebase/init.js"></script>
+	
+	<!-- w3schools -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<!-- css -->
 	<link rel="stylesheet" href="../css/main.css">
 	<!-- jquery -->
@@ -143,13 +146,47 @@
 			<div class="card">
 				<img src="../img/ejunhee/portfolio/kellogg/kellogg4.png" class="img" alt="port_maincard1"/>
 			</div>
-			<h5><a href="../weather/weather.html" class="bold">VIEW MORE</a></h5>
+			<h5><a href="www.juuuuunii-portfolio.firebaseapp.com/kellogg/kellog.html" target="_new" class="bold">VIEW MORE</a></h5>
 		</div>
 		<div id="cards2" class="port_mid cards">
-			<div class="card"></div>
-			<div class="card"></div>
-			<div class="card"></div>
-			<div class="card"></div>
+			<div class="card">
+				<div class="weather clear">
+					<ul class="tabs">
+						<li id="bt_daily">오늘의 날씨</li>
+						<li id="bt_weekly">주간 날씨</li>
+					</ul>
+					<div class="daily">
+						<div>
+							<div class="dl_area">
+								<span>[ 서울 ] </span> 
+								<span>
+									<button id="modal_open" class="modal_bt">도시선택</button>
+								</span>
+							</div>
+							<div class="dl_date"></div>
+							<div class="dl_temp"></div>
+							<div class="dl_desc"></div>
+						</div>
+					</div>
+					<ul class="weekly"></ul>
+				</div>
+
+				<div id="modal" class="w3-modal">
+					<div class="w3-modal-content">
+
+						<header class="w3-container">
+							<span id="modal_close" class="w3-button w3-display-topright">&times;</span>
+							<h2>도시선택</h2>
+						</header>
+
+						<div class="w3-container" style="padding:2rem">
+							<div class="selects">
+								<select id="area" class="w3-input"></select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div id="cards3" class="port_mid cards">
 			<div class="card"></div>

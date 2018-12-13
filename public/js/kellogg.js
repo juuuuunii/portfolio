@@ -31,9 +31,9 @@ $(".prds").mouseleave(function() {
 });
 
 
-$(window).resize(function(){
-//	$(".banner_txt>img").height($(".banner_img > img").height());
-}).trigger("resize");
+$(".mo_nav").click(function() {
+	$(".nav").stop().slideDown(500);
+})
 
 
 
