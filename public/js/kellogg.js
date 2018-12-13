@@ -21,11 +21,19 @@ $(".nav > li").mouseenter(function() {
 	});	
 });
 
-$(".prd").mouseenter(function() {
-	$(this).hide(300, function() {
-		$(this).parent().children(".prd_hover").show(100)
-	});	
+$(".prds").mouseenter(function() {
+	$(this).children("img").eq(0).stop().animate({"opacity":0}, 300);	
+	$(this).children("img").eq(1).stop().animate({"opacity":1}, 300);	
 });
+$(".prds").mouseleave(function() {
+	$(this).children("img").eq(0).stop().animate({"opacity":1}, 300);	
+	$(this).children("img").eq(1).stop().animate({"opacity":0}, 300);	
+});
+
+
+$(window).resize(function(){
+//	$(".banner_txt>img").height($(".banner_img > img").height());
+}).trigger("resize");
 
 
 
