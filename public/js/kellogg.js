@@ -21,6 +21,11 @@ $(".nav > li").mouseenter(function() {
 	});	
 });
 
+$(".prd").mouseenter(function() {
+	$(this).hide(300, function() {
+		$(this).parent().children(".prd_hover").show(100)
+	});	
+});
 
 
 

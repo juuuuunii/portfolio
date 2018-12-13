@@ -18,7 +18,7 @@ a {text-decoration:none; color: inherit;}
 .img {width:100%;}
 .hover:hover {opacity:0.8;}
 .eng {font-family: 'Montserrat', sans-serif;}
-.tit {font-size: 1.2rem; font-weight: 500; color: #222; margin-bottom: 0.5rem;}
+.tit {font-size: 1.2rem; font-weight: 500; color: #222; margin-bottom: 0.5rem; letter-spacing: 2px;}
 .ani_tit {font-family: 'Yeon Sung', cursive;}
 
 /*************** header ****************/
@@ -41,7 +41,7 @@ html, body {width: 100%; height: 100%;}
 	100% {background-color: #c80136; color: #fff;}
 }
 */
-.nav_hover {width: 120%; height: 305px; background-color: #fff; position: absolute; display: none; left:0; top:31px;}
+.nav_hover {width: 120%; height: 305px; background-color: #fff; position: absolute; display: none; left:0; top:31px; z-index: 10;}
 .nav_hover > .nav_list {float: left; width: 55%}
 .nav_hover > .nav_list > ul {float: left; width: 50%;}
 .nav_hover > .nav_list > ul > h2 {font-size: 1.3rem; font-weight: 400; color: #c80136; margin-bottom: 0.5rem;}
@@ -56,29 +56,34 @@ html, body {width: 100%; height: 100%;}
 .banner {overflow: hidden; height: 685px; margin-top: 0.5rem;}
 .banner > li {float: left;}
 .banner > .banner_img {width: 60%;}
-.banner > .banner_txt {width: 40%; height: 100%; background-image: url("../img/kellogg/banner/banner_txtbg.png"); background-position: center center; background-size: cover; background-repeat: no-repeat; position: relative;}
-.banner > .banner_txt h1 {font-size: 3.5rem; color: #fff; top: 20%; left: 50%; transform: translate(-50%, -20%); position: absolute;}
+.banner > .banner_txt {width: 40%; /*background-image: url("../img/kellogg/banner/banner_txtbg.png"); background-position: center center; background-size: cover; background-repeat: no-repeat;*/ position: relative;}
+.banner > .banner_txt h1 {font-size: 3.5rem; color: #fff; top: 18%; left: 50%; transform: translate(-50%, -18%); position: absolute;}
 .banner > .banner_txt h1 > span {display: block;}
-.banner > .banner_txt > ul > li {width: 20%; height: 20%; border-radius: 50%; float: left; border: 1px solid #fff;}
+.banner > .banner_txt > ul {width: 100%; position: absolute; text-align: center; bottom: 30%; transform: translateY(-30%);}
+.banner > .banner_txt > ul > li {width: 130px; height: 130px; border-radius: 65px; display: inline-block; border: 1px solid #fff; padding: 1rem; margin-right: 2rem;}
+.banner > .banner_txt > ul > :last-child {margin-right: 0;}
+.banner > .banner_txt > ul > li > div {width: 60%; height: 60%; margin: 0 auto;}
+.banner > .banner_txt > ul > li span {display: block; color: #fff; text-align: center; color: #ecb301;}
 
 /*************** section ****************/
 section {padding: 4rem 0;}
 /*sub_banners*/
 .sub_banners {overflow: hidden;}
-.sub_banners > li {width: 49%; float: left;}
+.sub_banners > li {width: 49%; float: left; position: relative;}
+.sub_banners > li > img{cursor: pointer;}
+.sub_banners .sub_txt {position: absolute;}
 .sub_banners > :first-child {margin-right: 2%;}
-.sub_banners > :first-child > div {background-image: url("../img/kellogg/banner/sub_banner01.png"); background-repeat: no-repeat;}
-.sub_banners > :first-child > div > .sub_txt {width: 60%; color: #222; padding: 4rem 0 7rem 2rem; text-align: right;}
-.sub_banners > :first-child > div > .sub_txt h3 {text-decoration: underline; font-weight: 400;}
+.sub_banners > :first-child > div > .sub_txt {color: #222; text-align: right; top: 40%; left: 30%; transform: translate(-30%, -40%);}
+.sub_banners > :first-child > div > .sub_txt h3 {text-decoration: underline; font-weight: 400; margin-bottom: 1rem;}
 .sub_banners > :first-child > div > .sub_txt span {display: block; font-size: 1rem;}
-.sub_banners > :last-child > div {background-image: url("../img/kellogg/banner/sub_banner02.png"); background-repeat: no-repeat;}
-.sub_banners > :last-child > div > .sub_txt > div {width: 38%; background-color: rgba(235, 235, 235, .8); padding: 2rem;}
+.sub_banners > :last-child > div > .sub_txt {top: 30%; right: 7%; transform: translate(-7%, -30%);}
+.sub_banners > :last-child > div > .sub_txt > div {background-color: rgba(235, 235, 235, .8); padding: 2rem; }
 .sub_banners > :last-child > div > .sub_txt > div > span {display: block;}
 
 /*new_prds*/
 .new_prds {overflow: hidden; padding: 5rem 0;}
 .new_prds > ul > li {width: 25%; height: 450px; float: left; padding: 2rem;}
-.new_prds > ul > li > p {background-color: #fff; display: inline-block; padding: 0.2rem 0.5rem;}
+.new_prds > ul > li > p {background-color: #fff; display: inline-block; padding: 0.2rem 0.5rem; font-weight: 400;}
 /*.new_prds > ul > li > a:hover {font-weight: 500;}*/
 .new_prds > ul > li > h2 {margin: 1rem 0;}
 .new_prds > ul > li > h2 > span {display: block; font-weight: 500;}
@@ -89,8 +94,10 @@ section {padding: 4rem 0;}
 
 /*products*/
 .products {overflow: hidden;}
+.products > ul {position: relative;}
 .products > ul > li {width: 20%; float: left; margin: 2rem 0;}
-.products > ul > li > div {width: 70%; margin: 0 auto;}
+.products > ul > li > div {width: 70%; margin: 0 auto; position: relative;}
+.prd_hover {display: none;}
 .products > ul > li > h3 {font-weight: 400; text-align: center; margin-top: 1.5rem;}
 
 /*youtube*/
@@ -130,3 +137,10 @@ footer {background-color: #1f3950; padding: 4rem 0; overflow: hidden;}
 .footer > p > span {display: block; letter-spacing: 1px;}
 .footer > ul > li {float: left; margin-right: 1.5rem; color: #777; font-weight: 500;}
 .footer > ul > li:hover {text-decoration: underline;}
+
+
+@media screen and (max-width: 1260px) {
+	.banner > .banner_txt h1 {font-size: 2rem; top: 10%; left: 50%; transform: translate(-50%, -10%);}
+	.banner > .banner_txt > ul > li {width: 100px; height: 100px; border-radius: 50px; padding: 0.875rem; margin-right: 1.5rem;}
+	.banner > .banner_txt > ul > li span {font-size: 0.875rem;}
+}
