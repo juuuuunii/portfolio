@@ -9,6 +9,7 @@ h1, h2, h3, h4, h5, h6, p, span, img  {margin: 0; padding: 0; font-weight: 300; 
 div, ul, li, ol, dl, dd, dt{margin: 0; padding: 0; box-sizing: border-box; list-style: none; border:none;}
 table {margin:0; padding:0; border-collapse:collapse;}
 th, td {margin:0; padding:0;}
+img {vertical-align: middle;}
 
 a {text-decoration:none; color: inherit;}
 
@@ -24,17 +25,16 @@ a {text-decoration:none; color: inherit;}
 /*************** header ****************/
 html, body {width: 100%; height: 100%;}
 .wrap {width: 1260px; margin: 0 auto;}
-.head_wrap {position: relative; padding: 2rem 0;}
+.head_wrap {position: relative; padding: 2rem 0; z-index: 1;}
 .head_wrap .logo {max-width: 200px; margin: 0 auto;}
 .head_wrap > .head_nav {position: absolute; top: 17%; right: 0;}
 .head_wrap > .head_nav > li {display: inline-block; margin-right: 1rem;}
 .head_wrap > .head_nav > :last-child {margin-right: 0;}
 .head_wrap > .head_nav > li > a {font-size: 1rem; font-weight: 400; color: #c80136;}
 .nav {position: relative; width: 465px; margin: 0 auto;}
-.mo_nav {display: none;}
 .nav > li {float: left;}
 .nav > :last-child {margin-right: 0;}
-.nav > li > a {font-size: 1.2rem; font-weight: 400; color: #222; padding: 0.5rem 1rem;}
+.nav_tit {font-size: 1.2rem; font-weight: 400; color: #222; padding: 0.5rem 1rem;}
 /*
 .nav > li > a:hover {animation-name: nav_Ani; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out;}
 @keyframes nav_Ani {
@@ -54,6 +54,10 @@ html, body {width: 100%; height: 100%;}
 }
 .nav_hover > .nav_ban {float: right; width: 45%; position: relative;}
 .nav_hover > .nav_ban > img {position: absolute; cursor: pointer;}
+
+.mo_navs {display: none;}
+
+
 .banner {margin-top: 0.5rem; position:relative;}
 .banner > li {float: left;}
 .banner > .banner_img {width: 100%; background: url("../img/kellogg/banner/ban_txtbg.png") no-repeat right top; background-size: 40%; position: relative; }
@@ -211,22 +215,24 @@ footer {background-color: #1f3950; padding: 4rem 0; overflow: hidden;}
 	.head_wrap {padding: 1rem 0;}
 	.head_wrap .logo {max-width: 150px;}
 	.nav {display: none;}
-	.mo_nav {display: block; font-size: 1.5rem; color: #c80136; position: absolute; right: 0; top: 20%;}
-	.nav {width: 100%;}
-	.nav > li {float: none;}
-	.nav > li > a {color: #222; text-align: center;}
-	.nav_hover {width: 100%; height: 305px; background-color: #fff; position: absolute; display: none; left:0; top:31px; z-index: 10;}
-	.nav_hover > .nav_list {float: left; width: 100%}
-	.nav_hover > .nav_list > ul {float: none; width: 50%;}
-	.nav_hover > .nav_list > ul > h2 {font-size: 1.3rem; font-weight: 400; color: #c80136; margin-bottom: 0.5rem;}
-	.nav_hover > .nav_list a {display: block; width: 135px; font-size: 1rem; padding: 0.3rem 0 0.3rem 0.2rem;}
-	.nav_hover > .nav_list a:hover {animation-name: nav_listAni; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out; color: #fff; font-weight: 400;}
-	@keyframes nav_listAni {
-		0% {background-color: #c80136; padding-left: 0; }
-		100% {background-color: #c80136; padding-left: 0.5rem;}
-	}
+	
 
+	.mo_navs {display: block; width: 100%; height: 100%; position: absolute; top: 2%; right: 5%; z-index: 10;}
+	.mo_navs > i {font-size: 1.5rem; color: #c80136; position: absolute; right: 0;}
+	.mo_nav {display: none; width: 100%; position: absolute; top: 3%; background-color: #c80136;}
+	.navi {float: none; position: relative;}
+	.nav_tit {color: #fff; display: block;}
+	.nav_hover {height: 305px;}
+	.nav_hover > .nav_list {width: 100%}
+	.nav_hover > .nav_list > ul {float: left; width: 50%;}
+	.nav_hover > .nav_list > ul > h2 {font-size: 1.3rem; font-weight: 400; color: #c80136; margin-bottom: 0.5rem;}
 	.nav_hover > .nav_ban {display: none;}
+	.nav_hover > .nav_list a {display: block;}
+	.nav_hover > .nav_list a:hover {animation-name: mo_nav_listAni; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out; color: #fff; font-weight: 400;}
+	@keyframes mo_nav_listAni {
+		0% {color: #c80136; padding-left: 0; }
+		100% {color: #c80136; padding-left: 0.5rem;}
+	}
 
 	.banner > li {float: none;}
 	.banner > .banner_img > img {width: 100%; float: none;}

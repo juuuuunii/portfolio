@@ -337,41 +337,6 @@ $("#area").change(function(){
 		}
 	});
 });
-//기상정보: 주간날씨(forecast)
-$("#area").change(function(){
-    var id = $(this).val();
-	var city = $(this).find('option:selected').text();
-	var appid = "9850c950c6a3c3a3ca7a04a13d867c1a";
-	var units = "metric";
-	$.ajax({
-		url: "https://api.openweathermap.org/data/2.5/forecast",
-		type: "get",
-		dataType: "json",
-		data: {
-			id: id,
-			appid: appid,
-			units: units
-		},
-		success: function(data){
-			console.log(data);
-			$(".weekly").empty();
-			for(i=0; i<data.cnt; i++){
-				html = '<li class="clear">';
-				html += '<ul>';
-				html += '<li class="wk_area">'+city+'</li>';
-				html += '<li class="wk_date">'+data.list[i].dt_txt+'</li>';
-				html += '<li class="wk_temp">'+data.list[i].main.temp+'℃</li>';
-				html += '<li class="wk_desc">'+data.list[i].weather[0].description+'</li>';
-				html += '</ul>';
-				html += '</li>'
-				$(".weekly").append(html);
-			}
-		},
-		error: function(xhr, status, error){
-			console.log(xhr, status, error);
-		}
-	});
-});
 
 //////// about
 $(window).resize(function(){
