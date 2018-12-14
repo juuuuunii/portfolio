@@ -274,6 +274,7 @@ $(".tit_line").mouseenter(function() {
 	$(".cards").eq(portNumOld).stop().animate({"margin-top":"-200px", "opacity":0}, 600).hide();
 	$(".cards").eq(portNum).css({"margin-top":"200px", "opacity":0}).stop().animate({"margin-top":0, "opacity":1}, 600).show();
 });
+$(".tit_line").eq(0).trigger("mouseenter");
 //weather
 $.ajax({
 	url: "../json/city.json",
