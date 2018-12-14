@@ -31,11 +31,17 @@ $(".prds").mouseleave(function() {
 });
 
 
-$(".mo_nav").click(function() {
-	$(".nav").stop().slideDown(500);
-})
-
-
+var moNav = false;
+$(".mo_nav").click(function(e) {
+	if(moNav) {
+		$(".nav_hover").stop().slideUp(500)
+		moNav = false;
+		}
+	else {
+		$(".nav_hover").stop().slideDown(500)
+		moNav = true;
+		}
+});
 
 /*
 $(".nav > li").mouseenter(function() {

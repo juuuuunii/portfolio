@@ -364,8 +364,38 @@ $("#area").change(function(){
 });
 
 //////// about
+$(window).resize(function(){
+	$(".slides").width($(".slide").width());
+}).trigger("resize");
 
-// reset
-window.onbeforeunload = function () {
-	window.scrollTo(0, 0);
-  }
+$(window).on("mousewheel DOMMouseScroll", wheelLeft);
+function wheelLeft(e) {
+	var n1 = 1;
+	var interval;
+	interval = setInterval(slide, 3000);
+	function slide() {
+		$("#slides").parent().find(".pager").find("span").removeClass("w3-text-red");
+		$("#slides").parent().find(".pager").find("span").eq(n1).addClass("w3-text-red");
+		$("#slides").stop().animate({"left":-(n1*100)+"%"}, 500, function(){
+			if(n1 == 4) n1 = -1;
+			n1++;
+		});
+	}
+	function paging(obj) {
+		n1 = $(obj).index();
+		clearInterval(interval);
+		slide();
+		interval = setInterval(slide, 3000);
+	}
+	$("#slides").hover(function(){
+		clearInterval(interval);
+	}, function(){
+		interval = setInterval(slide, 3000);
+	});
+	// reset
+	window.onbeforeunload = function () {
+		window.scrollTo(0, 0);
+	} 
+}
+
+/***** Normal *****/

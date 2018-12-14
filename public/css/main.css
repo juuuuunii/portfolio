@@ -168,8 +168,8 @@ a {text-decoration:none; color: inherit;}
 .portfolio .port_mid > div:nth-child(5) {width: 15%; height: 12%; top: 55.5%; right: 13.2%;}
 .portfolio .port_mid > h5 > a {color: #fff; position: absolute;right: 20.5%; top: 71%; z-index: 999; letter-spacing: 2px;}
 
-#cards2 > .card {width: 71%; height: 45%; margin-left: 3.6rem; background-color: #f30;}
-#cards2 .weather > :first-child {color: #fff; font-size: 1.5rem; text-align: center; font-weight: 400; padding: 1.5rem 0;}
+#cards3 > .card {width: 71%; height: 45%; margin-left: 3.6rem; background-color: #f30;}
+#cards3 .weather > :first-child {color: #fff; font-size: 1.5rem; text-align: center; font-weight: 400; padding: 1.5rem 0;}
 .tabs > li{float: left; width: 50%;}
 .daily, .weekly{width: 50%; float: left; padding: 5%; text-align: center;}
 .daily{display: table; border-right: 1px solid #ccc; }
@@ -193,17 +193,19 @@ a {text-decoration:none; color: inherit;}
 .wk_desc{font-size: 1.25em;  color: rgb(177, 177, 177);}
 
 .tab_active{background-color: rgb(3, 112, 185); color: #fff;}
-.tab_disable{background-color: rgb(202, 216, 226); color: #666;}
+.tab_disables{background-color: rgb(202, 216, 226); color: #666;}
 
 
 .portfolio .port_right {width: 50%; height: 105%; background-color: #3e95ce; border-radius: 1%; float: right; position: absolute; top: -5%; right: 0; z-index: 16;}
 .portfolio .port_right > h5 {color: #fff; font-size: 1rem; letter-spacing: 2px; line-height: 3.4rem; margin-left: 2rem;}
 
 /*************** about ****************/
-.about {position: relative;}
-.about > div {width: 100%; height: 100%; position: absolute;}
-.about > :first-child {background-color: lightcoral;}
-.about > :nth-child(2) {background-color: goldenrod;}
-.about > :nth-child(3) {background-color: lightseagreen;}
-.about > :nth-child(4) {background-color: lightblue;}
-.about > :last-child {background-color: lightgreen;}
+.slide_wrap {width: 100%; height: 100%; position:relative; overflow:hidden;}
+.slides {width:100%; position:relative; height: 100%;}
+#slides .slide {width:100%;  position:absolute; height: 100%;}
+#slides .slide:nth-child(1) {left:0; top:0; background-color: lightcoral;}
+#slides .slide:nth-child(2) {left:100%; top:0; background-color: lightseagreen;}
+#slides .slide:nth-child(3) {left:200%; top:0; background-color: lightblue;}
+#slides .slide:nth-child(4) {left:300%; top:0; background-color: lightgreen;}
+#slides .slide:nth-child(5) {left:400%; top:0; background-color: lightcyan;}
+.pager_wrap {width:100%; position:absolute; bottom: 100px; font-size: 1rem; z-index:9999;}
