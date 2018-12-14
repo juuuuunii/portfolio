@@ -368,7 +368,6 @@ $(window).resize(function(){
 	$(".slides").width($(".slide").width());
 }).trigger("resize");
 
-$(window).on("mousewheel DOMMouseScroll", wheelLeft);
 function wheelLeft(e) {
 	var n1 = 1;
 	var interval;
