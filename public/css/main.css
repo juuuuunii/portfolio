@@ -169,18 +169,20 @@ a {text-decoration:none; color: inherit;}
 .portfolio .port_mid > h5 > a {color: #fff; position: absolute;right: 20.5%; top: 71%; z-index: 999; letter-spacing: 2px;}
 
 #cards3 > .card {width: 71%; height: 45%; margin-left: 3.6rem; background-color: #f30;}
-#cards3 .weather > :first-child {color: #fff; font-size: 1.5rem; text-align: center; font-weight: 400; padding: 1.5rem 0;}
+#cards3 video {width: 100%; z-index: 1;}
+#cards3 .weather {top: 0; left: 0; transform: translate(0, 0); z-index: 10;}
+#cards3 .weather > :first-child {color: #222; font-size: 1.5rem; text-align: center; font-weight: 400; padding: 1.5rem 0;}
 .tabs > li{float: left; width: 50%;}
 .daily, .weekly{width: 50%; float: left; padding: 5%; text-align: center;}
-.daily{display: table; border-right: 1px solid #ccc; }
+.daily{display: table;}
 .daily > div{display: table-cell; text-align: center; vertical-align: middle;}
 .weekly{overflow: auto;}
-.weekly > li{padding: 3%; border-bottom: 1px solid #ccc; text-align: left;}
+.weekly > li{padding: 3%; text-align: left;}
 .weekly ul{width: 80%; float: left; padding-left: 10%; }
 
 .dl_icon{width: 80%; max-width: 250px;}
 .dl_area > span {display: block;}
-.dl_area > :first-child {font-size: 1.2em; color: #fff;}
+.dl_area > :first-child {font-size: 1.2em; color: #ffcd16;}
 .dl_area button {margin-top: 1rem; border: 0; background-color: #fff; color: #222;}
 .dl_date{font-size: 1.5em; color: rgb(66, 66, 66);}
 .dl_temp{font-size: 2em; color: rgb(8, 52, 102);}
