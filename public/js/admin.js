@@ -13,7 +13,7 @@ var db = firebase.database();
 var ref;
 var key;
 
-/***** HOME ******/
+/***** kellogg ******/
 function initKellogg() {
 	$(".list:not(#kellogg_wrap)").remove();
 	ref = db.ref("root/kellogg");
@@ -26,25 +26,25 @@ initKellogg();
 function KelloggAdd(data) {
 	var id = data.key;
 	var img = data.val().img;
-	var src = '../img/main/' + img;
+	var src = '../img/kellogg/banner/' + img;
 	var title = data.val().title;
 	var link = data.val().link;
 	var html = '';
 	html += '<ul class="list clear row" id="' + id + '">';
-	html += '<li class="col-xs-4 col-sm-3 col-md-2 col-lg-2">';
+	html += '<li class="kel_img">';
 	html += '<div>';
 	html += '<img src="' + src + '">';
 	html += '<input type="text" class="tit_img form-control" placeholder="이미지" value="' + img + '">';
 	html += '</div>';
+	html += '<button class="btn btn-danger" onclick="homeDel(this);">삭제</button> ';
+	html += '<button class="btn btn-warning" onclick="homeUp(this);">수정</button>';
+	html += '</div>';
 	html += '</li>';
-	html += '<li class="col-xs-4 col-sm-6 col-md-7 col-lg-8">';
+	html += '<li class="kel_title">';
 	html += '<div>';
 	html += '<input type="text" class="title form-control" placeholder="타이틀" value="' + title + '">';
 	html += '<input type="text" class="link form-control" style="margin-top:5px;" placeholder="링크주소" value="' + link + '">';
 	html += '</div>';
-	html += '</li>';
-	html += '<li class="col-xs-4 col-sm-3 col-md-3 col-lg-2">';
-	html += '<div>';
 	html += '<button class="btn btn-danger" onclick="homeDel(this);">삭제</button> ';
 	html += '<button class="btn btn-warning" onclick="homeUp(this);">수정</button>';
 	html += '</div>';
@@ -66,16 +66,28 @@ function KelloggChg(data) {
 }
 
 
-$("#kellogg_save").on('click', function () {
+$("#kellogg_img_save").on('click', function () {
 	var img = $("#kellogg_list .tit_img").val();
-	var title = $("#kellogg_list .title").val();
 	var link = $("#kellogg_list .link").val();
-	if (title == '' || link == '' || img == '') {
+	if (link == '' || img == '') {
 		alert("내용을 적어주세요.");
 	} else {
-		ref = db.ref("root/home");
+		ref = db.ref("root/kellogg");
 		ref.push({
 			img: img,
+			link: link
+		}).key;
+		alert("등록되었습니다.");
+	}
+});
+$("#kellogg_save").on('click', function () {
+	var title = $("#kellogg_list .title").val();
+	var link = $("#kellogg_list .link").val();
+	if (title == '' || img == '') {
+		alert("내용을 적어주세요.");
+	} else {
+		ref = db.ref("root/kellogg");
+		ref.push({
 			title: title,
 			link: link
 		}).key;
@@ -111,7 +123,7 @@ function kelloggDel(obj) {
 	}
 }
 
-/***** SHOP ******/
+/***** SHOP *****
 //페이지가 생성될 때 한번 실행되며 shop레퍼런스에 콜백을 링크한다.
 function initShop() {
 	$(".grid > ul").remove();
@@ -296,7 +308,7 @@ function shopUp2(obj) {
 		});
 	}
 }
-
+*/
 
 
 /***** UI ******/

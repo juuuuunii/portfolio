@@ -261,17 +261,16 @@ $(".iphone").click(function(e) {
 $(".sign_bt").click(function(){
 	$("section").css({"display":"block"});
 	iphoneAni();
-	/* var pages = new WheelScroll({
+	/*
+	var pages = new WheelScroll({
 		page: ".page", 
 		nav: ".nav_bt",
 		speed: 700
-	}); */
+	}); 
+	*/
 	$(".nav_bt").eq(1).trigger("click");
 });
 
-$("#modal_open").click(function(){
-	$("#modal").show();
-});
 
 
 //////// portfolio
@@ -291,7 +290,16 @@ $(".tit_line").mouseenter(function() {
 	$(".cards").eq(portNum).css({"margin-top":"200px", "opacity":0, "display":"block"}).stop().animate({"margin-top":0, "opacity":1}, 600);
 });
 $(".tit_line").eq(0).trigger("mouseenter");
+
 //weather
+$("#modal_open").click(function(){
+	$("#modal").show();
+});
+$("#modal_close").click(function(){
+	$("#modal").hide();
+});
+
+
 $.ajax({
 	url: "../json/city.json",
 	type: "get",
@@ -327,7 +335,8 @@ $("#area").change(function(){
 			units: units
 		},
 		success: function(data){
-			
+			document.querySelector(".dl_icon").src = "../img/weather/"+data.weather[0].icon+".mp4";
+			document.querySelector("#weather_wrap").load();
 			$(".dl_area > span").html(city);
 			$(".dl_date").html(date);
 			$(".dl_temp").html(data.main.temp+'℃(최고: '+data.main.temp_max+'℃/최저: '+data.main.temp_min+'℃)');
