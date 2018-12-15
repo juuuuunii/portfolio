@@ -42,7 +42,7 @@ html, body {width: 100%; height: 100%;}
 	100% {background-color: #c80136; color: #fff;}
 }
 */
-.nav_hover {width: 120%; height: 305px; background-color: #fff; position: absolute; display: none; left:0; top:31px; z-index: 10;}
+.nav_hover {width: 120%; background-color: #fff; position: absolute; display:none;  left:0; top:31px; z-index: 10; border:1px solid #00f;}
 .nav_hover > .nav_list {float: left; width: 55%}
 .nav_hover > .nav_list > ul {float: left; width: 50%;}
 .nav_hover > .nav_list > ul > h2 {font-size: 1.3rem; font-weight: 400; color: #c80136; margin-bottom: 0.5rem;}
@@ -53,7 +53,7 @@ html, body {width: 100%; height: 100%;}
 	100% {background-color: #c80136; padding-left: 0.5rem;}
 }
 .nav_hover > .nav_ban {float: right; width: 45%; position: relative;}
-.nav_hover > .nav_ban > img {position: absolute; cursor: pointer;}
+.nav_hover > .nav_ban > img {cursor: pointer;}
 
 .mo_navs {display: none;}
 
@@ -219,12 +219,12 @@ footer {background-color: #1f3950; padding: 4rem 0; overflow: hidden;}
 	.nav {display: none;}
 	
 
-	.mo_navs {display: block; width: 100%; height: 100%; position: absolute; top: 2%; right: 5%; z-index: 10;}
-	.mo_navs > i {font-size: 1.5rem; color: #c80136; position: absolute; right: 0;}
-	.mo_nav {display: none; width: 100%; position: absolute; top: 3%; background-color: #c80136;}
+	.mo_navs {display: block; width: 100%; height: 100%; position: absolute; z-index: 10;}
+	.mo_navs > i {font-size: 1.5rem; color: #c80136; position: absolute; top:2%; right: 5%;}
+	.mo_nav {display: none; width: 100%; position: absolute; top: 70px; background-color: #c80136;}
 	.navi {float: none; position: relative;}
 	.nav_tit {color: #fff; display: block;}
-	.nav_hover {height: 305px;}
+	.nav_hover {position:static;}
 	.nav_hover > .nav_list {width: 100%}
 	.nav_hover > .nav_list > ul {float: left; width: 50%;}
 	.nav_hover > .nav_list > ul > h2 {font-size: 1.3rem; font-weight: 400; color: #c80136; margin-bottom: 0.5rem;}

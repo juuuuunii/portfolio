@@ -200,6 +200,7 @@ var WheelScroll = (function() {
 					}
 			});
 		}
+		iphoneAni();
 	}
 	WheelScroll.prototype.navAdd = function(obj, navObj) {
 		$(navObj).on("click", function() {
@@ -214,12 +215,6 @@ var WheelScroll = (function() {
 	}
 	return WheelScroll;
 }());
-
-var pages = new WheelScroll({
-	page: ".page", 
-	nav: ".nav_bt",
-	speed: 700
-});
 
 
 //////// intro
@@ -264,11 +259,19 @@ $(".iphone").click(function(e) {
 });
 
 $(".sign_bt").click(function(){
+	$("section").css({"display":"block"});
 	iphoneAni();
+	/* var pages = new WheelScroll({
+		page: ".page", 
+		nav: ".nav_bt",
+		speed: 700
+	}); */
 	$(".nav_bt").eq(1).trigger("click");
 });
 
-
+$("#modal_open").click(function(){
+	$("#modal").show();
+});
 
 
 //////// portfolio

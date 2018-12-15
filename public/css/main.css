@@ -20,6 +20,9 @@ a {text-decoration:none; color: inherit;}
 .eng {font-family: 'Montserrat', sans-serif;}
 .wrap {width: 100%; height: 100%;}
 
+section:not(#intro) {display:none;}
+#modal {z-index:9999;}
+
 /*************** nav ****************/
 .nav {
 	width: 376px; 
