@@ -97,7 +97,7 @@ section {padding: 4rem 0;}
 .new_prds > ul > li > img {float: right; right: 0; bottom: 0; width: 30%; position: absolute;}
 .new_prds > ul > :first-child {background-color: #8ce4f2; color: #4c9df8;}
 .new_prds > ul > :nth-child(2) {background-color: #bfde62; color: #36a54d;}
-.new_prds > ul > :nth-child(3) {background-color: #ffbf96; color: #f96d14;}
+.new_prds > ul > :nth-child(3) {background-color: #ffbf96; color: #6e6a68;}
 .new_prds > ul > :last-child {background-color: #e16687; color: #a4143b;}
 
 /*products*/
@@ -123,7 +123,9 @@ section {padding: 4rem 0;}
 .you_box > .you_txt > h1 > :first-child {font-size: 4rem; font-weight: bold; color: #c80136;}
 .you_box > .you_txt > h1 > :last-child {font-size: 2rem; font-weight: 500; color: #c80136;}
 .you_box > .you_txt > :nth-child(5) {margin-top: 1rem;}
-.you_box > .you_txt > button {background-color: #222; border: 0; color: #fff; padding: 0.2rem 0.5rem; margin-top: 2.5rem; cursor: pointer;}
+.you_box > .you_txt > button {width: 110px; height: 30px; background-color: #222; border: 0; color: #fff; margin-top: 2.5rem; cursor: pointer; position: absolute; z-index: 3;}
+.you_box > .you_txt > button:nth-child(2) {opacity: 1;}
+.you_box > .you_txt > .you_bt_hover {position: absolute; z-index: 2;}
 
 /*sns*/
 .sns {overflow: hidden;}
@@ -133,7 +135,7 @@ section {padding: 4rem 0;}
 .sns_list > li > i {font-size: 1.8rem; color: #c80136; margin: 0 auto;}
 .sns_pic {margin-bottom: 4rem;}
 .sns_pic_list > li {width: 20%; float: left; cursor: pointer; overflow: hidden;}
-.sns_pic_list > li > img {width: 100%; float:left;}
+.sns_pic_list > li > img {width: 100%;}
 .sns_pic_list > li > img:hover {animation-name: picAni; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out}
 @keyframes picAni {
 	0% {transform: scale(1);}

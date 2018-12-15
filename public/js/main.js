@@ -98,7 +98,8 @@ var option = [{
 	cutoutPercentage: 30,
 	circumference: 1.4 * Math.PI,
 	animation: {
-		animateRotate: false
+		animateRotate: false,
+		animateScale: true
 	}
 }, {
 	legend: {
@@ -107,7 +108,8 @@ var option = [{
 	cutoutPercentage: 30,
 	circumference: 1.6 * Math.PI,
 	animation: {
-		animateRotate: false
+		animateRotate: false,
+		animateScale: true
 	}
 }, {
 	legend: {
@@ -116,7 +118,8 @@ var option = [{
 	cutoutPercentage: 30,
 	circumference: 1.6 * Math.PI,
 	animation: {
-		animateRotate: false
+		animateRotate: false,
+		animateScale: true
 	}
 }, {
 	legend: {
@@ -125,7 +128,8 @@ var option = [{
 	cutoutPercentage: 30,
 	circumference: 1.3 * Math.PI,
 	animation: {
-		animateRotate: false
+		animateRotate: false,
+		animateScale: true
 	}
 }];
 var chart = [];
@@ -339,28 +343,26 @@ $("#area").change(function(){
 });
 
 //////// about
-$(window).resize(function(){
-	$(".slides").height($(".slide").height());
-}).trigger("resize");
-
-/*
-var n1 = 0;
+var n = 1;
+var interval;
 $("#slides").find(".slide").each(function(){
-	var name = $(this).data("name");
-	var html = '<span class="w3-bar-item" onclick="paging1(this);">●</span>';
+	var html = '<span class="w3-bar-item" onclick="paging(this);">●</span>';
 	$(this).parent().next().find(".pager").append(html);
 });
-interval = setInterval(slide, 3000);
+interval = setInterval(slide, 5000);
 function slide() {
 	$("#slides").parent().find(".pager").find("span").removeClass("w3-text-red");
-	$("#slides").parent().find(".pager").find("span").eq(n1).addClass("w3-text-red");
-	$("#slides1").stop().animate({"left":-(n1*100)+"%"}, 500, function(){
-		if(n1 == 5) n1 = -1;
-		n1++;
+	$("#slides").parent().find(".pager").find("span").eq(n).addClass("w3-text-red");
+	$("#slides").stop().animate({"left":-(n*100)+"%"}, 1000, function(){
+		if(n == 3) {
+			n = 0;
+			$(this).css({"left":0});
+		}
+		n++;
 	});
 }
-function paging1(obj) {
-	n1 = $(obj).index();
+function paging(obj) {
+	n = $(obj).index();
 	clearInterval(interval);
 	slide();
 	interval = setInterval(slide, 3000);
@@ -370,7 +372,7 @@ $("#slides").hover(function(){
 }, function(){
 	interval = setInterval(slide, 3000);
 });
-*/
+
 // reset
 window.onbeforeunload = function () {
 	window.scrollTo(0, 0);

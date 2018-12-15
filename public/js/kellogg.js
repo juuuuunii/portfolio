@@ -35,6 +35,14 @@ $(".mo_navs > i").click(function() {
 	$(".mo_nav").stop().slideToggle(500);
 })
 
+$(".you_bt").mouseenter(function() {
+	$(this).stop().animate({"opacity":0}, 300);
+	$(".you_bt_hover").stop().animate({"opacity":1}, 300);
+});
+$(".you_bt_hover").mouseleave(function() {
+	$(this).stop().animate({"opacity":0});
+	$(".you_bt").stop().animate({"opacity":1}, 300);
+});
 
 /*
 $(".nav > li").mouseenter(function() {

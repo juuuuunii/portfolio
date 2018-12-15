@@ -4,17 +4,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>admin page</title>
+	<title>Kellogg Admin</title>
 
-	<!-- 파이어베이스 -->
+	<!-- 파이어베이스 
 	<script defer src="/__/firebase/5.5.9/firebase-app.js"></script>
 	<script defer src="/__/firebase/5.5.9/firebase-auth.js"></script>
 	<script defer src="/__/firebase/5.5.9/firebase-database.js"></script>
 	<script defer src="/__/firebase/5.5.9/firebase-messaging.js"></script>
 	<script defer src="/__/firebase/5.5.9/firebase-storage.js"></script>
-	<script defer src="/__/firebase/init.js"></script>
+	<script defer src="/__/firebase/init.js"></script>-->
 	<!-- css -->
-	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/admin.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -22,116 +25,123 @@
 
 <body>
 	<ul class="header clear">
-		<li><img src="../img/main/logo.svg" class="logo img"></li>
+		<li><img src="../img/kellogg/common/logo.png" class="logo img"></li>
 		<li>
-			<button class="btn btn-primary">로그인</button>
-			<button class="btn btn-default">로그아웃</button>
-			<button class="btn btn-warning">사이트 바로가기</button>
+			<button class="btn">Sign In</button>
+			<button class="btn">Sign Out</button>
+			<button class="btn">GO SITE</button>
 		</li>
 	</ul>
-	<ul class="navs">
+	<ul class="navs width">
 		<li class="nav">
-			<span class="fa fa-home"></span><br>HOME
+			켈로그 이야기
 		</li>
 		<li class="nav">
-			<span class="fa fa-shopping-basket"></span><br>SHOP
+			켈로그 브랜드
 		</li>
 		<li class="nav">
-			<span class="fa fa-clipboard"></span><br>BLOG
+			켈로그 영양
+		</li>
+		<li class="nav">
+			이벤트
 		</li>
 	</ul>
-	<div class="section clear" id="home">
-		<div class="title">HOME 관리</div>
-		<div class="wrap" id="home_wrap">
-			<!-- ul.list>li>img.img^li>input.title+input.link^li>button.btn.btn-danger+button.btn.btn-warning -->
-			<div class="home_title">신규등록</div>
-			<ul class="list clear row" id="home_wr">
-				<li class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
-					<div>
-						<input type="text" class="tit_img form-control" placeholder="이미지">
-					</div>
-				</li>
-				<li class="col-xs-4 col-sm-6 col-md-7 col-lg-8">
-					<div>
-						<input type="text" class="title form-control" placeholder="타이틀">
-						<input type="text" class="link form-control" style="margin-top:5px;" placeholder="링크주소">
-					</div>
-				</li>
-				<li class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
-					<div>
-						<!--button class="btn btn-danger">삭제</button>
-						<button-- class="btn btn-warning">수정</button-->
-						<button class="btn btn-primary" id="home_save">등록</button>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="section clear" id="shop">
-		<div class="title">SHOP 관리</div>
-		<div class="wrap clear" id="shop_wrap">
-			<div class="shop_li0 clear">
-				<div>
-					<input type="text" class="title form-control" placeholder="제목">
-					<input type="text" class="icon form-control" placeholder="아이콘">
-					<input type="text" class="color form-control" placeholder="아이콘컬러">
-					<input type="text" class="link form-control" placeholder="링크">
-				</div>
-				<div>
-					<button class="btn btn-primary shop_wr">등록</button>
-				</div>				
+	<section class="width">
+		<div class="section clear" id="kellogg_lists">
+			<div class="title">신규등록</div>
+			<div class="wrap" id="kellogg_list">
+				<!-- ul.list>li>img.img^li>input.title+input.link^li>button.btn.btn-danger+button.btn.btn-warning -->				
+				<ul class="list clear row" id="kellogg_wrap">
+					<li class="col-xs-4 col-sm-3 col-md-2 col-lg-3">
+						<div>
+							<input type="text" class="tit_img form-control" placeholder="banner Image">
+							<input type="text" class="link form-control" style="margin-top:5px;" placeholder="Link">
+						</div>
+						<div>
+							<!--button class="btn btn-danger">삭제</button>
+							<button-- class="btn btn-warning">수정</button-->
+							<button class="btn save_btn" id="home_save">등록</button>
+						</div>
+					</li>
+					<li class="col-xs-4 col-sm-6 col-md-7 col-lg-8">
+						<div>
+							<input type="text" class="title form-control" placeholder="Title">
+							<input type="text" class="link form-control" style="margin-top:5px;" placeholder="Link">
+						</div>
+						<div>
+							<!--button class="btn btn-danger">삭제</button>
+							<button-- class="btn btn-warning">수정</button-->
+							<button class="btn save_btn" id="home_save">등록</button>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
-		<div class="grid">
-			<div class="grid-sizer"></div>
-			
+		<div class="section clear" id="shop">
+			<div class="wrap clear" id="shop_wrap">
+				<div class="shop_li0 clear">
+					<div>
+						<input type="text" class="title form-control" placeholder="제목">
+						<input type="text" class="icon form-control" placeholder="아이콘">
+						<input type="text" class="color form-control" placeholder="아이콘컬러">
+						<input type="text" class="link form-control" placeholder="링크">
+					</div>
+					<div>
+						<button class="btn btn-primary shop_wr">등록</button>
+					</div>				
+				</div>
+			</div>
+			<div class="grid">
+				<div class="grid-sizer"></div>
+				
+			</div>
+				
+				<!--
+				<ul>				
+					<li class="shop_li1 clear">
+						<div>
+							<input type="text" class="title form-control" placeholder="제목">
+							<input type="text" class="icon form-control" placeholder="아이콘">
+							<input type="text" class="color form-control" placeholder="아이콘컬러">
+						</div>
+						<div>
+							<button class="btn btn-danger shop_del1">삭제</button>
+							<button class="btn btn-warning shop_up1">수정</button>
+						</div>
+					</li>
+					<li class="shop_li2 clear">
+						<div>
+							<input type="text" class="title form-control" placeholder="제목">
+							<input type="text" class="icon form-control" placeholder="아이콘">
+							<input type="text" class="color form-control" placeholder="아이콘컬러">
+						</div>
+						<div>
+							<button class="btn btn-danger shop_del1">삭제</button>
+							<button class="btn btn-warning shop_up1">수정</button>
+						</div>
+					</li>
+					<li class="shop_li2 clear">
+						<div>
+							<input type="text" class="title form-control" placeholder="제목">
+							<input type="text" class="icon form-control" placeholder="아이콘">
+							<input type="text" class="color form-control" placeholder="아이콘컬러">
+						</div>
+						<div>
+							<button class="btn btn-danger">삭제</button>
+							<button class="btn btn-warning">수정</button>
+						</div>
+					</li>				
+				</ul>
+				-->
+			</div>
 		</div>
-			
-			<!--
-			<ul>				
-				<li class="shop_li1 clear">
-					<div>
-						<input type="text" class="title form-control" placeholder="제목">
-						<input type="text" class="icon form-control" placeholder="아이콘">
-						<input type="text" class="color form-control" placeholder="아이콘컬러">
-					</div>
-					<div>
-						<button class="btn btn-danger shop_del1">삭제</button>
-						<button class="btn btn-warning shop_up1">수정</button>
-					</div>
-				</li>
-				<li class="shop_li2 clear">
-					<div>
-						<input type="text" class="title form-control" placeholder="제목">
-						<input type="text" class="icon form-control" placeholder="아이콘">
-						<input type="text" class="color form-control" placeholder="아이콘컬러">
-					</div>
-					<div>
-						<button class="btn btn-danger shop_del1">삭제</button>
-						<button class="btn btn-warning shop_up1">수정</button>
-					</div>
-				</li>
-				<li class="shop_li2 clear">
-					<div>
-						<input type="text" class="title form-control" placeholder="제목">
-						<input type="text" class="icon form-control" placeholder="아이콘">
-						<input type="text" class="color form-control" placeholder="아이콘컬러">
-					</div>
-					<div>
-						<button class="btn btn-danger">삭제</button>
-						<button class="btn btn-warning">수정</button>
-					</div>
-				</li>				
-			</ul>
-			-->
-		</div>
-	</div>
-	<div class="section clear" id="blog">
-		<div class="title">BLOG 관리</div>
-		<div class="wrap">
+		<div class="section clear" id="blog">
+			<div class="title">BLOG 관리</div>
+			<div class="wrap">
 
+			</div>
 		</div>
-	</div>
+	</section>
 	<div class="footer clear">
 		Copyright ⓒ booldook. Allright reserved.
 	</div>
