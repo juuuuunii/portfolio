@@ -25,11 +25,11 @@
 
 <body>
 	<ul class="header clear">
-		<li href="../kellogg/kellogg.html"><img src="../img/kellogg/common/logo.png" class="logo img"></li>
+		<li onclick="location.href='admin.html';" target="_self"><img src="../img/kellogg/common/logo.png" class="logo img"></li>
 		<li>
 			<button class="btn">Sign In</button>
 			<button class="btn">Sign Out</button>
-			<button class="btn">GO SITE</button>
+			<button class="btn" onclick="window.open('../kellogg/kellogg.html');">GO SITE</button>
 		</li>
 	</ul>
 	<ul class="nav_lists width">
@@ -45,28 +45,37 @@
 				<!-- ul.list>li>img.img^li>input.title+input.link^li>button.btn.btn-danger+button.btn.btn-warning -->				
 				<ul class="list clear row" id="kellogg_wrap">
 					<li class="kel_img">
-						<div>
-							<input type="text" class="nav_img form-control" placeholder="banner Image">
-							<input type="text" class="img_link form-control" style="margin-top:5px;" placeholder="Link">
+						<div style="border:4px solid #ccc; padding:8px;">
+							<div>
+								<input type="text" class="nav_img form-control" placeholder="banner Image">
+								<input type="text" class="img_link form-control" style="margin-top:5px;" placeholder="Link">
+							</div>
+							<div>
+								<!--button class="btn btn-danger">삭제</button>
+								<button-- class="btn btn-warning">수정</button-->
+								<button class="btn save_btn" id="kellogg_img_save">등록</button>
+							</div>
 						</div>
-						<div>
-							<!--button class="btn btn-danger">삭제</button>
-							<button-- class="btn btn-warning">수정</button-->
-							<button class="btn save_btn" id="kellogg_img_save">등록</button>
+						<div class="kel_img_cont">
+							<!-- 여기에 내용이 생성됩니다. -->
 						</div>
 					</li>
 					<li class="kel_nav">
-						<div>
-							<input type="text" class="nav form-control" placeholder="nav">
-							<input type="text" class="nav_link form-control" placeholder="nav Link">
+						<div style="border:4px solid #ccc; padding:8px;">
+							<div>
+								<input type="text" class="nav form-control" placeholder="nav">
+								<input type="text" class="nav_link form-control" placeholder="nav Link">
+							</div>
+							<div>
+								<!--button class="btn btn-danger">삭제</button>
+								<button-- class="btn btn-warning">수정</button-->
+								<button class="btn kel_nav_save" id="kellogg_img_save">등록</button>
+							</div>
 						</div>
-						<div>
-							<!--button class="btn btn-danger">삭제</button>
-							<button-- class="btn btn-warning">수정</button-->
-							<button class="btn kel_nav_save" id="kellogg_img_save">등록</button>
+						<div class="kel_nav_cont">
+							<!-- 여기에 내용이 생성됩니다. -->
 						</div>
 					</li>
-
 				</ul>				
 			</div>
 

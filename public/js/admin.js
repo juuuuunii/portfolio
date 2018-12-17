@@ -42,7 +42,7 @@ function kelImgAdd(data) {
 	html += '</div>';
 	html += '</li>';
 	html += '</ul>';
-	$("#kellogg_lists").append(html);
+	$(".kel_img_cont").append(html);
 }
 
 function kelImgRev(data) {	
@@ -123,10 +123,12 @@ function kelNavMake(chk, data) {
 	html += '</div>';
 	if(chk == 'C') {
 		html += '</li>';
-		$("#kellogg_lists").append(html);
+		$(".kel_nav_cont").append(html);
 	}
 	else if(chk == 'U') {
-		$("#"+id).html(html);
+		var obj = $("#"+id);
+		obj.find(".nav").val(data.val().nav);
+		obj.find(".nav_link").val(data.val().link);
 	}
 }
 
@@ -163,13 +165,15 @@ $(".kel_nav_save").click(function () {
 			link: link
 		}).key;
 	}
+	$(this).parent().prev().find(".nav").val('');
+	$(this).parent().prev().find(".nav_link").val('');
 });
 
 function kelNavDel(obj) {
 	if(confirm("정말로 삭제하시겠습니까?")) {
 		var id = $(obj).parent().parent().attr("id");
 		//console.log(id);
-		db.ref("root/kellgg/nav/"+id).remove();
+		db.ref("root/kellogg/nav/"+id).remove();
 	}
 }
 
