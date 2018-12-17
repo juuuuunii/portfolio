@@ -14,174 +14,134 @@ var ref;
 var key;
 
 /***** kellogg ******/
-function initKellogg() {
+function initKelImg() {
 	$(".list:not(#kellogg_wrap)").remove();
-	ref = db.ref("root/kellogg");
-	ref.on("child_added", KelloggAdd);
-	ref.on("child_removed", KelloggRev);
-	ref.on("child_changed", KelloggChg);
+	ref = db.ref("root/kellogg/nav_img");
+	ref.on("child_added", kelImgAdd);
+	ref.on("child_removed", kelImgRev);
+	ref.on("child_changed", kelImgChg);
 }
-initKellogg();
-
-function KelloggAdd(data) {
+initKelImg();
+//kel_Img
+function kelImgAdd(data) {
 	var id = data.key;
 	var img = data.val().img;
-	var src = '../img/kellogg/banner/' + img;
-	var title = data.val().title;
+	var src = '../img/kellogg/nav/' + img;
 	var link = data.val().link;
 	var html = '';
-	html += '<ul class="list clear row" id="' + id + '">';
-	html += '<li class="kel_img">';
+	html += '<ul class="list clear row">';
+	html += '<li class="kel_img" id="' + id + '">';
 	html += '<div>';
 	html += '<img src="' + src + '">';
-	html += '<input type="text" class="tit_img form-control" placeholder="이미지" value="' + img + '">';
+	html += '<input type="text" class="nav_img form-control" placeholder="이미지" value="' + img + '">';
+	html += '<input type="text" class="img_link form-control" style="margin-top:5px;" placeholder="링크주소" value="' + link + '">';
 	html += '</div>';
-	html += '<button class="btn btn-danger" onclick="homeDel(this);">삭제</button> ';
-	html += '<button class="btn btn-warning" onclick="homeUp(this);">수정</button>';
-	html += '</div>';
-	html += '</li>';
-	html += '<li class="kel_title">';
 	html += '<div>';
-	html += '<input type="text" class="title form-control" placeholder="타이틀" value="' + title + '">';
-	html += '<input type="text" class="link form-control" style="margin-top:5px;" placeholder="링크주소" value="' + link + '">';
-	html += '</div>';
-	html += '<button class="btn btn-danger" onclick="homeDel(this);">삭제</button> ';
-	html += '<button class="btn btn-warning" onclick="homeUp(this);">수정</button>';
+	html += '<button class="btn btn-danger" onclick="kelImgDel(this);">삭제</button> ';
+	html += '<button class="btn btn-warning" onclick="kelImgUp(this);">수정</button>';
 	html += '</div>';
 	html += '</li>';
 	html += '</ul>';
 	$("#kellogg_lists").append(html);
 }
 
-function KelloggRev(data) {
+function kelImgRev(data) {	
 	var id = data.key;
 	$("#" + id).remove();
 }
-
-function KelloggChg(data) {
+function kelImgChg(data) {
 	var id = data.key;
-	var ul = $("#" + id);
-	$("img", ul).attr("src", "../img/main/" + data.val().img);
+	var li = $("#" + id);
+	$(".nav_img", li).attr("src", "../img/kellogg/nav/" + data.val().img);
 	alert("수정되었습니다.");
 }
 
-
 $("#kellogg_img_save").on('click', function () {
-	var img = $("#kellogg_list .tit_img").val();
-	var link = $("#kellogg_list .link").val();
+	var img = $(".kel_img .nav_img").val();
+	var link = $(".kel_img .img_link").val();
 	if (link == '' || img == '') {
 		alert("내용을 적어주세요.");
 	} else {
-		ref = db.ref("root/kellogg");
+		ref = db.ref("root/kellogg/nav_img");
 		ref.push({
 			img: img,
-			link: link
-		}).key;
-		alert("등록되었습니다.");
-	}
-});
-$("#kellogg_save").on('click', function () {
-	var title = $("#kellogg_list .title").val();
-	var link = $("#kellogg_list .link").val();
-	if (title == '' || img == '') {
-		alert("내용을 적어주세요.");
-	} else {
-		ref = db.ref("root/kellogg");
-		ref.push({
-			title: title,
 			link: link
 		}).key;
 		alert("등록되었습니다.");
 	}
 });
 
-function kelloggUp(obj) {
-	var ul = $(obj).parent().parent().parent();
-	var id = ul.attr("id");
-	var img = $(".tit_img", ul).val();
-	var title = $(".title", ul).val();
-	var link = $(".link", ul).val();
-	if (title == '' || link == '' || img == '') {
+function kelImgUp(obj) {
+	var li = $(obj).parent().parent();
+	var id = li.attr("id");
+	var img = $(".nav_img", li).val();
+	var link = $(".img_link",li).val();
+	if (img == '' || link == '') {
 		alert("내용을 적어주세요.");
 	} else {
-		ref = db.ref("root/home/" + id);
+		ref = db.ref("root/kellogg/nav_img/" + id);
 		ref.update({
 			img: img,
-			title: title,
 			link: link
 		});
 	}
 }
 
-function kelloggDel(obj) {
+function kelImgDel(obj) {	
 	if (confirm("정말로 삭제하시겠습니까?")) {
 		//var id = obj.parentNode.parentNode.parentNode.id;
-		var id = $(obj).parent().parent().parent().attr("id");
+		var id = $(obj).parent().parent().attr("id");
 		if (id != "") {
-			db.ref("root/home/" + id).remove();
+			db.ref("root/kellogg/nav_img/" + id).remove();
 		}
 	}
 }
 
-/***** SHOP *****
+//kel_Nav
 //페이지가 생성될 때 한번 실행되며 shop레퍼런스에 콜백을 링크한다.
-function initShop() {
-	$(".grid > ul").remove();
-	ref = db.ref("root/shop");
-	ref.on("child_added", shopAdd);
-	ref.on("child_removed", shopRev);
-	ref.on("child_changed", shopChg);
+function initNav() {
+	$(".kel_nav").remove();
+	ref = db.ref("root/kellogg/nav");
+	ref.on("child_added", navAdd);
+	ref.on("child_removed", navRev);
+	ref.on("child_changed", navChg);
 }
-initShop();
+initNav();
 
 //chk 변수의 값(C, U)에 따라 ul을 생성 또는 수정한다.
-function shopMake(chk, data) {
+function navMake(chk, data) {
 	var id = data.key;
 	var html = '';
-	if(chk == 'C') html += '<ul id="' + id + '" class="grid-item">';
-	html += '<li class="shop_li1 clear">';
+	if(chk == 'C')
+	html += '<li class="kel_nav">';
+	html += '<div class="kel_nav_li>';
 	html += '<div>';
-	html += '<input type="text" value="' + data.val().title + '" class="title form-control" placeholder="제목">';
-	html += '<input type="text" value="' + data.val().icon + '" class="icon form-control" placeholder="아이콘">';
-	html += '<input type="text" value="' + data.val().color + '" class="color form-control" placeholder="아이콘컬러">';
-	html += '<input type="text" value="' + data.val().link + '" class="link form-control" placeholder="링크">';
+	html += '<input type="text" value="' + data.val().nav + '" class="nav form-control" placeholder="nav">';
+	html += '<input type="text" value="' + data.val().link + '" class="nav_link form-control" placeholder="nav Link">';
 	html += '</div>';
 	html += '<div>';
-	html += '<button class="btn btn-danger" onclick="shopDel(this);">삭제</button>';
-	html += '<button class="btn btn-warning" onclick="shopUp(this);">수정</button>';
+	html += '<button class="btn btn-danger" onclick="kelNavDel(this);">삭제</button>';
+	html += '<button class="btn btn-warning" onclick="kelNavUp(this);">수정</button>';
 	html += '</div>';
-	html += '</li>';
-	html += '<li class="shop_li2 clear shop_li2_wr">';
-	html += '<div>';
-	html += '<input type="text" class="title form-control" placeholder="제목">';
-	html += '<input type="text" class="icon form-control" placeholder="아이콘">';
-	html += '<input type="text" class="color form-control" placeholder="아이콘컬러">';
-	html += '<input type="text" class="link form-control" placeholder="링크">';
 	html += '</div>';
-	html += '<div>';
-	html += '<button class="btn btn-primary" onclick="shopAdd2(this)">저장</button>';
-	html += '</div>';
-	html += '</li>';
 	if(chk == 'C') {
-		html += '</ul>';
-		$(".grid").append(html);
+		html += '</li>';
+		$(".kel_nav").append(html);
 	}
 	else if(chk == 'U') {
 		$("#"+id).html(html);
 	}
 	if(data.val().sub) {
-		db.ref("root/shop/"+id+"/sub").once("value").then(function(snapshot){
+		db.ref("root/kellogg/nav/"+id+"/sub").once("value").then(function(snapshot){
 			snapshot.forEach(function(item){
-				html  = '<li class="shop_li2 clear" id="'+item.key+'">';
+				html  = '<li class="kel_nav" id="'+item.key+'">';
 				html += '<div>';
-				html += '<input type="text" value="'+item.val().title+'" class="title form-control" placeholder="제목">';
-				html += '<input type="text" value="'+item.val().icon+'" class="icon form-control" placeholder="아이콘">';
-				html += '<input type="text" value="'+item.val().color+'" class="color form-control" placeholder="아이콘컬러">';
-				html += '<input type="text" value="'+item.val().link+'" class="link form-control" placeholder="링크">';
+				html += '<input type="text" value="'+item.val().nav+'" class="nav form-control" placeholder="제목">';
+				html += '<input type="text" value="'+item.val().nav+'" class="nav_link form-control" placeholder="링크">';
 				html += '</div>';
 				html += '<div>';
-				html += '<button class="btn btn-danger" onclick="shopDel2(this);">삭제</button>';
-				html += '<button class="btn btn-warning" onclick="shopUp2(this);">수정</button>';
+				html += '<button class="btn btn-danger" onclick="kelNavDel2(this);">삭제</button>';
+				html += '<button class="btn btn-warning" onclick="KelNavUp2(this);">수정</button>';
 				html += '</div>';
 				html += '</li>';
 				$("#"+id).append(html);
@@ -191,130 +151,112 @@ function shopMake(chk, data) {
 }
 
 //child_added 콜백
-function shopAdd(data) {
+function navAdd(data) {
 	var id = data.key;
-	shopMake('C', data);
+	navMake('C', data);
 }
 
 //child_remove 콜백
-function shopRev(data) {
+function navRev(data) {
 	var id = data.key;
 	$("#"+id).remove();
 }
 
 //child_changed 콜백
-function shopChg(data) {
+function navChg(data) {
 	var id = data.key;
-	shopMake('U', data);
+	navMake('U', data);
 }
 
 //1차 카테고리 생성
-$(".shop_wr").click(function () {
-	var title = $(".shop_li0 .title").val();
-	var icon = $(".shop_li0 .icon").val();
-	var color = $(".shop_li0 .color").val();
-	var link = $(".shop_li0 .link").val();
-	if (title == "") {
+$(".kellogg_nav_save").click(function () {
+	var nav = $(".kel_nav .nav").val();
+	var link = $(".kel_nav .nav_link").val();
+	if (nav == "") {
 		alert("제목을 입력하세요.");
-		$(".shop_li0 .title").focus();
+		$(".kel_nav .nav").focus();
 	} else {
-		ref = db.ref("root/shop");
+		ref = db.ref("root/kellogg/nav");
 		ref.push({
-			title: title,
-			icon: icon,
-			color: color,
+			nav: nav,
 			link: link
 		}).key;
 	}
 });
 
 //2차 카테고리 생성
-function shopAdd2(obj) {
+function navAdd2(obj) {
 	var div = $(obj).parent().prev();
 	var idUl = $(obj).parent().parent().parent().attr("id");
-	var title = $(".title", div).val();
-	var icon = $(".icon", div).val();
-	var color = $(".color", div).val();
-	var link = $(".link", div).val();
-	ref = db.ref("root/shop/" + idUl + "/sub");
+	var nav = $(".nav", div).val();
+	var link = $(".nav_link", div).val();
+	ref = db.ref("root/kellogg/nav/" + idUl + "/sub");
 	ref.push({
-		title: title,
-		icon: icon,
-		color: color,
+		nav: nav,
 		link: link
 	}).key;
 }
 
 //1차 카테고리 삭제
-function shopDel(obj) {
+function navDel(obj) {
 	if(confirm("정말로 삭제하시겠습니까?\n1차 카테고리 삭제시 하위 카테고리도 삭제됩니다.")) {
 		var id = $(obj).parent().parent().parent().attr("id");
-		db.ref("root/shop/"+id).remove();
+		db.ref("root/kellogg/"+id).remove();
 	}
 }
 
 //1차 카테고리 수정
-function shopUp(obj) {
+function navUp(obj) {
 	var id = $(obj).parent().parent().parent().attr("id");
 	var div = $(obj).parent().prev();
-	var title = $(".title", div).val();
-	var icon = $(".icon", div).val();
-	var color = $(".color", div).val();
-	var link = $(".link", div).val();
-	if(title == "") {
+	var nav = $(".nav", div).val();
+	var link = $(".nav_link", div).val();
+	if(nav == "") {
 		alert("카테고리 명을 입력하세요.");
-		$(".title", div).focus();
+		$(".nav", div).focus();
 		return false;
 	}
 	else {
-		db.ref("root/shop/"+id).update({
+		db.ref("root/kellogg/nav/"+id).update({
 			title: title,
-			icon: icon,
-			color: color,
 			link: link
 		});
 	}
 }
 
 //2차 카테고리 삭제
-function shopDel2(obj) {
+function navDel2(obj) {
 	if(confirm("정말로 삭제하시겠습니까?")) {
 		var id = $(obj).parent().parent().parent().attr("id");	//ul
 		var id2 = $(obj).parent().parent().attr("id");	//li
-		db.ref("root/shop/"+id+"/sub/"+id2).remove();
+		db.ref("root/kellogg/nav/"+id+"/sub/"+id2).remove();
 	}
 }
 
 //2차 카테고리 수정
-function shopUp2(obj) {
+function navUp2(obj) {
 	var id = $(obj).parent().parent().parent().attr("id");	//ul
 	var id2 = $(obj).parent().parent().attr("id");	//li
 	var div = $(obj).parent().prev();
-	var title = $(".title", div).val();
-	var icon = $(".icon", div).val();
-	var color = $(".color", div).val();
-	var link = $(".link", div).val();
-	if(title == "") {
+	var nav = $(".nav", div).val();
+	var link = $(".nav_link", div).val();
+	if(nav == "") {
 		alert("카테고리 명을 입력하세요.");
-		$(".title", div).focus();
+		$(".nav", div).focus();
 		return false;
 	}
 	else {
-		db.ref("root/shop/"+id+"/sub/"+id2).update({
-			title: title,
-			icon: icon,
-			color: color,
+		db.ref("root/kellogg/nav/"+id+"/sub/"+id2).update({
+			nav: nav,
 			link: link
 		});
 	}
 }
-*/
-
 
 /***** UI ******/
-$(".nav").on("click", function () {
+$(".nav_list").on("click", function () {
 	var n = $(this).index();
-	$(".nav").css({
+	$(".nav_list").css({
 		"background-color": "",
 		"color": ""
 	});
@@ -325,7 +267,7 @@ $(".nav").on("click", function () {
 	$(".section").hide();
 	$(".section").eq(n).show();
 });
-$(".nav").eq(0).trigger("click");
+$(".nav_list").eq(0).trigger("click");
 
 
 /***** 참조사항 ******/

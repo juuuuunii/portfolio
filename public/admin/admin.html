@@ -25,18 +25,18 @@
 
 <body>
 	<ul class="header clear">
-		<li><img src="../img/kellogg/common/logo.png" class="logo img"></li>
+		<li href="../kellogg/kellogg.html"><img src="../img/kellogg/common/logo.png" class="logo img"></li>
 		<li>
 			<button class="btn">Sign In</button>
 			<button class="btn">Sign Out</button>
 			<button class="btn">GO SITE</button>
 		</li>
 	</ul>
-	<ul class="navs width">
-		<li class="nav">켈로그 이야기</li>
-		<li class="nav">켈로그 브랜드</li>
-		<li class="nav">켈로그 영양</li>
-		<li class="nav">이벤트</li>
+	<ul class="nav_lists width">
+		<li class="nav_list">켈로그 이야기</li>
+		<li class="nav_list">켈로그 브랜드</li>
+		<li class="nav_list">켈로그 영양</li>
+		<li class="nav_list">이벤트</li>
 	</ul>
 	<section class="width">
 		<div class="section clear" id="kellogg_lists">
@@ -46,8 +46,8 @@
 				<ul class="list clear row" id="kellogg_wrap">
 					<li class="kel_img">
 						<div>
-							<input type="text" class="tit_img form-control" placeholder="banner Image">
-							<input type="text" class="link form-control" style="margin-top:5px;" placeholder="Link">
+							<input type="text" class="nav_img form-control" placeholder="banner Image">
+							<input type="text" class="img_link form-control" style="margin-top:5px;" placeholder="Link">
 						</div>
 						<div>
 							<!--button class="btn btn-danger">삭제</button>
@@ -55,16 +55,19 @@
 							<button class="btn save_btn" id="kellogg_img_save">등록</button>
 						</div>
 					</li>
-					<li class="kel_title">
-						<div>
-							<input type="text" class="title form-control" placeholder="Title">
-							<input type="text" class="link form-control" style="margin-top:5px;" placeholder="Link">
+					<li class="kel_nav">
+						<div class="kel_nav_li">
+							<div>
+								<input type="text" class="nav form-control" placeholder="nav">
+								<input type="text" class="nav_link form-control" placeholder="nav Link">
+							</div>
+							<div>
+								<!--button class="btn btn-danger">삭제</button>
+								<button-- class="btn btn-warning">수정</button-->
+								<button class="btn save_btn" id="kellogg_img_save">등록</button>
+							</div>
 						</div>
-						<div>
-							<!--button class="btn btn-danger">삭제</button>
-							<button-- class="btn btn-warning">수정</button-->
-							<button class="btn save_btn" id="kellogg_save">등록</button>
-						</div>
+						<div class="sub_nav"></div>
 					</li>
 				</ul>				
 			</div>
@@ -82,7 +85,7 @@
 						<input type="text" class="link form-control" placeholder="링크">
 					</div>
 					<div>
-						<button class="btn btn-primary shop_wr">등록</button>
+						<button class="btn btn-primary kellogg_nav_save">등록</button>
 					</div>				
 				</div>
 			</div>
