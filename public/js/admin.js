@@ -29,8 +29,8 @@ function kelImgAdd(data) {
 	var src = '../img/kellogg/nav/' + img;
 	var link = data.val().link;
 	var html = '';
-	html += '<ul class="list clear row">';
-	html += '<li class="kel_img" id="' + id + '">';
+	html += '<ul class="add_list clear row">';
+	html += '<li class="add_kel_img" id="' + id + '">';
 	html += '<div>';
 	html += '<img src="' + src + '">';
 	html += '<input type="text" class="nav_img form-control" placeholder="이미지" value="' + img + '">';
@@ -112,10 +112,10 @@ initShop();
 function kelNavMake(chk, data) {
 	var id = data.key;
 	var html = '';
-	html += '<li id="' + id + '" class="kel_nav clear">';
+	html += '<li id="' + id + '" class="add_kel_nav clear">';
 	html += '<div>';
-	html += '<input type="text" value="' + data.val().nav + '" class="nav form-control" placeholder="제목">';
-	html += '<input type="text" value="' + data.val().link + '" class="nav_link form-control" placeholder="링크">';
+	html += '<input type="text" value="' + data.val().nav + '" class="navi form-control" placeholder="제목">';
+	html += '<input type="text" value="' + data.val().link + '" class="nav_link form-control" style="margin-top:5px;" placeholder="링크">';
 	html += '</div>';
 	html += '<div>';
 	html += '<button class="btn btn-danger" onclick="kelNavDel(this);">삭제</button>';
@@ -127,7 +127,7 @@ function kelNavMake(chk, data) {
 	}
 	else if(chk == 'U') {
 		var obj = $("#"+id);
-		obj.find(".nav").val(data.val().nav);
+		obj.find(".navi").val(data.val().nav);
 		obj.find(".nav_link").val(data.val().link);
 	}
 }
@@ -153,11 +153,11 @@ function kelNavChg(data) {
 
 //카테고리 생성
 $(".kel_nav_save").click(function () {
-	var nav = $(".kel_nav .nav").val();
+	var nav = $(".kel_nav .navi").val();
 	var link = $(".kel_nav .nav_link").val();
 	if (nav == "") {
 		alert("제목을 입력하세요.");
-		$(".kel_nav_li .nav").focus();
+		$(".kel_nav_li .navi").focus();
 	} else {
 		ref = db.ref("root/kellogg/nav");
 		ref.push({
@@ -165,7 +165,7 @@ $(".kel_nav_save").click(function () {
 			link: link
 		}).key;
 	}
-	$(this).parent().prev().find(".nav").val('');
+	$(this).parent().prev().find(".navi").val('');
 	$(this).parent().prev().find(".nav_link").val('');
 });
 
@@ -180,11 +180,11 @@ function kelNavDel(obj) {
 function kelNavUp(obj) {
 	var id = $(obj).parent().parent().attr("id");
 	var div = $(obj).parent().prev();
-	var nav = $(".nav", div).val();
+	var nav = $(".navi", div).val();
 	var link = $(".nav_link", div).val();
 	if(nav == "") {
 		alert("카테고리 명을 입력하세요.");
-		$(".nav", div).focus();
+		$(".navi", div).focus();
 		return false;
 	}
 	else {

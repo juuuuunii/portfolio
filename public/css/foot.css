@@ -1,0 +1,63 @@
+/*************** 초기화 ****************/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+html, body {margin: 0; padding: 0; font-size: 14px; color:#222; box-sizing: border-box; font-family:'Noto Sans KR', sans-serif; height:100%; font-weight:300;}
+h1, h2, h3, h4, h5, h6, p, span, img  {margin: 0; padding: 0; font-weight: 300; border:none;}
+div, ul, li, ol, dl, dd, dt{margin: 0; padding: 0; box-sizing: border-box; list-style: none; border:none;}
+table {margin:0; padding:0; border-collapse:collapse;}
+th, td {margin:0; padding:0;}
+img {vertical-align: middle;}
+
+a {text-decoration:none; color: inherit;}
+
+.hand {cursor:pointer;}
+.clear {clear:both;}
+.clear:after {clear:both; content:""; display: block;}
+.img {width:100%;}
+.hover:hover {opacity:0.8;}
+.eng {font-family: 'Montserrat', sans-serif;}
+.tit {font-size: 1.2rem; font-weight: 500; color: #222; margin-bottom: 0.5rem; letter-spacing: 2px;}
+.wrap {width: 95.5%; float: right;}
+body, html {height: 100%;}
+
+
+
+/********** nav **********/
+.nav {width: 4.5%; float: left; position: relative; background-color: #fff; height: 100%; z-index: 1;}
+.nav > .nav_logo {width: 70%; position: absolute; top: 3%; left: 50%; transform: translate(-50%, -3%); cursor: pointer;}
+.nav > .fa-bars {font-size: 2rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;}
+.nav > ul {font-size: 2rem; color: #999; position: absolute; bottom: 3%; left: 50%; transform: translate(-50%, -3%);}
+.nav > ul > li {cursor: pointer;}
+.nav > ul > :nth-child(2) {margin: 10px 0;}
+.nav_wrap {position: absolute; background-color: #fff; top: 0; left: 0; z-index: 2; width: 20%; height: 100%; padding: 1.5rem;}
+.nav_wrap > .wrap_logo {width: 70%;}
+
+/********** page0 **********/
+.page {width: 100%; height: 100%;}
+#page2 {background-color: darkorange;}
+#page3 {background-color: burlywood;}
+
+#page0 .banner {background-image: url("../img/foot/page0/page0.jpg"); background-size: 100%; background-repeat: no-repeat; background-position: fixed; background-position: center center;  display: table; height: 100%;}
+#page0 >.banner > .txt {display: table-cell; vertical-align: middle; padding-left: 12rem;} 
+#page0 .txt > .full_logo {width: 20%;}
+#page0 .txt > :nth-child(2) {width: 5%; height: 5%; border-right: 1px solid #222; margin: 2rem 0;}
+#page0 .txt > :last-child > p > span {display: block; font-size: 1.2rem;}
+#page0 .txt > :last-child > button {background-color: none; border: 1px solid #222; position: relative; z-index: 2; box-sizing: border-box; margin-top: 3%;}
+
+#page0 .txt > :last-child > button:hover{color:#fff;}
+/*이벤트가 발생하기 전의 과정*/
+#page0 .txt > :last-child > button:after{width: 0; height: 100%; position: absolute; top: 0; left: 0; content: ""; -webkit-transition:all 0.7s ease; -moz-transition:all 0.7s ease; -o-transition:all 0.7s ease; transition:all 0.7s ease; z-index: -1;}
+/*마우스가 올라갔을 때 발생되는 애니메이션*/
+#page0 .txt > :last-child > button:hover:after{width: 100%;}
+#page0 .txt > :last-child > button:after{background-color: #222;}
+
+/********** page0 **********/
+#page1 .banner {background-image: url("../img/foot/page1/page1.jpg"); background-size: cover; background-repeat: no-repeat; background-position: fixed; background-position: center center; display: table; text-align: center; height: 100%;}
+#page1 .txt {display: table-cell; vertical-align: middle;}
+#page1 .txt > :first-child {font-size: 1.2rem; font-weight: 600;}
+#page1 .txt > h1 {margin-top: 3.5rem;}
+#page1 .txt > h1 > span {display: block; font-weight: 500;}
+#page1 .txt > h1 > span > span {color: #55b948; font-weight: bold;}
+#page1 .txt > :last-child > span {display: block; font-weight: 400;}

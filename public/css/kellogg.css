@@ -101,31 +101,34 @@ section {padding: 4rem 0;}
 .new_prds > ul > :last-child {background-color: #e16687; color: #a4143b;}
 
 /*products*/
-.products {overflow: hidden;}
-.products > ul {position: relative;}
+.products {overflow: hidden; position: relative; z-index: 2;}
+.products > ul {position: relative; z-index: 3;}
 .products > ul > li {width: 20%; float: left; margin: 2rem 0;}
 .products > ul > li > div {width: 70%; margin: 0 auto; position: relative;}
 .products > ul > li > h3 {font-weight: 400; text-align: center; margin-top: 1.5rem;}
 .prds > :nth-child(1) {position:absolute; top:0; left:0; z-index:2; opacity:1;}
 .prds > :nth-child(2) {position:absolute; top:0; left:0; z-index:1; opacity:0;}
 .prds > :nth-child(3) {opacity:0;}
+.products > .bg {position: absolute; bottom: 0; opacity: 0.4; z-index: 1; left: 50%; transform: translateX(-50%);}
 /*youtube*/
-.youtube {padding: 5rem 0;}
+.youtube {padding: 5rem 0; position: relative; overflow: hidden;}
+.youtube > div {position: relative; z-index: 10;}
 .you_box {width: 100%; padding: 3rem; background-color: #fff; box-shadow: 2px 2px 5px rgba(0, 0, 0, .5); overflow: hidden;}
-.you_box > .you_video {float: left; width: 60%;}
-.you_box > .you_video > iframe {width: 90%; height: 330px;}
-.you_box > .you_txt {float: right; width: 40%; transform: translateY(-6px);}
-.you_box > .you_txt > :first-child {margin-bottom: 1rem;}
-.you_box > .you_txt > :nth-child(2) > :nth-of-type(2) {color: #c80136; font-size: 2.3rem; font-weight: 400; margin-left: 0.5rem;}
+.you_box .you_video {float: left; width: 60%;}
+.you_box .you_video > iframe {width: 90%; height: 330px;}
+.you_box .you_txt {float: right; width: 40%; transform: translateY(-6px);}
+.you_box .you_txt > :first-child {margin-bottom: 1rem;}
+.you_box .you_txt > :nth-child(2) > :nth-of-type(2) {color: #c80136; font-size: 2.3rem; font-weight: 400; margin-left: 0.5rem;}
 .you_box > .you_txt > :nth-child(3) > :nth-of-type(1) {font-size: 1.5rem; color: #20790c; font-weight: 400;}
 .you_box > .you_txt > :nth-child(3) > :nth-of-type(2) {font-size: 1.5rem; color: #ff6401; font-weight: 400;}
 .you_box > .you_txt > h1 > span {display: block;}
 .you_box > .you_txt > h1 > :first-child {font-size: 4rem; font-weight: bold; color: #c80136;}
 .you_box > .you_txt > h1 > :last-child {font-size: 2rem; font-weight: 500; color: #c80136;}
 .you_box > .you_txt > :nth-child(5) {margin-top: 1rem;}
-.you_box > .you_txt > button {width: 110px; height: 30px; background-color: #222; border: 0; color: #fff; margin-top: 2.5rem; cursor: pointer; position: absolute; z-index: 3;}
+.you_box > .you_txt > button {width: 110px; height: 30px; background-color: #222; border: 0; color: #fff; margin-top: 2.5rem; cursor: pointer; position: absolute; z-index: 4;}
 .you_box > .you_txt > button:nth-child(2) {opacity: 1;}
-.you_box > .you_txt > .you_bt_hover {position: absolute; z-index: 2;}
+.you_box > .you_txt > .you_bt_hover {position: absolute; z-index: 3;}
+.youtube > .bg {position: absolute; top: 0; opacity: 0.4; z-index: 1; left: 50%; transform: translateX(-50%);}
 
 /*sns*/
 .sns {overflow: hidden;}
