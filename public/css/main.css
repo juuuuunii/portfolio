@@ -161,19 +161,20 @@ section:not(#intro) {display:none;}
 	-o-transform:translate(-40%, -50%); 
 	transform:translate(-40%, -50%);
 }
-.portfolio .port_mid > :nth-child(2) {width: 20%; height: 13%;  top: 28.7%; right: 8%;}
+.portfolio .port_mid > :nth-child(2) {width: 20%; height: 13%;  top: 27.5%; right: 8%;}
 .portfolio .port_mid > :nth-child(3) {width: 20%; height: 13%; top: 42%; right: 8%;}
-.portfolio .port_mid > :nth-child(4) {width: 20%; height: 13%; top: 55.5%; right: 8%;}
-.portfolio .port_mid > :nth-child(5) {position: absolute; top: 69.5%; right: 20.5%; z-index: 999;}
+.portfolio .port_mid > :nth-child(4) {width: 20%; height: 13%; top: 56.5%; right: 8%;}
+.portfolio .port_mid > :nth-child(5) {position: absolute; top: 71%; right: 20.5%; z-index: 999;}
 .portfolio .port_mid > h5 > a {color: #fff; letter-spacing: 2px;}
 
 .cards {opacity:0; display:none;}
-.cards > div {background-size: 100%; background-position: center center; background-repeat: no-repeat;}
-#cards0 > :first-child {background-image: url("../img/ejunhee/portfolio/main/main1.png");}
-#cards1 > :first-child {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg1.png");}
-#cards1 > :nth-child(2) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg2.png");}
-#cards1 > :nth-child(3) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg3.png");}
-#cards1 > :nth-child(4) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg4.png");}
+.cards > div {background-size: cover; background-position: center center; background-repeat: no-repeat;}
+#cards0 > :first-child {background-image: url("../img/ejunhee/portfolio/main/main1.jpg");}
+#cards1 > :first-child {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg1.jpg");}
+#cards1 > :nth-child(2) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg2.jpg");}
+#cards1 > :nth-child(3) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg3.jpg");}
+#cards1 > :nth-child(4) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg4.jpg");}
+#cards2 > :first-child {background-image: url("../img/ejunhee/portfolio/admin/admin1.jpg");}
 #cards3 > .card {width: 60%; height: 45%; margin-left: 3.6rem;}
 #cards3 video {width: 100%; position: relative; z-index: 1;}
 #cards3 .weather {width: 100%; position: absolute; top: 0; z-index: 10;}

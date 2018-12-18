@@ -14,7 +14,7 @@ var ref;
 var key;
  /***** kellogg ******/
  //img
- (function initHome() {
+ (function initKelImg() {
 	ref = db.ref("root/kellogg/nav_img");
 	ref.on("child_added", kelImgAdd);
 	ref.on("child_removed", kelImgRev);
@@ -26,9 +26,9 @@ function kelImgAdd(data) {
 	var src = '../img/kellogg/nav/' + img;
 	var link = data.val().link;
 	var html = '';
-	html += '<img onclick="location.href='+ link +'"';
+	html += '<img id="'+ id +'" onclick="location.href='+ link +'"';
 	html += 'src="'+ src +'" class="img" alt="nav_banner"/>';
-	$(".nav_ban").append(html);
+	$(".kel_nav_ban").append(html);
 }
 function kelImgRev(data) {	
 	var id = data.key;
@@ -64,7 +64,66 @@ function kelNavMake(chk, data) {
 	var html = '';
 	if(chk == "C") {
 		html = '<a href="'+v.link+'">'+v.nav+'</a>';
-		$(".nav_list").append(html);
+		$(".kel_nav_list").append(html);
+	}
+	else {
+		$("#"+id).html(html);
+	}
+}
+
+ /***** nutri ******/
+ //img
+ (function initNutri() {
+	ref = db.ref("root/nutri/nav_img");
+	ref.on("child_added", nutImgAdd);
+	ref.on("child_removed", nutImgRev);
+	ref.on("child_changed", nutImgChg);
+})();
+function nutImgAdd(data) {
+	var id = data.key;
+	var img = data.val().img;
+	var src = '../img/kellogg/nav/' + img;
+	var link = data.val().link;
+	var html = '';
+	html += '<img id="'+ id +'" onclick="location.href='+ link +'"';
+	html += 'src="'+ src +'" class="img" alt="nav_banner"/>';
+	$(".nut_nav_ban").append(html);
+}
+function nutImgRev(data) {	
+	var id = data.key;
+	$("#" + id).remove();
+}
+function nutImgChg(data) {
+	var id = data.key;
+	var li = $("#" + id);
+	$(".nav_img", li).attr("src", "../img/kellogg/nav/" + data.val().img);
+	$(".nav_img", li).attr("onclick", data.val().link);
+}
+//nav
+function initNutNav() {
+	ref = db.ref("root/nutri/nav");
+	ref.on("child_added", nutNavAdd);
+	ref.on("child_removed", nutNavRev);
+	ref.on("child_changed", nutNavChg);
+}
+initNutNav();
+function nutNavAdd(data) {
+	nutNavMake('C', data);
+}
+function nutNavRev(data) {
+	var id = data.key;
+	$("#"+id).remove();
+}
+function nutNavChg(data) {
+	nutNavMake('U', data);
+}
+function nutNavMake(chk, data) {
+	var id = data.key;
+	var v = data.val();
+	var html = '';
+	if(chk == "C") {
+		html = '<a href="'+v.link+'">'+v.nav+'</a>';
+		$(".nut_nav_list").append(html);
 	}
 	else {
 		$("#"+id).html(html);
@@ -106,6 +165,9 @@ $(".mo_nav .navi").click(function() {
 $(".mo_navs > i").click(function() {
 	$(".mo_nav").stop().slideToggle(500);
 })
+
+
+
 
 //products
 $(".prds").mouseenter(function() {

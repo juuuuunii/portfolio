@@ -35,18 +35,23 @@ a {text-decoration:none; color: inherit;}
 .width {width: 1260px; margin: 0 auto; padding: 20px;}
 .section {width: 100%; min-height: calc(100% - 201px); display: none;}
 .section .title{font-size: 1.2em; font-weight: 700; color: #222; padding: 2% 0;}
-#kellogg_lists .list {margin: 12px;}
-#kellogg_lists .list > li {border: 1px solid #ccc; text-align: center; padding: 1.5rem;}
-.kel_img {width: 30%; float: left;}
-.kel_nav {width: 65%; float: right;}
-#kellogg_lists .list img {height: 60px; margin-bottom: 8px; border: 1px solid #ccc;}
+.list {margin: 12px;}
+.list > li {border: 1px solid #ccc; text-align: center; padding: 1.5rem;}
+.img_li {width: 30%; float: left;}
+.nav_li {width: 65%; float: right;}
+.list img {height: 60px; margin-bottom: 8px; border: 1px solid #ccc;}
 .btn {background-color: #1f3950; color: #fff; margin-top: 1.5rem;}
 
-#kellogg_lists .list > li > :first-child {border:4px solid #ccc; padding: 8px; }
-.kel_img_cont {margin: 15px;}
-.kel_img_cont > :first-child, .kel_nav_cont > :first-child {margin-top: 50px;}
+.list > li > :first-child {border:4px solid #ccc; padding: 8px;}
+#brand_wrap .nav_li > div {width: 49%; float: left;}
+#brand_wrap .nav_li > div > :first-child {border:4px solid #ccc; padding: 8px;}
+#brand_wrap .nav_li > :first-child {border:0;}
+#brand_wrap .nav_li > :last-child {float: right; padding: 8px;}
+
+.img_cont {margin: 15px;}
+.img_cont > :first-child, .nav_cont > :first-child {margin-top: 50px;}
 .add_list {border: 1px solid #ccc; text-align: center; padding: 1.5rem; margin-bottom: 15px;}
-.add_kel_img {margin: 0;}
-.add_kel_nav {border: 1px solid #ccc; padding: 2%; margin-bottom: 15px;}
+.add_img {margin: 0;}
+.add_nav {border: 1px solid #ccc; padding: 2%; margin-bottom: 15px;}
 
 .footer {width: 100%; height: 50px; background-color: #222; text-align: center;  line-height:50px; color: #f1f1f1;}
