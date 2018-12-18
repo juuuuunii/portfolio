@@ -88,17 +88,20 @@ section {padding: 4rem 0;}
 
 /*new_prds*/
 .new_prds {overflow: hidden; padding: 5rem 0;}
+.new_prds > ul {overflow-x:hidden;}
 .new_prds > ul > li {width: 25%; height: 450px; float: left; position: relative;}
-.new_prds > ul > li > div {padding: 2rem;}
+.new_prds > ul > li > :nth-child(1){padding: 2rem;}
 .new_prds > ul > li p {background-color: #fff; display: inline-block; padding: 0.2rem 0.5rem; font-weight: 400;}
 /*.new_prds > ul > li > a:hover {font-weight: 500;}*/
 .new_prds > ul > li h2 {margin: 1rem 0;}
 .new_prds > ul > li h2 > span {display: block; font-weight: 500;}
-.new_prds > ul > li > img {float: right; right: 0; bottom: 0; width: 30%; position: absolute;}
+.new_prds > ul > li > .new_ori {float: right; right: 0; bottom: 0; width: 30%; position: absolute; z-index:3;}
 .new_prds > ul > :first-child {background-color: #8ce4f2; color: #4c9df8;}
 .new_prds > ul > :nth-child(2) {background-color: #bfde62; color: #36a54d;}
 .new_prds > ul > :nth-child(3) {background-color: #ffbf96; color: #6e6a68;}
 .new_prds > ul > :last-child {background-color: #e16687; color: #a4143b;}
+.new_hover {display:none; position:absolute; top:0; left:0; z-index:4; height:100%; overflow:hidden;}
+.new_hover > img {width:auto; height:100%;}
 
 /*products*/
 .products {overflow: hidden; position: relative; z-index: 2;}
@@ -186,6 +189,7 @@ footer {background-color: #1f3950; padding: 4rem 0; overflow: hidden;}
 	.new_prds {overflow: hidden; padding: 4rem 0;}
 	.new_prds > ul > li {width: 50%; height: 300px;}
 	.new_prds > ul > li > img {width: 25%;}
+
 
 	
 	.products > ul > li {width: 33.33333333333333%;}

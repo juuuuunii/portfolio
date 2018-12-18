@@ -137,3 +137,24 @@ $(".nav > li").mouseenter(function() {
 	});
 });
 */
+var num = 0;
+var pos = [0,0,0,0];
+$(".new_li").click(function(){
+	if($(window).width() >= 798) {
+		num = $(this).index();
+		var gap = $(this).width() * 0.5;
+		var wid = $(this).parent().width() - gap*3;
+		for(var i=0; i<=num; i++) {
+			pos[i] = -i * gap;
+		}
+		for(var i=3,j=1; i>num; i--,j++) {
+			pos[i] = j * gap;
+		}
+		$(".new_li").each(function(i){
+			$(this).find(".new_hover").hide();
+			$(this).css({"transform":"translateX("+pos[i]+"px)"});
+		});
+		$(this).find(".new_hover").width(wid);
+		$(this).find(".new_hover").show();
+	}
+});
