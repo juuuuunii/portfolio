@@ -259,7 +259,7 @@ $(".iphone").click(function(e) {
 });
 
 $(".sign_bt").click(function(){
-	$("section").css({"display":"block"});
+	$("section").css({"display":"block"})
 	iphoneAni();
 	/*
 	var pages = new WheelScroll({

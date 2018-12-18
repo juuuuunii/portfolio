@@ -1,4 +1,4 @@
-// Initialize Firebase
+  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCihLa0DgYwwegQpn5HvCIrnvdpX_l_jhg",
     authDomain: "juuuuunii-portfolio.firebaseapp.com",
@@ -99,14 +99,14 @@ function kelImgDel(obj) {
 
 //kel_Nav
 //페이지가 생성될 때 한번 실행되며 shop레퍼런스에 콜백을 링크한다.
-function initShop() {
+function initNav() {
 	$(".grid > ul").remove();
 	ref = db.ref("root/kellogg/nav");
 	ref.on("child_added", kelNavAdd);
 	ref.on("child_removed", kelNavRev);
 	ref.on("child_changed", kelNavChg);
 }
-initShop();
+initNav();
 
 //chk 변수의 값(C, U)에 따라 ul을 생성 또는 수정한다.
 function kelNavMake(chk, data) {

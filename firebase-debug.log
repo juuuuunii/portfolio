@@ -1,54 +1,25 @@
-[debug] [2018-12-15T09:08:52.347Z] ----------------------------------------------------------------------
-[debug] [2018-12-15T09:08:52.354Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2018-12-15T09:08:52.354Z] CLI Version:   6.1.1
-[debug] [2018-12-15T09:08:52.354Z] Platform:      win32
-[debug] [2018-12-15T09:08:52.354Z] Node Version:  v8.12.0
-[debug] [2018-12-15T09:08:52.356Z] Time:          Sat Dec 15 2018 18:08:52 GMT+0900 (대한민국 표준시)
-[debug] [2018-12-15T09:08:52.356Z] ----------------------------------------------------------------------
+[debug] [2018-12-18T04:40:24.354Z] ----------------------------------------------------------------------
+[debug] [2018-12-18T04:40:24.354Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-12-18T04:40:24.354Z] CLI Version:   6.1.1
+[debug] [2018-12-18T04:40:24.354Z] Platform:      win32
+[debug] [2018-12-18T04:40:24.354Z] Node Version:  v8.12.0
+[debug] [2018-12-18T04:40:24.354Z] Time:          Tue Dec 18 2018 13:40:24 GMT+0900 (대한민국 표준시)
+[debug] [2018-12-18T04:40:24.354Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-12-15T09:08:52.381Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-12-15T09:08:52.383Z] > authorizing via signed-in user
-[debug] [2018-12-15T09:08:52.384Z] [iam] checking project juuuuunii-portfolio for permissions ["firebase.projects.get"]
-[debug] [2018-12-15T09:08:52.388Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/juuuuunii-portfolio:testIamPermissions  
+[debug] [2018-12-18T04:40:24.385Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-18T04:40:24.385Z] > authorizing via signed-in user
+[debug] [2018-12-18T04:40:24.385Z] [iam] checking project juuuuunii-portfolio for permissions ["firebase.projects.get"]
+[debug] [2018-12-18T04:40:24.401Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/juuuuunii-portfolio:testIamPermissions  
 
-[debug] [2018-12-15T09:08:53.665Z] <<< HTTP RESPONSE 200
-[debug] [2018-12-15T09:08:53.665Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/juuuuunii-portfolio  
+[debug] [2018-12-18T04:40:25.735Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-18T04:40:25.735Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/juuuuunii-portfolio  
  
-[debug] [2018-12-15T09:08:54.849Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-18T04:40:26.887Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'D:\portfolio'...
 [info] 
-[debug] [2018-12-15T09:08:54.865Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/793722252437/clients/_:getWebAppConfig  
+[debug] [2018-12-18T04:40:26.887Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/793722252437/clients/_:getWebAppConfig  
  
-[debug] [2018-12-15T09:08:55.909Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: public
-[info] +  hosting: Local server: http://localhost:5000
-[debug] [2018-12-17T01:37:51.662Z] ----------------------------------------------------------------------
-[debug] [2018-12-17T01:37:51.664Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2018-12-17T01:37:51.664Z] CLI Version:   6.1.1
-[debug] [2018-12-17T01:37:51.664Z] Platform:      win32
-[debug] [2018-12-17T01:37:51.664Z] Node Version:  v8.12.0
-[debug] [2018-12-17T01:37:51.665Z] Time:          Mon Dec 17 2018 10:37:51 GMT+0900 (대한민국 표준시)
-[debug] [2018-12-17T01:37:51.665Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2018-12-17T01:37:51.678Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-12-17T01:37:51.679Z] > authorizing via signed-in user
-[debug] [2018-12-17T01:37:51.679Z] [iam] checking project juuuuunii-portfolio for permissions ["firebase.projects.get"]
-[debug] [2018-12-17T01:37:51.681Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-12-17T01:37:51.681Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2018-12-17T01:37:51.972Z] <<< HTTP RESPONSE 200
-[debug] [2018-12-17T01:37:52.018Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/juuuuunii-portfolio:testIamPermissions  
-
-[debug] [2018-12-17T01:37:53.236Z] <<< HTTP RESPONSE 200
-[debug] [2018-12-17T01:37:53.236Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/juuuuunii-portfolio  
- 
-[debug] [2018-12-17T01:37:54.400Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'D:\portfolio'...
-[info] 
-[debug] [2018-12-17T01:37:54.400Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/793722252437/clients/_:getWebAppConfig  
- 
-[debug] [2018-12-17T01:37:54.992Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-18T04:40:27.597Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
