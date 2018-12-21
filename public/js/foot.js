@@ -73,3 +73,12 @@ var pages = new WheelScroll({
 	page: ".page",
 	speed: 700
 }); 
+
+
+//nav_wrap
+$(".nav > .fa-bars").click(function() {
+	$(".nav_wrap").show().stop().animate({"right":"80%"}, 500);
+})
+$(".nav_wrap > .fa-close").click(function() {
+	$(".nav_wrap").stop().animate({"right":"100%"}, 500);
+})

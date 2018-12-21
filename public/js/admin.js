@@ -151,6 +151,7 @@ function kelNavRev(data) {
 function kelNavChg(data) {
 	var id = data.key;
 	kelNavMake('U', data);
+	alert("수정되었습니다.");
 }
 
 //카테고리 생성
@@ -284,7 +285,7 @@ function brdImgDel(obj) {
 	}
 }
 
-//brd_Nav
+//brd_Nav1
 function initBrdNav1() {
 	$(".brd_nav1_cont > li").remove();
 	ref = db.ref("root/brand/nav1");
@@ -336,15 +337,16 @@ function brdNav1Rev(data) {
 function brdNav1Chg(data) {
 	var id = data.key;
 	brdNav1Make('U', data);
+	alert("수정되었습니다.");
 }
 
 //카테고리 생성
 $(".brd_nav1_save").click(function () {
-	var nav = $(".nav_li2_1 .navi").val();
-	var link = $(".nav_li2_1 .nav_link").val();
+	var nav = $("#brand_wrap .nav_li2_1 .navi").val();
+	var link = $("#brand_wrap .nav_li2_1 .nav_link").val();
 	if (nav == "") {
 		alert("제목을 입력하세요.");
-		$(".nav_li2_1 .navi").focus();
+		$("#brand_wrap .nav_li2_1 .navi").focus();
 	} else {
 		ref = db.ref("root/brand/nav1");
 		ref.push({
@@ -383,7 +385,105 @@ function brdNav1Up(obj) {
 	}
 }
 
+//brd_Nav2
+function initBrdNav2() {
+	$(".brd_nav2_cont > li").remove();
+	ref = db.ref("root/brand/nav2");
+	ref.on("child_added", brdNav2Add);
+	ref.on("child_removed", brdNav2Rev);
+	ref.on("child_changed", brdNav2Chg);
+}
+initBrdNav2();
 
+//chk 변수의 값(C, U)에 따라 ul을 생성 또는 수정한다.
+function brdNav2Make(chk, data) {
+	var id = data.key;
+	var html = '';
+	html += '<li id="' + id + '" class="add_nav clear">';
+	html += '<div>';
+	html += '<input type="text" value="' + data.val().nav + '" class="navi form-control" placeholder="제목">';
+	html += '<input type="text" value="' + data.val().link + '" class="nav_link form-control" style="margin-top:5px;" placeholder="링크">';
+	html += '</div>';
+	html += '<div>';
+	html += '<button class="btn btn-danger" style="margin-right:0.5rem;" onclick="brdNav2Del(this);">삭제</button>';
+	html += '<button class="btn btn-warning" onclick="brdNav2Up(this);">수정</button>';
+	html += '</div>';
+	if(chk == 'C') {
+		html += '</li>';
+		$(".brd_nav2_cont").append(html);
+	}
+	else if(chk == 'U') {
+		var obj = $("#"+id);
+		obj.find(".navi").val(data.val().nav);
+		obj.find(".nav_link").val(data.val().link);
+	}
+	
+}
+
+//child_added 콜백
+function brdNav2Add(data) {
+	var id = data.key;
+	brdNav2Make('C', data);
+}
+
+//child_remove 콜백
+function brdNav2Rev(data) {
+	var id = data.key;
+	//console.log(id);
+	$("#"+id).remove();
+}
+
+//child_changed 콜백
+function brdNav2Chg(data) {
+	var id = data.key;
+	brdNav2Make('U', data);
+	alert("수정되었습니다.");
+}
+
+//카테고리 생성
+$(".brd_nav2_save").click(function () {
+	var nav = $("#brand_wrap .nav_li2_2 .navi").val();
+	var link = $("#brand_wrap .nav_li2_2 .nav_link").val();
+	if (nav == "") {
+		alert("제목을 입력하세요.");
+		$("#brand_wrap .nav_li2_2 .navi").focus();
+	} else {
+		ref = db.ref("root/brand/nav2");
+		ref.push({
+			nav: nav,
+			link: link
+		}).key;
+		alert("등록되었습니다.");
+	}
+	$(this).parent().prev().find(".navi").val('');
+	$(this).parent().prev().find(".nav_link").val('');
+});
+
+function brdNav2Del(obj) {
+	if(confirm("정말로 삭제하시겠습니까?")) {
+		var id = $(obj).parent().parent().attr("id");
+		//console.log(id);
+		db.ref("root/brand/nav2/"+id).remove();
+	}
+}
+
+function brdNav2Up(obj) {
+	var id = $(obj).parent().parent().attr("id");
+	var div = $(obj).parent().prev();
+	var nav = $(".navi", div).val();
+	var link = $(".nav_link", div).val();
+	if(nav == "") {
+		alert("카테고리 명을 입력하세요.");
+		$(".navi", div).focus();
+		return false;
+	}
+	else {
+		db.ref("root/brand/nav2/"+id).update({
+			nav: nav,
+			link: link
+		});
+	}
+}
 
 /***** nutri ******/
 function initNutImg() {
@@ -515,6 +615,7 @@ function nutNavRev(data) {
 function nutNavChg(data) {
 	var id = data.key;
 	nutNavMake('U', data);
+	alert("수정되었습니다.");
 }
 
 //카테고리 생성
@@ -564,6 +665,289 @@ function nutNavUp(obj) {
 
 
 
+/***** event ******/
+function initEvtImg() {
+	ref = db.ref("root/event/nav_img");
+	ref.on("child_added", evtImgAdd);
+	ref.on("child_removed", evtImgRev);
+	ref.on("child_changed", evtImgChg);
+}
+initEvtImg();
+//evt_Img
+function evtImgAdd(data) {
+	var id = data.key;
+	var img = data.val().img;
+	var src = '../img/kellogg/nav/' + img;
+	var link = data.val().link;
+	var html = '';
+	html += '<ul class="add_list clear row">';
+	html += '<li class="add_img" id="' + id + '">';
+	html += '<div>';
+	html += '<img src="' + src + '">';
+	html += '<input type="text" class="nav_img form-control" placeholder="이미지" value="' + img + '">';
+	html += '<input type="text" class="img_link form-control" style="margin-top:5px;" placeholder="링크주소" value="' + link + '">';
+	html += '</div>';
+	html += '<div>';
+	html += '<button class="btn btn-danger" onclick="evtImgDel(this);">삭제</button> ';
+	html += '<button class="btn btn-warning" onclick="evtImgUp(this);">수정</button>';
+	html += '</div>';
+	html += '</li>';
+	html += '</ul>';
+	$(".evt_img_cont").append(html);
+}
+
+function evtImgRev(data) {	
+	var id = data.key;
+	$("#" + id).parent().remove();
+}
+function evtImgChg(data) {
+	var id = data.key;
+	var li = $("#" + id);
+	$(".nav_img", li).attr("src", "../img/kellogg/nav/" + data.val().img);
+	alert("수정되었습니다.");
+}
+
+$("#event_img_save").on('click', function () {
+	var img = $("#event_wrap .nav_img").val();
+	var link = $("#event_wrap .img_link").val();
+	if (link == '' || img == '') {
+		alert("내용을 적어주세요.");
+	} else {
+		ref = db.ref("root/event/nav_img");
+		ref.push({
+			img: img,
+			link: link
+		}).key;
+		alert("등록되었습니다.");
+	}
+	$(this).parent().prev().find(".nav_img").val('');
+	$(this).parent().prev().find(".img_link").val('');
+});
+
+function evtImgUp(obj) {
+	var li = $(obj).parent().parent();
+	var id = li.attr("id");
+	var img = $(".nav_img", li).val();
+	var link = $(".img_link",li).val();
+	if (img == '' || link == '') {
+		alert("내용을 적어주세요.");
+	} else {
+		ref = db.ref("root/event/nav_img/" + id);
+		ref.update({
+			img: img,
+			link: link
+		});
+	}
+}
+
+function evtImgDel(obj) {	
+	if (confirm("정말로 삭제하시겠습니까?")) {
+		//var id = obj.parentNode.parentNode.parentNode.id;
+		var id = $(obj).parent().parent().attr("id");
+		if (id != "") {
+			db.ref("root/event/nav_img/" + id).remove();
+		}
+	}
+}
+
+//evt_Nav1
+function initEvtNav1() {
+	$(".evt_nav1_cont > li").remove();
+	ref = db.ref("root/event/nav1");
+	ref.on("child_added", evtNav1Add);
+	ref.on("child_removed", evtNav1Rev);
+	ref.on("child_changed", evtNav1Chg);
+}
+initEvtNav1();
+
+//chk 변수의 값(C, U)에 따라 ul을 생성 또는 수정한다.
+function evtNav1Make(chk, data) {
+	var id = data.key;
+	var html = '';
+	html += '<li id="' + id + '" class="add_nav clear">';
+	html += '<div>';
+	html += '<input type="text" value="' + data.val().nav + '" class="navi form-control" placeholder="제목">';
+	html += '<input type="text" value="' + data.val().link + '" class="nav_link form-control" style="margin-top:5px;" placeholder="링크">';
+	html += '</div>';
+	html += '<div>';
+	html += '<button class="btn btn-danger" style="margin-right:0.5rem;" onclick="evtNav1Del(this);">삭제</button>';
+	html += '<button class="btn btn-warning" onclick="evtNav1Up(this);">수정</button>';
+	html += '</div>';
+	if(chk == 'C') {
+		html += '</li>';
+		$(".evt_nav1_cont").append(html);
+	}
+	else if(chk == 'U') {
+		var obj = $("#"+id);
+		obj.find(".navi").val(data.val().nav);
+		obj.find(".nav_link").val(data.val().link);
+	}
+	
+}
+
+//child_added 콜백
+function evtNav1Add(data) {
+	var id = data.key;
+	evtNav1Make('C', data);
+}
+
+//child_remove 콜백
+function evtNav1Rev(data) {
+	var id = data.key;
+	$("#"+id).remove();
+}
+
+//child_changed 콜백
+function evtNav1Chg(data) {
+	var id = data.key;
+	evtNav1Make('U', data);
+	alert("수정되었습니다.");
+}
+
+//카테고리 생성
+$(".evt_nav1_save").click(function () {
+	var nav = $("#event_wrap .nav_li2_1 .navi").val();
+	var link = $("#event_wrap .nav_li2_1 .nav_link").val();
+	if (nav == "") {
+		alert("제목을 입력하세요.");
+		$("#event_wrap .nav_li2_1 .navi").focus();
+	} else {
+		ref = db.ref("root/event/nav1");
+		ref.push({
+			nav: nav,
+			link: link
+		}).key;
+		alert("등록되었습니다.");
+	}
+	$(this).parent().prev().find(".navi").val('');
+	$(this).parent().prev().find(".nav_link").val('');
+});
+
+function evtNav1Del(obj) {
+	if(confirm("정말로 삭제하시겠습니까?")) {
+		var id = $(obj).parent().parent().attr("id");
+		//console.log(id);
+		db.ref("root/event/nav1/"+id).remove();
+	}
+}
+
+function evtNav1Up(obj) {
+	var id = $(obj).parent().parent().attr("id");
+	var div = $(obj).parent().prev();
+	var nav = $(".navi", div).val();
+	var link = $(".nav_link", div).val();
+	if(nav == "") {
+		alert("카테고리 명을 입력하세요.");
+		$(".navi", div).focus();
+		return false;
+	}
+	else {
+		db.ref("root/event/nav1/"+id).update({
+			nav: nav,
+			link: link
+		});
+	}
+}
+
+//evt_Nav2
+function initEvtNav2() {
+	$(".evt_nav2_cont > li").remove();
+	ref = db.ref("root/event/nav2");
+	ref.on("child_added", evtNav2Add);
+	ref.on("child_removed", evtNav2Rev);
+	ref.on("child_changed", evtNav2Chg);
+}
+initEvtNav2();
+
+//chk 변수의 값(C, U)에 따라 ul을 생성 또는 수정한다.
+function evtNav2Make(chk, data) {
+	var id = data.key;
+	var html = '';
+	html += '<li id="' + id + '" class="add_nav clear">';
+	html += '<div>';
+	html += '<input type="text" value="' + data.val().nav + '" class="navi form-control" placeholder="제목">';
+	html += '<input type="text" value="' + data.val().link + '" class="nav_link form-control" style="margin-top:5px;" placeholder="링크">';
+	html += '</div>';
+	html += '<div>';
+	html += '<button class="btn btn-danger" style="margin-right:0.5rem;" onclick="evtNav2Del(this);">삭제</button>';
+	html += '<button class="btn btn-warning" onclick="evtNav2Up(this);">수정</button>';
+	html += '</div>';
+	if(chk == 'C') {
+		html += '</li>';
+		$(".evt_nav2_cont").append(html);
+	}
+	else if(chk == 'U') {
+		var obj = $("#"+id);
+		obj.find(".navi").val(data.val().nav);
+		obj.find(".nav_link").val(data.val().link);
+	}
+	
+}
+
+//child_added 콜백
+function evtNav2Add(data) {
+	var id = data.key;
+	evtNav2Make('C', data);
+}
+
+//child_remove 콜백
+function evtNav2Rev(data) {
+	var id = data.key;
+	//console.log(id);
+	$("#"+id).remove();
+}
+
+//child_changed 콜백
+function evtNav2Chg(data) {
+	var id = data.key;
+	evtNav2Make('U', data);
+	alert("수정되었습니다.");
+}
+
+//카테고리 생성
+$(".evt_nav2_save").click(function () {
+	var nav = $("#event_wrap .nav_li2_2 .navi").val();
+	var link = $("#event_wrap .nav_li2_2 .nav_link").val();
+	if (nav == "") {
+		alert("제목을 입력하세요.");
+		$("#event_wrap .nav_li2_2 .navi").focus();
+	} else {
+		ref = db.ref("root/event/nav2");
+		ref.push({
+			nav: nav,
+			link: link
+		}).key;
+		alert("등록되었습니다.");
+	}
+	$(this).parent().prev().find(".navi").val('');
+	$(this).parent().prev().find(".nav_link").val('');
+});
+
+function evtNav2Del(obj) {
+	if(confirm("정말로 삭제하시겠습니까?")) {
+		var id = $(obj).parent().parent().attr("id");
+		//console.log(id);
+		db.ref("root/event/nav2/"+id).remove();
+	}
+}
+
+function evtNav2Up(obj) {
+	var id = $(obj).parent().parent().attr("id");
+	var div = $(obj).parent().prev();
+	var nav = $(".navi", div).val();
+	var link = $(".nav_link", div).val();
+	if(nav == "") {
+		alert("카테고리 명을 입력하세요.");
+		$(".navi", div).focus();
+		return false;
+	}
+	else {
+		db.ref("root/event/nav2/"+id).update({
+			nav: nav,
+			link: link
+		});
+	}
+}
 
 
 

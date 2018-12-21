@@ -48,6 +48,11 @@ a {text-decoration:none; color: inherit;}
 #brand_wrap .nav_li > :first-child {border:0;}
 #brand_wrap .nav_li > :last-child {float: right; padding: 8px;}
 
+#event_wrap .nav_li > div {width: 49%; float: left;}
+#event_wrap .nav_li > div > :first-child {border:4px solid #ccc; padding: 8px;}
+#event_wrap .nav_li > :first-child {border:0;}
+#event_wrap .nav_li > :last-child {float: right; padding: 8px;}
+
 .img_cont {margin: 15px;}
 .img_cont > :first-child, .nav_cont > :first-child {margin-top: 50px;}
 .add_list {border: 1px solid #ccc; text-align: center; padding: 1.5rem; margin-bottom: 15px;}

@@ -25,26 +25,35 @@ body, html {height: 100%;}
 
 
 /********** nav **********/
+.nav_sec {position: fixed; width: 100%; height: 100%;}
 .nav {width: 4.5%; float: left; position: relative; background-color: #fff; height: 100%; z-index: 1;}
 .nav > .nav_logo {width: 70%; position: absolute; top: 3%; left: 50%; transform: translate(-50%, -3%); cursor: pointer;}
-.nav > .fa-bars {font-size: 2rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;}
+.nav .fa-bars, .nav_wrap .fa-close {font-size: 1.2rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;}
 .nav > ul {font-size: 2rem; color: #999; position: absolute; bottom: 3%; left: 50%; transform: translate(-50%, -3%);}
 .nav > ul > li {cursor: pointer;}
 .nav > ul > :nth-child(2) {margin: 10px 0;}
-.nav_wrap {position: absolute; background-color: #fff; top: 0; left: 0; z-index: 2; width: 20%; height: 100%; padding: 1.5rem;}
-.nav_wrap > .wrap_logo {width: 70%;}
 
+.nav_wrap {display: none; position: absolute; background-color: #fff; top: 0; right: 100%; z-index: 2; width: 20%; height: 100%; padding: 1.5rem;}
+.nav_wrap > .wrap_logo {width: 80%; float: right;}
+.nav_wrap > .fa-close {left: 11%;}
+.nav_wrap > .navi {font-size: 1.4rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 3;}
+.navi > li {margin-bottom: 1rem;}
+.navi > li > a {font-weight: 600; }
+.nav_wrap > p {font-size: 1.2rem; color: #222; position: absolute; bottom: 3%; left: 61%; transform: translate(-61%, -3%);}
+.nav_wrap > p > span {display: block;}
+.nav_wrap > p > :nth-child(2) {font-size: 1rem;  margin: 10px 0; color: #999;}
 /********** page0 **********/
 .page {width: 100%; height: 100%;}
 #page2 {background-color: darkorange;}
 #page3 {background-color: burlywood;}
 
-#page0 .banner {background-image: url("../img/foot/page0/page0.jpg"); background-size: 100%; background-repeat: no-repeat; background-position: fixed; background-position: center center;  display: table; height: 100%;}
-#page0 >.banner > .txt {display: table-cell; vertical-align: middle; padding-left: 12rem;} 
-#page0 .txt > .full_logo {width: 20%;}
-#page0 .txt > :nth-child(2) {width: 5%; height: 5%; border-right: 1px solid #222; margin: 2rem 0;}
-#page0 .txt > :last-child > p > span {display: block; font-size: 1.2rem;}
-#page0 .txt > :last-child > button {background-color: none; border: 1px solid #222; position: relative; z-index: 2; box-sizing: border-box; margin-top: 3%;}
+#page0 .banner {background-image: url("../img/foot/page0/page0.jpg"); background-size: 100%; background-repeat: no-repeat; background-position: fixed; background-position: center center; height: 100%;}
+#page0 >.banner > .txt {position: absolute; top: 50%; left: 20%; transform: translate(-20%, -50%); width: 28%;}
+#page0 .txt > .full_logo {width: 50%; margin: 0 auto;}
+#page0 .txt > :nth-child(2) {width: 15%; height: 15%; border-right: 1px solid #222; margin: 2rem 0;}
+#page0 .txt > :last-child > p {margin: 3rem 0;}
+#page0 .txt > :last-child > p > span {display: block; font-size: 1.2rem; text-align: center;}
+#page0 .txt > :last-child > button {display: block; background-color: none; border: 1px solid #222; position: relative; z-index: 1; box-sizing: border-box; margin: 0 auto;}
 
 #page0 .txt > :last-child > button:hover{color:#fff;}
 /*이벤트가 발생하기 전의 과정*/
