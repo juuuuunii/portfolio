@@ -184,7 +184,7 @@ var WheelScroll = (function() {
 					break;
 				}
 			}
-			obj.oldNow = obj.now;
+			node -v	obj.oldNow = obj.now;
 			if(obj.dir > 0) { if(obj.now > 0) obj.now--; }
 			else { if(obj.now < obj.gap.length-1) obj.now++; }
 			obj.animation(obj, function() {
