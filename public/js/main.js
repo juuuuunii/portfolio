@@ -279,7 +279,7 @@ var portNumOld = 0;
 $(".tit_line").mouseenter(function() {
 	portNumOld = portNum;
 	portNum = $(this).index();
-	console.log(portNumOld, portNum);
+	//console.log(portNumOld, portNum);
 	$(".tit_line").css({"border-top":"0"});
 	$(".tit_line").children("h4").css({"color":"#222"});
 	$(this).css({"border-top":"1px solid #3e95ce"});
@@ -338,7 +338,7 @@ $("#area").change(function(){
 			document.querySelector(".dl_icon").src = "../img/weather/"+data.weather[0].icon+".mp4";
 			document.querySelector("#weather_wrap").load();
 			$(".dl_area > span").html(city);
-			$(".dl_date").html(date);
+		(".dl_date").html(date);
 			$(".dl_temp").html(data.main.temp+'℃(최고: '+data.main.temp_max+'℃/최저: '+data.main.temp_min+'℃)');
 			$(".dl_desc").html(data.weather[0].description);
 			//console.log(data.main.temp);
@@ -366,7 +366,7 @@ function slide() {
 	$("#slides").parent().find(".pager").find("span").removeClass("w3-text-red");
 	$("#slides").parent().find(".pager").find("span").eq(n).addClass("w3-text-red");
 	$("#slides").stop().animate({"left":-(n*100)+"%"}, 1000, function(){
-		if(n == 3) {
+		if(n == 5) {
 			n = 0;
 			$(this).css({"left":0});
 		}
@@ -385,7 +385,26 @@ $("#slides").hover(function(){
 	interval = setInterval(slide, 3000);
 });
 
+var abNum = 0;
+var abNumOld = 0;
+$(".slide li").mouseenter(function() {
+	abNumOld = abNum;
+	abNum = $(this).index();
+	//console.log(abNumOld, abNum);
+	//console.log($(".slide li").eq(abNumOld).find("div"));
+	$(".slide li").eq(abNum).find("#ab_nohover").hide();
+	$(".slide li").eq(abNum).find("#ab_hover").show();
+	$(".slide li").mouseleave(function() {
+		//console.log(abNumOld, abNum);
+		$(".slide li").eq(abNum).find("#ab_nohover").show();
+		$(".slide li").eq(abNum).find("#ab_hover").hide();
+	});
+});
+$("#reset").click(function() {
+	window.location.reload(true);
+})
+
 // reset
-window.onbeforeunload = function () {
+/*window.onbeforeunload = function () {
 	window.scrollTo(0, 0);
-} 
+} */
