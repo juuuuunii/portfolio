@@ -65,6 +65,8 @@ section:not(#intro) {display:none;}
 /*.nav > h4 {text-align: center; margin-bottom: 1.5rem; font-weight: 300;} 
 .nav > h4 > strong {font-size: 1.2em; margin-right: 1rem;} */
 
+
+body {background-color: #f9f9fb;}
 /*************** intro ****************/
 .mainbanner{background-image:url("../img/ejunhee/intro/sky.png");background-repeat:no-repeat; background-size: cover; background-position:center center; overflow: hidden;}
 .banner{width:100%; height: 100%; position: relative;; z-index:11; }
@@ -120,55 +122,24 @@ section:not(#intro) {display:none;}
 .sign_bt > button:hover {background-color: #333; color: #ffcd16; font-weight: bold;}
 .banner .cloud{top:0; left:0; width:5440px; height:100%; background-image:url("../img/ejunhee/intro/could.png"); z-index:9;}
 
-/*************** main ****************/
-.main {overflow: hidden; background-image:url("../img/ejunhee/main/summit_bott.png");background-repeat:no-repeat; background-size: cover; background-position:center center; overflow: hidden; position: relative;}
-.simple_about {padding: 7rem 13rem;}
-.simple_about > h1 {font-size: 5rem; font-weight: bold; color: #ffcd16; margin-bottom: 3rem; z-index: 1111;}
-.simple_txt > div {width: 70%; height: 80%; ;; z-index: 111; overflow: hidden;}
-.chart_txt > div {color: #fff; float: left;}
-.chart_txt > div > h3 {margin-bottom: 5px;}
-.chart_txt > :first-child {width: 6%;}
-.chart_txt > :first-child > h3 {font-weight: 500;}
-.chart_txt > :last-child > :last-child {position: absolute; left: 11%; top: 45.5%;}
-.chart_txt > :last-child > :last-child > span {color: #ffcd16;}
-.chart_box {color: #fff; margin-top: 8rem;}
-.chart_box > h3 {margin-bottom: 3%;}
-.chart_box > h3 > :last-child {font-size: 1rem; text-decoration: underline; padding-bottom: 5%;}
-.charts {margin-top: 5%;}
-.chart_wrap {width: 31.33333333333333%; padding-right: 3%; float: left; z-index: 1111;}
-.chart_wrap:nth-child(4), .chart_wrap:nth-child(5), .chart_wrap:last-child {margin-top: 5%;}
-.chart_wrap:nth-child(3), .chart_wrap:last-child {padding-left: 0;}
-.main .climing {width: 50%; position:absolute; right: 0; bottom: 0; z-index: 10;}
-
-
 /*************** portfolio ****************/
-.portfolio {background-color: #fff; position: relative;}
-.portfolio .port_left {width: 50%; height: 100%; float: left; display: table;}
+.portfolio {position: relative; background-color: #fff;}
+.portfolio .port_left {width: 45%; height: 75%; float: left; display: table;}
 .port_left > ul {display: table-cell; vertical-align: middle;}
 .port_left .tit_line {width: 100%; cursor: pointer; padding-bottom: 1.5rem; box-sizing: border-box;}
-.port_left > ul h4 {background-color: #fff; position: relative; width: 100px; margin: 0 auto; top: -10px; padding-left: 1.5rem;}
+.port_left > ul h4 {position: relative; width: 100px; margin: 0 auto; top: -11px; padding-left: 1.5rem; letter-spacing: 1px;}
 
-.portfolio .port_mid {width: 60%; height: 100%; position: absolute; left: 70%; transform:translateX(-70%); z-index: 20;}
-.portfolio .port_mid > .card {position: absolute;}
-.portfolio .port_mid > .card > img {border-radius: 5px;}
-.portfolio .port_mid > :first-child {
-	width: 50%; 
-	height: 45%;
-	top: 50%; 
-	left: 40%;
-	-webkit-transform:translate(-40%, -55%);
-	-moz-transform:translate(-40%, -50%); 
-	-o-transform:translate(-40%, -50%); 
-	transform:translate(-40%, -50%);
-}
-.portfolio .port_mid > :nth-child(2) {width: 20%; height: 13%;  top: 27.5%; right: 8%;}
-.portfolio .port_mid > :nth-child(3) {width: 20%; height: 13%; top: 42%; right: 8%;}
-.portfolio .port_mid > :nth-child(4) {width: 20%; height: 13%; top: 56.5%; right: 8%;}
-.portfolio .port_mid > :nth-child(5) {position: absolute; top: 71%; right: 20.5%; z-index: 999;}
-.portfolio .port_mid > h5 > a {color: #fff; letter-spacing: 2px;}
+.portfolio .port_right {width: 55%; height: 90%; background-color: #3e95ce; border-radius: 1%; float: right; position: relative; z-index: 16;}
+.cards {width: 100%; height: 52%; opacity:0; display:none; position: absolute; top: 15%; left: -20%;}
+.cards > div {position: absolute; background-size: cover; background-position: center center; background-repeat: no-repeat;}
+.portfolio .port_right > .card > img {border-radius: 5px;}
+.cards > :first-child {width: 65%; height: 100%;}
+.cards > :nth-child(2) {width: 21%; height: 27%;  top: 0; right: 12%;}
+.cards > :nth-child(3) {width: 21%; height: 27%; top: 31.5%; right: 12%;}
+.cards > :nth-child(4) {width: 21%; height: 27%; bottom: 10%; right: 12%;}
+.cards > :nth-child(5) {position: absolute; bottom: 0; right: 25%; z-index: 999;}
+.cards > h5 > a {color: #fff; letter-spacing: 2px;}
 
-.cards {opacity:0; display:none;}
-.cards > div {background-size: cover; background-position: center center; background-repeat: no-repeat;}
 #cards0 > :first-child {background-image: url("../img/ejunhee/portfolio/main/main1.jpg");}
 #cards1 > :first-child {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg1.jpg");}
 #cards1 > :nth-child(2) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg2.jpg");}
@@ -199,8 +170,45 @@ section:not(#intro) {display:none;}
 .tab_disables{background-color: rgb(202, 216, 226); color: #666;}
 
 
-.portfolio .port_right {width: 50%; height: 105%; background-color: #3e95ce; border-radius: 1%; float: right; position: absolute; top: -5%; right: 0; z-index: 16;}
-.portfolio .port_right > h5 {color: #fff; font-size: 1rem; letter-spacing: 2px; line-height: 3.4rem;}
+.portfolio .port_right > .bold {color: #fff; font-size: 1rem; letter-spacing: 2px; line-height: 3.4rem; position: absolute; bottom: 2%; left:3%;}
+
+
+
+/*************** main ****************/
+.about {width: 62%; margin: 0 auto;}
+.about_txt {width: 70%;}
+.about > div > h1 {font-size: 2rem; color: #555; font-weight: 400; margin-top: 18rem;}
+.about > div > h1 > span {display: block;}
+.about_txt > h3 {margin: 1rem 0 3rem;}
+.about_txt > h3 > span {display: block; color: #999;}
+
+.ejunhee > div { float: left;}
+.ejunhee > div > h3 {margin-bottom: 5px;}
+.ejunhee > :first-child {color: #3e95ce; margin-right: 2.5rem;}
+.ejunhee > :first-child > h3 {font-weight: 500; text-align: center; line-height: 40px; width: 50px; height: 50px; border: 1px solid #3e95ce; border-radius: 25px;}
+.ejunhee > :last-child {color: #999;}
+.ejunhee > :last-child > h3 {height: 50px; line-height: 40px; font-weight: 500;}
+
+.about_skills > h3 {width: 10%; padding: .4rem 1rem; text-align: center; color: #fff; font-size: 1.1rem; font-weight: 500; background-color: #f94b71; border-radius: 6px; margin: 2rem 0;}
+.about_skills > h3:hover {background-color: #dd3055}
+.chart_box {color: #fff;}
+.chart_box:before {   
+	content: "";
+	display: block;
+	width: 1px;
+    height: 140px;
+    background-color: #3e95ce;
+    margin-left: 5%;
+}
+.chart_box > h3 {margin-bottom: 3%;}
+.chart_box > h3 > :last-child {font-size: 1rem; text-decoration: underline; padding-bottom: 5%;}
+.charts {margin-top: 5%;}
+.chart_wrap {width: 31.33333333333333%; padding-right: 3%; float: left; z-index: 1111;}
+.chart_wrap:nth-child(4), .chart_wrap:nth-child(5), .chart_wrap:last-child {margin-top: 5%;}
+.chart_wrap:nth-child(3), .chart_wrap:last-child {padding-left: 0;}
+.main .climing {width: 50%; position:absolute; right: 0; bottom: 0; z-index: 10;}
+
+
 
 /*************** about ****************/
 .slide_wrap {width: 100%; height: 100%; position:relative; overflow:hidden;}
@@ -210,8 +218,8 @@ section:not(#intro) {display:none;}
 #slides .slide:nth-child(1) {left:0; top:0;}
 #slides .slide:nth-child(1) h1:first-child {font-size: 3rem; font-weight: 600; color: #ffcd16; margin-bottom: 17px;}
 #slides .slide:nth-child(1) h1 > span {display: block;}
-#slides .slide:nth-child(2) {left:100%; top:0; background-color: #ffcd16;}
-#slides .slide:nth-child(3) {left:200%; top:0; background-color: #00be65;}
+#slides .slide:nth-child(3) {left:100%; top:0; background-color: #ffcd16;}
+#slides .slide:nth-child(2) {left:200%; top:0; background-color: #00be65;}
 #slides .slide:nth-child(4) {left:300%; top:0;}
 #slides .slide:nth-child(4) ul {width: 75%; margin: 0 auto;}
 #slides .slide:nth-child(4) ul > li {width: 23%; height: 400px; float: left; padding: 2rem; margin-right: 2%; position: relative;}
