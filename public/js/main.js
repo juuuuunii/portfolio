@@ -135,10 +135,16 @@ var option = [{
 var chart = [];
 
 var ctx = $(".chart");
+ctx.each(function (i) {
+	chart[i] = new Chart($(this), {
+		type: 'doughnut',
+		data: data[i],
+		options: option[i]
+	});
+});
 
 
-
-// scroll
+// start
 var WheelScroll = (function() {
 	function WheelScroll(_opt) {
 		var obj = this;  //this = function
@@ -184,7 +190,7 @@ var WheelScroll = (function() {
 					break;
 				}
 			}
-			node -v	obj.oldNow = obj.now;
+			obj.oldNow = obj.now;
 			if(obj.dir > 0) { if(obj.now > 0) obj.now--; }
 			else { if(obj.now < obj.gap.length-1) obj.now++; }
 			obj.animation(obj, function() {
@@ -211,7 +217,7 @@ var WheelScroll = (function() {
 	}
 	WheelScroll.prototype.animation = function(obj, fn) {
 		obj.speedGap = Math.abs(obj.now - obj.oldNow);
-		$("html, body").stop().animate({"scrollTop":obj.gap[obj.now]+"px"}, obj.speed*obj.speedGap, fn);
+		//$("html, body").stop().animate({"scrollTop":obj.gap[obj.now]+"px"}, obj.speed*obj.speedGap, fn);
 	}
 	return WheelScroll;
 }());
@@ -236,9 +242,6 @@ function iphoneAni() {
 		$(".sign_bt").hide();
 	});
 };
-
-
-//////// main
 // toogle
 var iphoneChk = false;
 $(".iphone").click(function(e) {
@@ -261,15 +264,16 @@ $(".iphone").click(function(e) {
 $(".sign_bt").click(function(){
 	$("section").css({"display":"block"})
 	iphoneAni();
-	/*
 	var pages = new WheelScroll({
 		page: ".page", 
 		nav: ".nav_bt",
 		speed: 700
-	}); 
-	*/
+	});
 	$(".nav_bt").eq(1).trigger("click");
 });
+
+//////// main
+
 
 
 
@@ -363,10 +367,10 @@ $("#slides").find(".slide").each(function(){
 });
 interval = setInterval(slide, 5000);
 function slide() {
-	$("#slides").parent().find(".pager").find("span").removeClass("w3-text-red");
-	$("#slides").parent().find(".pager").find("span").eq(n).addClass("w3-text-red");
+	$("#slides").parent().find(".pager").find("span").removeClass("w3-text-amber");
+	$("#slides").parent().find(".pager").find("span").eq(n).addClass("w3-text-amber");
 	$("#slides").stop().animate({"left":-(n*100)+"%"}, 1000, function(){
-		if(n == 5) {
+		if(n == 4) {
 			n = 0;
 			$(this).css({"left":0});
 		}
@@ -377,14 +381,14 @@ function paging(obj) {
 	n = $(obj).index();
 	clearInterval(interval);
 	slide();
-	interval = setInterval(slide, 3000);
+	interval = setInterval(slide, 5000);
 }
 $("#slides").hover(function(){
 	clearInterval(interval);
 }, function(){
-	interval = setInterval(slide, 3000);
+	interval = setInterval(slide, 5000);
 });
-
+/*
 var abNum = 0;
 var abNumOld = 0;
 $(".slide li").mouseenter(function() {
@@ -403,7 +407,7 @@ $(".slide li").mouseenter(function() {
 $("#reset").click(function() {
 	window.location.reload(true);
 })
-
+*/
 // reset
 /*window.onbeforeunload = function () {
 	window.scrollTo(0, 0);
