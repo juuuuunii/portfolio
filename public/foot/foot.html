@@ -23,41 +23,38 @@
 </head>
 
 <body>
-	<div class="nav_sec">
-		<div class="nav">
-				<div class="nav_logo">
-					<img src="../img/foot/common/character.png" alt="nav_logo" class="img"/>
-				</div>
-				<div></div>
-				<i class="fa fa-bars"></i>
-				<ul>
-					<li><i class="fa fa-facebook"></i></li>
-					<li><i class="fa fa-location-arrow"></i></li>
-					<li><i class="fa fa-phone"></i></li>
-				</ul>		
+	<div class="nav_wrap">
+		<div class="wrap_logo">
+			<img src="../img/foot/common/full_logo.png" class="full_logo img">
 		</div>
-		<div class="nav_wrap">
-			<div class="wrap_logo">
-				<img src="../img/foot/common/full_logo.png" class="full_logo img">
-			</div>
-			<i class="fa fa-close"></i>
-			<ul class="navi">
-				<li><a href="#">브랜드 소개</a></li>
-				<li><a href="#">프로그램</a></li>
-				<li><a href="#">더풋샵 제품</a></li>
-				<li><a href="#">프렌차이즈</a></li>
-			</ul>
-			<p>
-				<span>02-6677-8888</span>
-				<span>(평일 09:00 ~ 18:00)</span>
-			</p>
+		<ul class="navi">
+			<li><a href="#">브랜드 소개</a></li>
+			<li><a href="#">프로그램</a></li>
+			<li><a href="#">더풋샵 제품</a></li>
+			<li><a href="#">프렌차이즈</a></li>
+		</ul>
+		<p>
+			<span>02-6677-8888</span>
+			<span>(평일 09:00 ~ 18:00)</span>
+		</p>
+	</div>
+	<div class="nav">
+		<div class="nav_logo">
+			<img src="../img/foot/common/character.png" alt="nav_logo" class="img"/>
 		</div>
+		<i class="fa fa-bars"></i>
+		<i class="fa fa-close"></i>
+		<ul class="icon">
+			<li><i class="fa fa-phone"></i></li>
+			<li><i class="fa fa-location-arrow" onclick="location.href='http://www.thefootshop.co.kr/thefootshop/store.php';" target="_new"></i></li>
+			<li><i class="fa fa-facebook"></i></li>
+		</ul>		
 	</div>
 
-	<section id="page0" class="page wrap" data-now="0">
-		<div class="banner wrap">
+	<section id="page0" class="page" data-now="0">
+		<div class="banner">
 			<div class="txt">
-				<div class="full_logo">
+				<div class="full_logo" onclick="location.href='foot.html';" target="_sellf">
 					<img src="../img/foot/common/full_logo.png" alt="full_logo" class="img"/>
 				</div>
 				<div></div>
@@ -67,13 +64,13 @@
 						<span>복잡한 도심 속 웰빙의 원천이 숨 쉬는 곳을</span>
 						<span>지향하는 더풋샵은 국내 최초 발 관리 전문 프랜차이즈입니다.</span>
 					</p>
-					<button>자세히보기</button>
+					<button onclick="location.href='http://www.thefootshop.co.kr/main/';" target="_new">자세히보기</button>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section id="page1" class="page wrap" data-now="1">
-		<ul class="banner wrap">
+	<section id="page1" class="page" data-now="1">
+		<div class="banner">
 			<div class="txt">
 				<p>Paradise in the City</p>
 				<h1>
@@ -86,9 +83,9 @@
 					<span>더풋샵에서 삶의 여유를 누려보세요.</span>
 				</p>
 			</div>
-		</ul>
+		</div>
 	</section>
-	<section id="page2" class="page wrap clear" data-now="2">
+	<section id="page2" class="page clear" data-now="2">
 		<div class="you_txt">
 			<div>
 				<div class="full_logo">
@@ -102,33 +99,43 @@
 					<span>피곤한 내 발에 휴식을 주세요!</span>
 					<span>유투브에서 만나보는 더풋샵</span>
 				</p>
-				<button type="submit">더 많은 영상보기</button>
+				<button type="submit" onclick="location.href='https://www.youtube.com/channel/UCdgMqETpp4yBNN_uZSx6swg';" target="_new">더 많은 영상보기</button>
 			</div>
 		</div>
 		<div class="you_box">
-
+			<div class="you_video">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/bENxTkpBeEc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
 		</div>
 	</section>
-	<section id="page3" class="page" data-now="3">
-		<div class="banner wrap">
+	<section id="page3" class="page wrap" data-now="3">
+		<div class="banner">
 			<ul class="clear">
 				<li>
-					<div></div>
+					<div>
+						<img src="../img/foot/page4/cont01.jpg" alt="cont01" class="img"/>
+					</div>
 					<h6>이용안내</h6>
 					<h4>더풋샵이 처음이시라면~</h4>
 				</li>
 				<li>
-					<div></div>
+					<div>
+						<img src="../img/foot/page4/cont02.png" alt="cont02" class="img"/>
+					</div>
 					<h6>프로그램</h6>
-					<h4>더풋샵과 함께하는 더욱 건강한 웰빙라이프</h4>
+					<h4>더풋샵과 함께, 더욱 건강한 웰빙라이프</h4>
 				</li>
 				<li>
-					<div></div>
+					<div>
+						<img src="../img/foot/page4/cont03.png" alt="cont03" class="img"/>
+					</div>
 					<h6>제품</h6>
 					<h4>집에서 누구보다 편안하게 셀프케어!</h4>
 				</li>
 				<li>
-					<div></div>
+					<div>
+						<img src="../img/foot/page4/cont04.png" alt="cont04" class="img"/>
+					</div>
 					<h6>더풋샵 창업</h6>
 					<h4>
 						<span>전국 가맹점 200호 달성을 목표로 하는</span>
@@ -137,9 +144,30 @@
 				</li>
 			</ul>
 		</div>
-	</section>
+	</section>z
 	
-	<section id="page4" class="page footer" data-now="3" style="width: 100%; height: 100px; background-color:#f30">s</section>
+	<section id="page4" class="page wrap" data-now="3">
+		<footer>
+			<ul class="clear wid">
+				<li>회사소개</li>
+				<li>|</li>
+				<li>개인정보처리방침</li>
+				<li>|</li>
+				<li>가맹안내</li>
+				<li>|</li>
+				<li>고객만족센터</li>
+			</ul>
+			<div>
+				<div class="wid">
+					<p>
+						<span>주소: 서울특별시 용산구 원효로 7, 3층(청암동) | 문의전화: 02-6677-8888(평일 09:00~18:00)</span>
+						<span>대표이사: 진은정 | 사업자번호: 105-86-87325 | 통신판매업 신고번호: 2012-서울마포-811호</span>
+					</p>
+					<address>coptright (c)2016 THEFOOTSHOP all reserved.</address>
+				</div>
+			</div>
+		</footer>
+	</section>
 
 
 	<script defer src="../js/foot.js"></script>

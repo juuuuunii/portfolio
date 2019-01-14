@@ -77,8 +77,25 @@ var pages = new WheelScroll({
 
 //nav_wrap
 $(".nav > .fa-bars").click(function() {
-	$(".nav_wrap").show().stop().animate({"right":"80%"}, 500);
+	$(".nav_wrap").show().stop().animate({"right":"79%"}, 500);
+	$(this).hide();
+	$(".nav > .nav_logo").hide();
+	$(".nav > .fa-close").show();
 })
-$(".nav_wrap > .fa-close").click(function() {
+$(".nav > .fa-close").click(function() {
 	$(".nav_wrap").stop().animate({"right":"100%"}, 500);
+	$(this).hide();
+	$(".nav > .nav_logo").show();
+	$(".nav > .fa-bars").show();
 })
+
+//page3
+$("#page3 ul > li").mouseenter(function() {
+	//console.log($(this).children('h4'));
+	$(this).find('img').css({"transform":"scale(1.1)"});
+	$(this).find('h4, span').css({"font-weight":"600"});
+});
+$("#page3 ul > li").mouseleave(function() {
+	$(this).find('img').css({"transform":"scale(1)"});
+	$(this).find('h4, span').css({"font-weight":"400"});
+});
