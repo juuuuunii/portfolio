@@ -346,6 +346,30 @@ $(".mo_navs > i").click(function() {
 })
 
 
+//banner
+var n = 1;
+var interval;
+
+function slide() {
+	$("#slides").stop().animate({"left":-(n*100)+"%"}, 1000, function(){
+		if(n == 4) {
+			n = 0;
+			$(this).css({"left":0});
+		}
+		n++;
+	});
+}
+function paging(obj) {
+	n = $(obj).index();
+	clearInterval(interval);
+	slide();
+	interval = setInterval(slide, 5000);
+}
+$("#slides").hover(function(){
+	clearInterval(interval);
+}, function(){
+	interval = setInterval(slide, 5000);
+});
 
 
 //products

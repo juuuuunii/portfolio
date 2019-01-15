@@ -135,13 +135,7 @@ var option = [{
 var chart = [];
 
 var ctx = $(".chart");
-ctx.each(function (i) {
-	chart[i] = new Chart($(this), {
-		type: 'doughnut',
-		data: data[i],
-		options: option[i]
-	});
-});
+
 
 
 // start
@@ -231,7 +225,7 @@ function cloudAni() {
 	   cloudAni();
 	});
  }
- cloudAni();
+ //cloudAni();
 
 // nav
 function iphoneAni() {
@@ -342,7 +336,7 @@ $("#area").change(function(){
 			document.querySelector(".dl_icon").src = "../img/weather/"+data.weather[0].icon+".mp4";
 			document.querySelector("#weather_wrap").load();
 			$(".dl_area > span").html(city);
-		(".dl_date").html(date);
+			$(".dl_date").html(date);
 			$(".dl_temp").html(data.main.temp+'℃(최고: '+data.main.temp_max+'℃/최저: '+data.main.temp_min+'℃)');
 			$(".dl_desc").html(data.weather[0].description);
 			//console.log(data.main.temp);
