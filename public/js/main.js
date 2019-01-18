@@ -1,6 +1,6 @@
 // chart
 var data = [{
-	labels: ["PHOTOSHOP"],
+	labels: ["책과 유투브를 통해 계속해서 연습하고 있습니다."],
 	datasets: [{
 		label: '# of Votes',
 		data: [85],
@@ -16,7 +16,7 @@ var data = [{
 		borderWidth: 1
 	}]
 }, {
-	labels: ["ILLUSTRATOR"],
+	labels: ["시간과 정성과의 싸움, 자신있습니다."],
 	datasets: [{
 		label: '# of Votes',
 		data: [80],
@@ -32,7 +32,7 @@ var data = [{
 		borderWidth: 1
 	}]
 }, {
-	labels: ["HTML5"],
+	labels: ["웹표준을 준수하여 코딩을 하여 웹사이트를 구현할 수 있습니다."],
 	datasets: [{
 		label: '# of Votes',
 		data: [85],
@@ -48,7 +48,7 @@ var data = [{
 		borderWidth: 1
 	}]
 }, {
-	labels: ["CSS"],
+	labels: ["하나하나 정성들여 작업합니다."],
 	datasets: [{
 		label: '# of Votes',
 		data: [85],
@@ -64,7 +64,7 @@ var data = [{
 		borderWidth: 1
 	}]
 }, {
-	labels: ["Javascript"],
+	labels: ["간단한 애니메이션을 구현해 낼 수 있습니다."],
 	datasets: [{
 		label: '# of Votes',
 		data: [75],
@@ -144,12 +144,12 @@ var WheelScroll = (function() {
 		var obj = this;  //this = function
 		if(_opt) {
 			if(_opt.page)  this.page = $(_opt.page);
-			else this.page = $(".page");
+			else this.page = $(".pages");
 			if(_opt.speed) this.speed = _opt.speed;
 			else this.speed = 200;
 		}
 		else {
-			this.page = $(".page");
+			this.page = $(".pages");
 			this.speed = 200;
 			this.nav = null;
 		}
@@ -170,6 +170,35 @@ var WheelScroll = (function() {
 	}
 		
 	WheelScroll.prototype.init = function(obj) {
+		var chartChk = true;
+		$(window).scroll(function(){
+			$(obj.page).each(function(i) {
+				obj.gap[i] = $(this).offset().top; 
+			});
+			obj.scTop = $(window).scrollTop();	
+			for(var i=0; i<obj.gap.length; i++) {
+				if(obj.scTop <= obj.gap[i] + 500) {
+					obj.now = i;
+					break;
+				}
+			}
+			console.log(obj.now)
+			if(obj.now == 3 && chartChk) {
+				chartChk = false;
+				ctx.each(function (i) {
+					chart[i] = new Chart($(this), {
+						type: 'doughnut',
+						data: data[i],
+						options: option[i]
+					});
+				});
+			}
+		});
+		
+		
+
+		iphoneAni();
+		/*
 		$(window).on("mousewheel DOMMouseScroll", wheelFn);
 		function wheelFn(e) {
 			e.preventDefault();
@@ -200,6 +229,7 @@ var WheelScroll = (function() {
 					}
 			});
 		}
+		*/
 		iphoneAni();
 	}
 	WheelScroll.prototype.navAdd = function(obj, navObj) {
@@ -211,7 +241,7 @@ var WheelScroll = (function() {
 	}
 	WheelScroll.prototype.animation = function(obj, fn) {
 		obj.speedGap = Math.abs(obj.now - obj.oldNow);
-		//$("html, body").stop().animate({"scrollTop":obj.gap[obj.now]+"px"}, obj.speed*obj.speedGap, fn);
+		$("html, body").stop().animate({"scrollTop":obj.gap[obj.now]+"px"}, obj.speed*obj.speedGap, fn);
 	}
 	return WheelScroll;
 }());
@@ -225,7 +255,7 @@ function cloudAni() {
 	   cloudAni();
 	});
  }
- //cloudAni();
+ cloudAni();
 
 // nav
 function iphoneAni() {
@@ -259,7 +289,7 @@ $(".sign_bt").click(function(){
 	$("section").css({"display":"block"})
 	iphoneAni();
 	var pages = new WheelScroll({
-		page: ".page", 
+		page: ".pages", 
 		nav: ".nav_bt",
 		speed: 700
 	});
@@ -272,22 +302,38 @@ $(".sign_bt").click(function(){
 
 
 //////// portfolio
-var portNum = 0;
-var portNumOld = 0;
+var Num;
+var NumOld;
 $(".tit_line").mouseenter(function() {
-	portNumOld = portNum;
-	portNum = $(this).index();
+	NumOld = Num;
+	Num = $(this).index();
 	//console.log(portNumOld, portNum);
 	$(".tit_line").css({"border-top":"0"});
 	$(".tit_line").children("h4").css({"color":"#222"});
 	$(this).css({"border-top":"1px solid #3e95ce"});
 	$(this).children("h4").css({"color":"#3e95ce"});
-	$(".cards").eq(portNumOld).stop().animate({"margin-top":"200px", "opacity":0}, 600, function () {
+	$(".cards").eq(NumOld).stop().animate({"margin-top":"200px", "opacity":0}, 600, function () {
 		$(this).hide();
 	});
-	$(".cards").eq(portNum).css({"margin-top":"200px", "opacity":0, "display":"block"}).stop().animate({"margin-top":0, "opacity":1}, 600);
+	$(".cards").eq(Num).css({"margin-top":"200px", "opacity":0, "display":"block"}).stop().animate({"margin-top":0, "opacity":1}, 600);
 });
 $(".tit_line").eq(0).trigger("mouseenter");
+
+
+$(".card:not(#cards3 > .card)").mouseenter(function() {
+	NumOld = Num;
+	Num = $(this).index();
+	console.log($(this));
+	//console.log($(this).find("img"));
+	$(this).css({"background-color":"#222"});
+	$(this).find("img").css({"transform":"scale(1.15)", "bacground-color":"#222", "opacity":"0.4"});
+});
+$(".card:not(#cards3 > .card)").mouseleave(function() {
+	NumOld = Num;
+	Num = $(this).index();
+	//console.log($(this).find("img"));
+	$(this).find("img").css({"transform":"scale(1)", "opacity":"1"});
+});
 
 //weather
 $("#modal_open").click(function(){

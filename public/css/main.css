@@ -21,7 +21,7 @@ a {text-decoration:none; color: inherit;}
 .wrap {width: 100%; height: 100%;}
 
 section:not(#intro) {display:none;}
-#modal {z-index:9999; position: relative;}
+#modal {z-index:9999; position: fixed;}
 .bg {    width: 45%;
     position: absolute;
     top: 130%;
@@ -139,27 +139,19 @@ body {background-color: #f9f9fb;}
 .portfolio .port_right > .bold {color: #fff; font-size: 1rem; letter-spacing: 2px; position: absolute; top: 1.5%; left:3%;}
 
 .cards {width: 100%; height: 52%; opacity:0; display:none; position: absolute; top: 20%; left: -20%;}
-.cards > div {position: absolute; background-size: cover; background-position: center center; background-repeat: no-repeat;}
+.cards > div {position: absolute; background-color: #222; overflow: hidden;}
 .portfolio .port_right > .card > img {border-radius: 5px;}
 .cards > :first-child {width: 65%; height: 100%;}
-.cards > :nth-child(2) {width: 21%; height: 27%;  top: 0; right: 12%;}
-.cards > :nth-child(3) {width: 21%; height: 27%; top: 31.5%; right: 12%;}
-.cards > :nth-child(4) {width: 21%; height: 27%; bottom: 10%; right: 12%;}
+.cards > :nth-child(2) {width: 20%; height: 29%;  top: 0; right: 14%;}
+.cards > :nth-child(3) {width: 20%; height: 29%; top: 30.5%; right: 14%;}
+.cards > :nth-child(4) {width: 20%; height: 29%; bottom: 10%; right: 14%;}
 .cards > :nth-child(5) {position: absolute; bottom: 0; right: 25%; z-index: 999;}
 .cards > h5 > a {color: #fff; letter-spacing: 2px;}
-
-#cards0 > :first-child {background-image: url("../img/ejunhee/portfolio/main/main1.jpg");}
-#cards1 > :first-child {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg1.jpg");}
-#cards1 > :nth-child(2) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg2.jpg");}
-#cards1 > :nth-child(3) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg3.jpg");}
-#cards1 > :nth-child(4) {background-image: url("../img/ejunhee/portfolio/kellogg/kellogg4.jpg");}
-#cards2 > :first-child {background-image: url("../img/ejunhee/portfolio/admin/admin1.jpg");}
-#cards3 > .card {width: 80%; height: 70%; top: -8%;}
+#cards3 > .card {width: 80%; height: 120%; top: -11%;}
 #cards3 video {width: 100%; position: relative; z-index: 1;}
 #cards3 .weather {width: 100%; position: absolute; top: 0; z-index: 10;}
 #cards3 .weather > :first-child {color: #222; font-size: 1.5rem; text-align: center; font-weight: bold; padding: 5rem 0 3.5rem;}
 .daily{text-align: center;}
-
 .dl_icon{width: 80%; max-width: 250px;}
 .dl_area > span {display: block;}
 .dl_area > :first-child {font-size: 1.3em; color: #ffcd16;}
@@ -167,8 +159,6 @@ body {background-color: #f9f9fb;}
 .dl_date{font-size: 1.5em; color: rgb(66, 66, 66);}
 .dl_temp{font-size: 2em; color: rgb(8, 52, 102);}
 .dl_desc{font-size: 1.5em; color: #ffcd16;}
-
-
 .wk_area{font-size: 1.25em;  color: rgb(2, 39, 95); font-weight: bold;}
 .wk_date{font-size: 1.25em;  color: rgb(66, 66, 66);}
 .wk_temp{font-size: 1.5em;  color: rgb(8, 52, 102);}
@@ -180,7 +170,6 @@ body {background-color: #f9f9fb;}
 /** about **/
 .about {width: 62%; height: 100%; margin: 0 auto;}
 .about > div > h1 {font-size: 2rem; color: #555; font-weight: 400;}
-.about_txt > h1 {margin-top: 18rem;}
 .about_txt > h1 > span {display: block;}
 .about_txt > h3 {margin: 1rem 0 3rem;}
 .about_txt > h3 > span {display: block; color: #999;}
@@ -192,7 +181,7 @@ body {background-color: #f9f9fb;}
 .ejunhee > :last-child {color: #999;}
 .ejunhee > :last-child > h3 {height: 60px; line-height: 50px; font-weight: 500;}
 
-.about_skills {padding: 18rem 0 0;}
+.about_skills {padding: 15rem 0 0;}
 .about_skills > h3 {width: 10%; padding: .4rem 1rem; text-align: center; color: #fff; font-size: 1.1rem; font-weight: 500; background-color: #f94b71; border-radius: 6px; margin: 2rem 0;}
 .about_skills > h3:hover {background-color: #dd3055}
 .chart_box {color: #fff;}
@@ -207,7 +196,7 @@ body {background-color: #f9f9fb;}
 .charts {margin-top: 2rem;}
 .charts > div {width: 33.33333333333333%; float: left;}
 .chart_wrap:nth-child(4), .chart_wrap:nth-child(5) {padding-top: 5rem;}
-
+.charts > div > h1{color: #222; text-align: center; font-weight: 500; margin-top: 2rem; z-index: 10;}
 /*************** more ****************/
 .slide_wrap {width: 100%; height: 100%; position: relative;}
 .slides {width:100%; height: 100%; position:relative; left: 0; bottom: 0;}
