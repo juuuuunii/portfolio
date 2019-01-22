@@ -260,7 +260,7 @@ function cloudAni() {
 // nav
 function iphoneAni() {
 	$(".iphone_nav").stop().animate({"bottom":"107%"}, 2000, "linear", function() {
-		$(".iphone_nav").stop().animate({"left":"80%"}, 2000, "linear", function(){
+		$(".iphone_nav").stop().animate({"right":"20%"}, 2000, "linear", function(){
 			$(".cls_iphone").on("click", iphoneFn).trigger("click");
 		});
 		$(".sign_bt").hide();

@@ -346,31 +346,53 @@ $(".mo_navs > i").click(function() {
 })
 
 
-//banner
-var n = 1;
-var interval;
-
-function slide() {
-	$("#slides").stop().animate({"left":-(n*100)+"%"}, 1000, function(){
-		if(n == 4) {
-			n = 0;
-			$(this).css({"left":0});
-		}
-		n++;
+horzShow();
+function horzShow() {
+	//맨 앞의 li를 복사해서 $(".ban")맨 뒤에 붙여라
+	$(".banners").append($(".banners > li").eq(0).clone());	
+	var $wrap = $(".banners");
+	var $slide = $(".banners > li");
+	var now = 1;
+	var speed = 500;
+	var timeout = 3000;
+	var end = $slide.length - 1;
+	var interval;
+	var hei = 0;
+	//초기화
+	$(window).resize(function(){
+		hei = 0;
+		$slide.each(function(i){
+			//$(".ban > li")중 가장 큰 height 구함
+			if(hei < $(this).height()) hei = $(this).height();	
+		});
+		$wrap.height(hei);		// $(".ban")의 높이를 넣어준다.
+	}).trigger("resize");
+	$slide.each(function(i){
+		$(this).css({"left":(i*100)+"%", "position":"absolute"});
+		if(i<end) $(".cycle-pager").append("<span>●</span>");
 	});
+	$(".cycle-pager span").click(function(){
+		now = $(this).index();
+		horzAni();
+		clearInterval(interval);
+		interval = setInterval(horzAni, timeout);
+	});
+	interval = setInterval(horzAni, timeout);
+	function horzAni() {
+		if(now == end) pnow = 0;
+		else pnow = now;
+		$(".cycle-pager span").removeClass("cycle-pager-active");
+		$(".cycle-pager span").eq(pnow).addClass("cycle-pager-active");
+		$wrap.stop().animate({"left":(-now*100)+"%"}, speed, function(){
+			$(window).trigger("resize");
+			if(now == end) {
+				$wrap.css({"left":0});
+				now = 1;
+			}
+			else now++;
+		});
+	}	
 }
-function paging(obj) {
-	n = $(obj).index();
-	clearInterval(interval);
-	slide();
-	interval = setInterval(slide, 5000);
-}
-$("#slides").hover(function(){
-	clearInterval(interval);
-}, function(){
-	interval = setInterval(slide, 5000);
-});
-
 
 //products
 $(".prds").mouseenter(function() {

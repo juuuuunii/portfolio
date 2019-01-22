@@ -106,11 +106,11 @@ body {background-color: #f9f9fb;}
 	width: 22%;
 	position: fixed;
 	bottom: -20%; 
-	left: 50%;
-	-webkit-transform:translate(-50%, 20%);
-	-moz-transform:translate(-50%, 20%);
-	-o-transform:translate(-50%, 20%);
-	transform:translate(-50%, 20%);
+	right: 50%;
+	-webkit-transform:translate(50%, 20%);
+	-moz-transform:translate(50%, 20%);
+	-o-transform:translate(50%, 20%);
+	transform:translate(50%, 20%);
 	z-index: 999;
 }
 .sign_bt {

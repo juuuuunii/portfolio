@@ -22,6 +22,13 @@ a {text-decoration:none; color: inherit;}
 .tit {font-size: 1.2rem; font-weight: 500; color: #222; margin-bottom: 0.5rem; letter-spacing: 2px;}
 .ani_tit {font-family: 'Yeon Sung', cursive;}
 
+
+.cycle-pager { text-align: center; width: 100%; z-index: 9000; position: absolute; bottom: 10px; overflow: hidden;}
+.cycle-pager span { font-family: arial; font-size: 30px; 
+	display: inline-block; color: rgb(85, 85, 85); cursor: pointer; }
+.cycle-pager span.cycle-pager-active { color: rgb(224, 47, 100);}
+.cycle-pager > * { cursor: pointer;}
+
 /*************** header ****************/
 html, body {width: 100%; height: 100%;}
 .wrap {width: 1260px; margin: 0 auto;}
@@ -59,18 +66,19 @@ html, body {width: 100%; height: 100%;}
 
 
 .banner {margin-top: 0.5rem; position:relative;}
-.banner > li {float: left;}
-.banner > .banner_img {width: 100%; background: url("../img/kellogg/banner/ban_txtbg.png") no-repeat right top; background-size: 40%; position: relative;}
-.banner > .banner_img > img {width:60%; float:left;}
-.banner > .banner_txt {width: 40%; position:absolute; top:0; right:0;}
-.banner > .banner_txt h1 {font-size: 3.5rem; color: #fff; left: -23%; transform: translateX(23%); margin: 5rem 0;}
-.banner > .banner_txt h1 > span {display: block;}
-.banner > .banner_txt > ul > li > p > :last-child {display: none;}
-.banner > .banner_txt > ul {width: 100%; text-align: center;}
-.banner > .banner_txt > ul > li {width: 130px; height: 130px; border-radius: 65px; display: inline-block; border: 1px solid #fff; padding: 1rem; margin-right: 2rem;}
-.banner > .banner_txt > ul > :last-child {margin-right: 0;}
-.banner > .banner_txt > ul > li > div {width: 60%; height: 60%; margin: 0 auto;}
-.banner > .banner_txt > ul > li span {display: block; color: #fff; text-align: center; color: #ecb301;}
+.banner > .banner_img {width: 100%; background: url("../img/kellogg/banner/ban_txtbg.png") no-repeat right top; background-size: 40%; position: relative; overflow:hidden;}
+.banner_wrap {float:left; width:60%; position: relative; overflow: hidden;}
+.banners {width:100%; position:absolute;}
+.banners > li {position:absolute; width:100%;}
+.banner_txt {width: 40%; position:absolute; right:0; z-index:80; top:0;}
+.banner_txt h1 {font-size: 3.5rem; color: #fff; left: -23%; transform: translateX(23%); margin: 5rem 0;}
+.banner_txt h1 > span {display: block;}
+.banner_txt > ul > li > p > :last-child {display: none;}
+.banner_txt > ul {width: 100%; text-align: center;}
+.banner_txt > ul > li {width: 130px; height: 130px; border-radius: 65px; display: inline-block; border: 1px solid #fff; padding: 1rem; margin-right: 2rem;}
+.banner_txt > ul > :last-child {margin-right: 0;}
+.banner_txt > ul > li > div {width: 60%; height: 60%; margin: 0 auto;}
+.banner_txt > ul > li span {display: block; color: #fff; text-align: center; color: #ecb301;}
 
 /*************** section ****************/
 section {padding: 4rem 0;}
