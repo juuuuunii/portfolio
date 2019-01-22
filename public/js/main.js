@@ -261,14 +261,14 @@ function cloudAni() {
 function iphoneAni() {
 	$(".iphone_nav").stop().animate({"bottom":"107%"}, 2000, "linear", function() {
 		$(".iphone_nav").stop().animate({"left":"80%"}, 2000, "linear", function(){
-			$(".iphone").trigger("click");
+			$(".cls_iphone").on("click", iphoneFn).trigger("click");
 		});
 		$(".sign_bt").hide();
 	});
 };
 // toogle
 var iphoneChk = false;
-$(".iphone").click(function(e) {
+function iphoneFn(e) {
 	if(iphoneChk) {
 		//내려와 있다면
 		$(".nav").stop().slideUp(700, function() {
@@ -283,9 +283,11 @@ $(".iphone").click(function(e) {
 			iphoneChk = true;
 		});
 	}
-});
-
-$(".sign_bt").click(function(){
+}
+$(".sign_bt").on("click", signFn);
+function signFn(){
+	$(".sign_bt").off("click");
+	$(this).off("click");
 	$("section").css({"display":"block"})
 	iphoneAni();
 	var pages = new WheelScroll({
@@ -294,8 +296,7 @@ $(".sign_bt").click(function(){
 		speed: 700
 	});
 	$(".nav_bt").eq(1).trigger("click");
-});
-
+}
 //////// main
 
 
