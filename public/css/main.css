@@ -28,13 +28,44 @@ section:not(#intro) {display:none;}
     right: 0;}
 
 /*************** nav ****************/
+.iphone_nav {	
+	width: 22%;
+	position: fixed;
+	bottom: -20%; 
+	right: 50%;
+	-webkit-transform:translate(50%, 20%);
+	-moz-transform:translate(50%, 20%);
+	-o-transform:translate(50%, 20%);
+	transform:translate(50%, 20%);
+	z-index: 999;
+}
+.sign_bt{
+	position: absolute;
+	left: 50%;
+	bottom: 55%;
+	-webkit-transform:translate(-50%, -45%);
+	-moz-transform:translate(-50%, -45%);
+	-o-transform:translate(-50%, -45%);
+	transform:translate(-50%, -45%);
+	z-index: 10;
+	width: 30%; 
+	height: 5%; 
+	border: 0; 
+	border-radius: 10px; 
+	background-color: #ffcd16;
+	font-size: 1vw;
+	cursor:pointer;
+}
+.sign_bt:hover {background-color: #333; color: #ffcd16; font-weight: bold;}
+.cls_iphone {width:50%; height:8%; background:rgba(0,0,0,0); position:absolute; bottom:5%; left:25%; z-index:1000; cursor:pointer;}
+
+
 .nav {
 	width: 96%; 
 	height: 98%; 
 	color: #fff; 
 	background-color: rgba(82, 68, 62, .7);
-	position: absolute; 
-	z-index: 25; 
+	position: absolute;
 	top: 0; 
 	left: 50%;
 	border-radius: 0 0 10% 10%;
@@ -43,11 +74,18 @@ section:not(#intro) {display:none;}
 	-o-transform:translate(-50%, 0);
 	transform:translate(-50%, 0);
 	display: none;}
-.nav > div {width: 100%; height: 50%; margin: 0 auto; position: absolute; bottom:10%; padding:0 5%;}
-.nav > div > :nth-child(1) {background-color: #ffcd16; width: 40%; height: 2px; float: left; margin-top:1rem;}
+.nav > div {
+	width: 100%;
+    height: 73%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 9%;
+    padding: 35% 15%;
+}
+.nav > div > :nth-child(1) {background-color: #ffcd16; width: 30%; height: 2px; float: left; margin-top:11%;}
 .nav > div > :nth-child(2) {float:right; cursor: pointer; width:60%; padding-left:10%;}
-.nav > div > :nth-child(2) > h2 {font-size: 2vw;}
-.nav > div > :nth-child(2) > h3 {font-size: 1vw; font-weight: 300; }
+.nav > div > :nth-child(2) > h2 {font-size: 2vw; margin-bottom: 40%;}
+.nav > div > :nth-child(2) > h3 {font-size: 1vw; font-weight: 300; margin-bottom: 20%;}
 .nav > div > :nth-child(2) > h3:after{
 	width: 0;
 	height: 100%;
@@ -60,7 +98,7 @@ section:not(#intro) {display:none;}
 	-moz-transition:all 0.5s ease;
 	-o-transition:all 0.5s ease;
 	transition:all 0.5s ease;
-	/*a 안엝서의 애니메이션 부분은 오브젝트보다*/
+	/*a 안에서의 애니메이션 부분은 오브젝트보다*/
 	z-index:-1;
 }
 /*마우스가 올라갔을 때 발생띘는 애니메이션 화면을 rn조 안엝서 다른 색으로 변경한 부분*/
@@ -70,11 +108,11 @@ section:not(#intro) {display:none;}
 /*.nav > h4 {text-align: center; margin-bottom: 1.5rem; font-weight: 300;} 
 .nav > h4 > strong {font-size: 1.2em; margin-right: 1rem;} */
 
-
 body {background-color: #f9f9fb;}
+
 /*************** intro ****************/
-.mainbanner{background-image:url("../img/ejunhee/intro/sky.png");background-repeat:no-repeat; background-size: cover; background-position:center center; overflow: hidden;}
-.banner{width:100%; height: 100%; position: relative;; z-index:11; }
+#intro {background-image:url("../img/ejunhee/intro/sky.png"); background-repeat:no-repeat; background-size: cover; background-position:center center; overflow: hidden;}
+.banner{width:100%; height: 100%; position: relative; z-index:11; }
 .banner > div, .banner > img {position: absolute;}
 .banner .title {
 	width: 60px; 
@@ -102,56 +140,34 @@ body {background-color: #f9f9fb;}
 	transform:translate(-50%, 25%); 
 	z-index:1;
 }
-.iphone_nav {	
-	width: 22%;
-	position: fixed;
-	bottom: -20%; 
-	right: 50%;
-	-webkit-transform:translate(50%, 20%);
-	-moz-transform:translate(50%, 20%);
-	-o-transform:translate(50%, 20%);
-	transform:translate(50%, 20%);
-	z-index: 999;
-}
-.sign_bt {
-	position: absolute;
-	left: 50%;
-	bottom: 55%;
-	-webkit-transform:translate(-50%, -45%);
-	-moz-transform:translate(-50%, -45%);
-	-o-transform:translate(-50%, -45%);
-	transform:translate(-50%, -45%);
-	z-index: 10;
-	cursor:pointer;
-}
 
-.cls_iphone {width:50%; height:8%; background:rgba(0,0,0,0); position:absolute; bottom:5%; left:25%; z-index:1000; cursor:pointer;}
-
-.sign_bt > button {width: 7rem; height: 2.5rem; border: 0; border-radius: 10px; background-color: #ffcd16; }
-.sign_bt > button:hover {background-color: #333; color: #ffcd16; font-weight: bold;}
 .banner .cloud{top:0; left:0; width:5440px; height:100%; background-image:url("../img/ejunhee/intro/could.png"); z-index:9;}
 
 /*************** main ****************/
-#main {position: relative;}
-/** portfolio **/
-.portfolio {background-color: #fff; margin-bottom: 3rem; height: 75%;}
-.portfolio .port_left {width: 45%; height: 100%; float: left; display: table;}
-.port_left > ul {display: table-cell; vertical-align: middle;}
-.port_left .tit_line {width: 100%; cursor: pointer; padding-bottom: 1.5rem; box-sizing: border-box;}
-.port_left > ul h4 {position: relative; width: 100px; margin: 0 auto; top: -11px; padding-left: 1.5rem; letter-spacing: 1px;}
-
-.portfolio .port_right {width: 60%; height: 92%; background-color: #3e95ce; border-radius: 1%; top: -5%; right: -5%; position: absolute; z-index: 16;}
-.portfolio .port_right > .bold {color: #fff; font-size: 1rem; letter-spacing: 2px; position: absolute; top: 1.5%; left:3%;}
-
+#main {position: relative;background-color: #fff; margin-bottom: 3rem; height: 75%;}
+/*.site_left*/
+.site_left {width: 45%; height: 100%; float: left; display: table;}
+.site_left > ul {display: table-cell; vertical-align: middle;}
+.tit_line {width: 100%; cursor: pointer; padding-bottom: 1.5rem; box-sizing: border-box;}
+.tit_line > h2 {position: relative; width: 100px; margin: 0 auto; top: -11px; padding-left: 1.5rem; letter-spacing: 1px;}
+/*.site_right*/
+.site_right {width: 60%; height: 92%; background-color: #3e95ce; border-radius: 1%; top: -5%; right: -5%; position: absolute; z-index: 16;}
+.site_right > .bold {color: #fff; font-size: 1rem; letter-spacing: 2px; position: absolute; top: 1.5%; left:3%;}
 .cards {width: 100%; height: 52%; opacity:0; display:none; position: absolute; top: 20%; left: -20%;}
-.cards > div {position: absolute; background-color: #222; overflow: hidden;}
-.portfolio .port_right > .card > img {border-radius: 5px;}
-.cards > :first-child {width: 65%; height: 100%;}
-.cards > :nth-child(2) {width: 20%; height: 29%;  top: 0; right: 14%;}
-.cards > :nth-child(3) {width: 20%; height: 29%; top: 30.5%; right: 14%;}
-.cards > :nth-child(4) {width: 20%; height: 29%; bottom: 10%; right: 14%;}
-.cards > :nth-child(5) {position: absolute; bottom: 0; right: 25%; z-index: 999;}
-.cards > h5 > a {color: #fff; letter-spacing: 2px;}
+.card {position: absolute; background-color: #222; overflow: hidden;}
+.cards > :first-child {width: 65%;}
+.cards > :nth-child(2) {width: 20%; top: 0; right: 14%;}
+.cards > :nth-child(3) {width: 20%; top: 38.5%; right: 14%;}
+.cards > :nth-child(4) {width: 20%; bottom: -12%; right: 14%;}
+.cards > a {
+	color: #fff; 
+	letter-spacing: 2px;
+	position: absolute;
+    bottom: -34%;
+    right: 21%;
+    z-index: 999;
+    font-size: 1.2vw;
+}
 #cards3 > .card {width: 80%; height: 120%; top: -11%;}
 #cards3 video {width: 100%; position: relative; z-index: 1;}
 #cards3 .weather {width: 100%; position: absolute; top: 0; z-index: 10;}
@@ -172,8 +188,8 @@ body {background-color: #f9f9fb;}
 .tab_active{background-color: rgb(3, 112, 185); color: #fff;}
 .tab_disables{background-color: rgb(202, 216, 226); color: #666;}
 
-/** about **/
-.about {width: 62%; height: 100%; margin: 0 auto;}
+/*************** portfolio ****************/
+#portfolio {width: 60%; height: 100%; margin: 0 auto;}
 .about > div > h1 {font-size: 2rem; color: #555; font-weight: 400;}
 .about_txt > h1 > span {display: block;}
 .about_txt > h3 {margin: 1rem 0 3rem;}
@@ -202,38 +218,12 @@ body {background-color: #f9f9fb;}
 .charts > div {width: 33.0%; float: left;}
 .chart_wrap:nth-child(4), .chart_wrap:nth-child(5) {padding-top: 5rem;}
 .charts > div > h1{color: #222; text-align: center; font-weight: 500; margin-top: 2rem; z-index: 10;}
+
 /*************** more ****************/
-.slide_wrap {width: 100%; height: 100%; position: relative;}
-.slides {width:100%; height: 100%; position:relative; left: 0; bottom: 0;}
-#slides .slide {width:100%; height: 100%; position:absolute; top: 0; left: 0; display: table;}
-#slides .slide > div {text-align: center; height: 100%; display: table-cell; vertical-align: middle; margin-bottom: 25px;}
-#slides .slide:nth-child(1) {left:0; top:0;}
-#slides .slide:nth-child(1) > div > div {width: 8%; margin: 0 auto; padding-bottom: 3rem;}
-#slides .slide:nth-child(1) > div > :nth-child(2) {font-size: 3rem; font-weight: 600; color: #ffcd16; margin-bottom: 17px;}
-#slides .slide:nth-child(1) h1 > span {display: block;}
-#slides .slide:nth-child(2) {left:100%; top:0;}
-#slides .slide:nth-child(3) {left:200%; top:0;}
-#slides .slide:nth-child(4) {left:300%; top:0;}
-#slides .slide:nth-child(3) ul {width: 80%; height: 70%; margin: 0 auto; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -30%);}
-#slides .slide:nth-child(3) ul > li {border: 5px solid #3e95ce; width: 23%; height: 49%; float: left; margin-right: 2%; padding: 3.5rem 2rem;}
-#slides .slide:nth-child(3) ul > :first-child, 
-#slides .slide:nth-child(3) ul > :nth-child(2),
-#slides .slide:nth-child(3) ul > :nth-child(3),
-#slides .slide:nth-child(3) ul > :nth-child(4){
-	margin-bottom: 2%;
-}
-#slides .slide:nth-child(3) ul > :nth-child(4), #slides .slide:nth-child(3) ul > :last-child {margin-right: 0;}
-#slides .slide:nth-child(3) ul > :nth-child(2), #slides .slide:nth-child(3) ul > :nth-child(4),
-
-#slides .slide:nth-child(3) li > h2 {font-size: 1.2rem;}
-#slides .slide:nth-child(3) li > h1 {color: #3e95ce; font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem;}
-#slides .slide:nth-child(3) li > h3 {text-align: left;}
-#slides .slide:nth-child(4) h1 > span {display: block;}
-#slides .slide:nth-child(4) > div > div {margin-top: 2rem;}
-#slides .slide:nth-child(4) button {font-size: 1.1rem; border: none; padding: .6rem 1rem;}
-#slides .slide:nth-child(4) button:first-child {background-color: #ffcd16; margin-right: 1rem;}
-#slides .slide:nth-child(4) button:first-child:hover {background-color: transparent; color: #ffcd16; font-weight: 500;}
-#slides .slide:nth-child(4) button:last-child {background-color: #00be65;}
-#slides .slide:nth-child(4) button:last-child:hover {background-color: transparent; color: #00be65; font-weight: 500;}
-.pager_wrap {width:100%; position:absolute; bottom: 7%; font-size: 1rem; z-index:9999;}
-
+#more {width: 60%; margin: 0 auto; background-color: #fff;}
+#more > h1 {text-align: center; font-size: 1.4vw; font-weight: 500; margin-bottom: 6%}
+#more > ul {margin-bottom: 2%; height: 35%;}
+#more > ul > li {float: left;}
+#more > ul > :first-child {width: 45%; margin-right: 2%;}
+#more > ul > :last-child {width: 53%;}
+#more > ul > :last-child h1 {font-size: 1.3vw; font-weight: 500; margin-bottom: 2%;}

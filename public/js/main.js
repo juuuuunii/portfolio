@@ -310,9 +310,9 @@ $(".tit_line").mouseenter(function() {
 	Num = $(this).index();
 	//console.log(portNumOld, portNum);
 	$(".tit_line").css({"border-top":"0"});
-	$(".tit_line").children("h4").css({"color":"#222"});
+	$(".tit_line").children("h2").css({"color":"#222"});
 	$(this).css({"border-top":"1px solid #3e95ce"});
-	$(this).children("h4").css({"color":"#3e95ce"});
+	$(this).children("h2").css({"color":"#3e95ce"});
 	$(".cards").eq(NumOld).stop().animate({"margin-top":"200px", "opacity":0}, 600, function () {
 		$(this).hide();
 	});
