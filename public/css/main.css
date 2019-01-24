@@ -1,9 +1,17 @@
 /*************** 초기화 ****************/
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Jua');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400,700');
+@import url('https://fonts.googleapis.com/css?family=Yeon+Sung');
 
-
-html, body {margin: 0; padding: 0; font-size:14px; color:#222; box-sizing: border-box; font-family:'Noto Sans KR', sans-serif; height:100%; font-weight:300;}
+html, body {
+	margin: 0; 
+	padding: 0; 
+	font-size:14px; 
+	color:#222; 
+	box-sizing: border-box; 
+	font-family: 'Nanum Gothic Coding', monospace;
+	height:100%; 
+	font-weight:300;}
 h1, h2, h3, h4, h5, h6, p, span  {margin: 0; padding: 0; font-weight: 300;}
 div, ul, li, ol, dl, dd, dt{margin: 0; padding: 0; box-sizing: border-box; list-style: none;}
 table {margin:0; padding:0; border-collapse:collapse;}
@@ -17,15 +25,13 @@ a {text-decoration:none; color: inherit;}
 .img {width:100%;}
 .hover:hover {opacity:0.8;}
 .bold {font-weight: 500;}
-.eng {font-family: 'Montserrat', sans-serif;}
+.eng {font-family: 'Nunito', sans-serif;}
+.tit {font-family: 'Yeon Sung', cursive;}
 .wrap {width: 100%; height: 100%;}
 
 section:not(#intro) {display:none;}
 #modal {z-index:9999; position: fixed;}
-.bg {    width: 45%;
-    position: absolute;
-    top: 130%;
-    right: 0;}
+.bg {width: 45%; position: absolute; top: 130%; right: 0;}
 
 /*************** nav ****************/
 .iphone_nav {	
@@ -79,8 +85,8 @@ section:not(#intro) {display:none;}
     height: 73%;
     margin: 0 auto;
     position: absolute;
-    bottom: 9%;
-    padding: 35% 15%;
+    bottom:0;
+    padding: 42% 15%;
 }
 .nav > div > :nth-child(1) {background-color: #ffcd16; width: 30%; height: 2px; float: left; margin-top:11%;}
 .nav > div > :nth-child(2) {float:right; cursor: pointer; width:60%; padding-left:10%;}
@@ -100,6 +106,7 @@ section:not(#intro) {display:none;}
 	transition:all 0.5s ease;
 	/*a 안에서의 애니메이션 부분은 오브젝트보다*/
 	z-index:-1;
+	border-radius: 0 0 10% 10%;
 }
 /*마우스가 올라갔을 때 발생띘는 애니메이션 화면을 rn조 안엝서 다른 색으로 변경한 부분*/
 .nav > div > :nth-child(2) > h3:nth-child(2):hover:after{width:100%; background-color: #ffcd16;}
@@ -111,99 +118,91 @@ section:not(#intro) {display:none;}
 body {background-color: #f9f9fb;}
 
 /*************** intro ****************/
-#intro {background-image:url("../img/ejunhee/intro/sky.png"); background-repeat:no-repeat; background-size: cover; background-position:center center; overflow: hidden;}
-.banner{width:100%; height: 100%; position: relative; z-index:11; }
-.banner > div, .banner > img {position: absolute;}
-.banner .title {
-	width: 60px; 
-	height: 90px; 
-	border: 1px solid #333; 
-	display: table; 
-	margin: 0 auto; 
-	top: 20%; 
-	left: 50%; 
-	-webkit-transform:translate(-50%, -20%);
-	-moz-transform:translate(-50%, -20%);
-	-o-transform:translate(-50%, -20%);
-	transform:translate(-50%, -20%);
-	z-index: 10;
+#intro {
+	background-image:url("../img/ejunhee/intro/sky.png"); 
+	background-repeat:no-repeat; 
+	background-size: cover; 
+	background-position:center center; 
+	background-attachment: fixed;
+	overflow: hidden;
 }
-.banner .title > .caption {display: table-cell; vertical-align: middle; text-align: center;}
-.banner .title > .caption > span {display: block; color: #333}
-.banner .summit{
-	width: 100%; 
-	bottom: -25%; 
-	left: 50%; 
-	-webkit-transform:translate(-50%, 25%);
-	-moz-transform:translate(-50%, 25%);
-	-o-transform:translate(-50%, 25%);
-	transform:translate(-50%, 25%); 
-	z-index:1;
-}
+.banner{width:100%; height: 100%; position: relative;}
+.title {width: 5%; position: absolute; top: 25%; left: 50%; transform: translate(-50%, -25%);}
+.tit_box {position: absolute;}
+.tit {font-size: 1.2vw; letter-spacing: 2px; text-align: center; padding-top: 30%;}
+.tit > span {display: block;}
+
 
 .banner .cloud{top:0; left:0; width:5440px; height:100%; background-image:url("../img/ejunhee/intro/could.png"); z-index:9;}
 
 /*************** main ****************/
-#main {position: relative;background-color: #fff; margin-bottom: 3rem; height: 75%;}
+#main {height: 33.5vw; background-color: #fff; position: relative;}
 /*.site_left*/
 .site_left {width: 45%; height: 100%; float: left; display: table;}
 .site_left > ul {display: table-cell; vertical-align: middle;}
 .tit_line {width: 100%; cursor: pointer; padding-bottom: 1.5rem; box-sizing: border-box;}
-.tit_line > h2 {position: relative; width: 100px; margin: 0 auto; top: -11px; padding-left: 1.5rem; letter-spacing: 1px;}
+.tit_line > h3 {width: 20%; font-size: .8vw; font-weight: 600; letter-spacing: 1px; margin: 0 auto; position: relative; top: -13px;}
 /*.site_right*/
-.site_right {width: 60%; height: 92%; background-color: #3e95ce; border-radius: 1%; top: -5%; right: -5%; position: absolute; z-index: 16;}
-.site_right > .bold {color: #fff; font-size: 1rem; letter-spacing: 2px; position: absolute; top: 1.5%; left:3%;}
+.site_right {width: 60%; height: 37vw; background-color: #3e7cce; border-radius: 1%; top: -5%; right: -5%; position: absolute; z-index: 16;}
+.site_right > h5 {font-size: .8vw; font-weight:600; color: #fff; letter-spacing: 2px; margin: .4% 0 0 1.5%;}
 .cards {width: 100%; height: 52%; opacity:0; display:none; position: absolute; top: 20%; left: -20%;}
-.card {position: absolute; background-color: #222; overflow: hidden;}
-.cards > :first-child {width: 65%;}
-.cards > :nth-child(2) {width: 20%; top: 0; right: 14%;}
-.cards > :nth-child(3) {width: 20%; top: 38.5%; right: 14%;}
-.cards > :nth-child(4) {width: 20%; bottom: -12%; right: 14%;}
+.card {position: absolute; overflow: hidden;}
+.card > img:hover {animation-name: cardAni; animation-duration: 0.5s; animation-fill-mode: forwards; animation-timing-function: ease-out}
+@keyframes cardAni {
+	0% {transform: scale(1);}
+	100% {transform: scale(1.1);}
+}
+.cards > :first-child {width: 65%; height: 130%;}
+.cards > :nth-child(2) {width: 18%; top: 0; right: 16%;}
+.cards > :nth-child(3) {width: 18%; top: 40%; right: 16%;}
+.cards > :nth-child(4) {width: 18%; bottom: -17%; right: 16%;}
 .cards > a {
 	color: #fff; 
 	letter-spacing: 2px;
 	position: absolute;
-    bottom: -34%;
-    right: 21%;
-    z-index: 999;
-    font-size: 1.2vw;
+    bottom: -31%;
+    right: 25%;
+	z-index: 999;
+	font-weight: 500;
+	font-size: .8vw;
 }
-#cards3 > .card {width: 80%; height: 120%; top: -11%;}
+#cards3 > .card {top: 0;}
 #cards3 video {width: 100%; position: relative; z-index: 1;}
 #cards3 .weather {width: 100%; position: absolute; top: 0; z-index: 10;}
-#cards3 .weather > :first-child {color: #222; font-size: 1.5rem; text-align: center; font-weight: bold; padding: 5rem 0 3.5rem;}
+#cards3 .weather > :first-child {color: #222; font-size: 1.2vw; text-align: center; font-weight: bold; padding: 10% 0 3.5%;}
 .daily{text-align: center;}
 .dl_icon{width: 80%; max-width: 250px;}
 .dl_area > span {display: block;}
-.dl_area > :first-child {font-size: 1.3em; color: #ffcd16;}
-.dl_area button {margin-top: 1rem; border: 0; background-color: #fff; color: #222;}
-.dl_date{font-size: 1.5em; color: rgb(66, 66, 66);}
-.dl_temp{font-size: 2em; color: rgb(8, 52, 102);}
-.dl_desc{font-size: 1.5em; color: #ffcd16;}
+.dl_area > :first-child {font-size: 1vw; color: #ffc116;}
+.dl_area button {margin: 1% 0; border: 0; background-color: #fff; color: #222;}
+.dl_date{font-size: 1vw; color: rgb(66, 66, 66);}
+.dl_temp{font-size: 1.3vw; font-weight: 500; color: rgb(8, 52, 102);}
+.dl_desc{font-size: 1.2vw; color: #ffcd16;}
 .wk_area{font-size: 1.25em;  color: rgb(2, 39, 95); font-weight: bold;}
 .wk_date{font-size: 1.25em;  color: rgb(66, 66, 66);}
-.wk_temp{font-size: 1.5em;  color: rgb(8, 52, 102);}
+.wk_temp{font-size: 1.2vw;  color: rgb(8, 52, 102);}
 .wk_desc{font-size: 1.25em;  color: rgb(177, 177, 177);}
 
 .tab_active{background-color: rgb(3, 112, 185); color: #fff;}
 .tab_disables{background-color: rgb(202, 216, 226); color: #666;}
 
 /*************** portfolio ****************/
-#portfolio {width: 60%; height: 100%; margin: 0 auto;}
-.about > div > h1 {font-size: 2rem; color: #555; font-weight: 400;}
-.about_txt > h1 > span {display: block;}
-.about_txt > h3 {margin: 1rem 0 3rem;}
-.about_txt > h3 > span {display: block; color: #999;}
+#portfolio {width: 60%; margin: 0 auto; padding-top: 10%;}
+.about > div > h1 {font-size: 1.5vw; color: #555; font-weight: 700;}
+.about_txt > h1 > span {display: block; font-weight: 700;}
+.about_txt > h3 {font-size: .85vw; margin: 1.5% 0 4%;}
+.about_txt > h3 > span {display: block; color: #999; margin-bottom: .3%;}
 
 .ejunhee > div {float: left;}
 .ejunhee > div > h3 {margin-bottom: 1rem;}
 .ejunhee > :first-child {color: #3e95ce; margin-right: 2.5rem;}
-.ejunhee > :first-child > h3 {width: 60px; height: 60px; font-weight: 500; line-height: 50px; text-align: center; border: 1px solid #3e95ce; border-radius: 30px;}
+.ejunhee > :first-child > h3 {font-size: .8vw; font-weight: 500; line-height: 2.5vw; text-align: center; border: 1px solid #3e95ce; border-radius: 50%;}
 .ejunhee > :last-child {color: #999;}
-.ejunhee > :last-child > h3 {height: 60px; line-height: 50px; font-weight: 500;}
+.ejunhee > :last-child > h3 {font-size: .76vw; line-height: 2.54vw; font-weight: 500;}
 
-.about_skills {padding: 15rem 0 0;}
-.about_skills > h3 {width: 10%; padding: .4rem 1rem; text-align: center; color: #fff; font-size: 1.1rem; font-weight: 500; background-color: #f94b71; border-radius: 6px; margin: 2rem 0;}
+.about_skills {padding-top: 15%;}
+.about_skills > h1 {font-size: 1.5vw !important;}
+.about_skills > h3 {width: 12%; padding: .5% 1%; font-size: .8vw;  color: #fff; font-weight: 500; text-align: center; background-color: #f94b71; border-radius: 6px; margin: 2% 0;}
 .about_skills > h3:hover {background-color: #dd3055}
 .chart_box {color: #fff;}
 .chart_box:before {   
@@ -217,13 +216,33 @@ body {background-color: #f9f9fb;}
 .charts {margin-top: 2rem;}
 .charts > div {width: 33.0%; float: left;}
 .chart_wrap:nth-child(4), .chart_wrap:nth-child(5) {padding-top: 5rem;}
-.charts > div > h1{color: #222; text-align: center; font-weight: 500; margin-top: 2rem; z-index: 10;}
+.charts > div > h1{color: #222; font-size: 1vw; text-align: center; font-weight: 500; margin-top: 2rem; z-index: 10;}
 
 /*************** more ****************/
-#more {width: 60%; margin: 0 auto; background-color: #fff;}
-#more > h1 {text-align: center; font-size: 1.4vw; font-weight: 500; margin-bottom: 6%}
-#more > ul {margin-bottom: 2%; height: 35%;}
-#more > ul > li {float: left;}
-#more > ul > :first-child {width: 45%; margin-right: 2%;}
-#more > ul > :last-child {width: 53%;}
-#more > ul > :last-child h1 {font-size: 1.3vw; font-weight: 500; margin-bottom: 2%;}
+#more {width: 60%; margin: 0 auto; padding-top: 10%;}
+#more > h1 {text-align: center; font-size: 1.5vw; color: #555; font-weight: 700; margin-bottom: 5%}
+#more > div {margin-bottom: 2%; position: relative;}
+.more_bott {width: 89%; font-size: .8vw;}
+.more_bott h1 {font-size: 1vw; font-weight: 600; margin-bottom:3%;}
+.more_img {width: 45%;}
+.more_txt {width: 50%;}
+.more_top {width: 20%;}
+/*1, 3*/
+.txt_rt {position: absolute; top: 5%; right: 7%;}
+.txt_rt .more_bott {
+    text-align: justify;
+    position: absolute;
+    top: 15%;
+    right: -12%;}
+/*2, 4*/
+.img_rt {float: right;}
+.txt_li {text-align: right; position: absolute; top: 5%; left: 7%;}
+.txt_li .more_bott {position: absolute; top: 15%; left: -13%;}
+
+@media screen and (max-width:1260px) {
+	#portfolio {width: 70%;}
+	.tit_line > h3 {top: -7px;}
+	.cards > a {right: 24%;}
+	.chart_box:before {height: 110px;}
+	#more {width: 70%}
+}
