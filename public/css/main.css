@@ -1,7 +1,8 @@
 /*************** 초기화 ****************/
-@import url('https://fonts.googleapis.com/css?family=Jua');
-@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400,700');
+
 @import url('https://fonts.googleapis.com/css?family=Yeon+Sung');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
 
 html, body {
 	margin: 0; 
@@ -9,7 +10,7 @@ html, body {
 	font-size:14px; 
 	color:#222; 
 	box-sizing: border-box; 
-	font-family: 'Nanum Gothic Coding', monospace;
+	font-family: 'Noto Sans KR', sans-serif;
 	height:100%; 
 	font-weight:300;}
 h1, h2, h3, h4, h5, h6, p, span  {margin: 0; padding: 0; font-weight: 300;}
@@ -25,7 +26,7 @@ a {text-decoration:none; color: inherit;}
 .img {width:100%;}
 .hover:hover {opacity:0.8;}
 .bold {font-weight: 500;}
-.eng {font-family: 'Nunito', sans-serif;}
+.eng {font-family: 'Josefin Sans', sans-serif; font-weight: 500;}
 .tit {font-family: 'Yeon Sung', cursive;}
 .wrap {width: 100%; height: 100%;}
 
@@ -187,7 +188,7 @@ body {background-color: #f9f9fb;}
 .tab_disables{background-color: rgb(202, 216, 226); color: #666;}
 
 /*************** portfolio ****************/
-#portfolio {width: 60%; margin: 0 auto; padding-top: 10%;}
+#portfolio {width: 60%; margin: 0 auto; padding-top: 10%; }
 .about > div > h1 {font-size: 1.5vw; color: #555; font-weight: 700;}
 .about_txt > h1 > span {display: block; font-weight: 700;}
 .about_txt > h3 {font-size: .85vw; margin: 1.5% 0 4%;}
@@ -241,13 +242,14 @@ body {background-color: #f9f9fb;}
 
 
 /*************** footer ****************/
-footer {background-color: #555;  padding: 2% 0; margin-top:2rem;}
-footer ul {width: 95%; margin: 0 auto;}
-footer li {float: left; color: #fff;}
-footer > ul > :first-child {width: 90%; float: left;}
-footer > ul > :first-child p {display: inline-block; font-size: .7vw; font-weight:500; background-color: #999; padding: .2% .5%; margin-top: 1rem;}
-footer > ul > :last-child {width: 10%; float: right; text-align: right; margin-top: 1%;}
-footer > ul > :last-child img {width: 20%;}
+.footer {padding: 2% 0; margin-top:2rem;}
+.footer ul {width: 95%; margin: 0 auto;}
+.footer li {float: left;}
+.footer > ul > :first-child {width: 90%; float: left;}
+.footer > ul > :first-child h3 {font-size: 1.5rem;}
+.footer > ul > :first-child p {display: inline-block; font-size: .7vw; font-weight:500; background-color: #999; padding: .2% .5%; margin-top: 1rem;}
+.footer > ul > :last-child {width: 10%; float: right; text-align: right; margin-top: 1%;}
+.footer > ul > :last-child img {width: 20%;}
 
 
 @media screen and (max-width:1260px) {

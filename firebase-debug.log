@@ -1,0 +1,33 @@
+[debug] [2019-01-28T02:59:19.998Z] ----------------------------------------------------------------------
+[debug] [2019-01-28T02:59:20.005Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\01071\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-01-28T02:59:20.006Z] CLI Version:   6.3.0
+[debug] [2019-01-28T02:59:20.006Z] Platform:      win32
+[debug] [2019-01-28T02:59:20.006Z] Node Version:  v10.15.0
+[debug] [2019-01-28T02:59:20.014Z] Time:          Mon Jan 28 2019 11:59:20 GMT+0900 (GMT+09:00)
+[debug] [2019-01-28T02:59:20.014Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-01-28T02:59:20.053Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-28T02:59:20.060Z] > authorizing via signed-in user
+[debug] [2019-01-28T02:59:20.060Z] [iam] checking project juuuuunii-portfolio for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2019-01-28T02:59:20.066Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/juuuuunii-portfolio:testIamPermissions  
+
+[debug] [2019-01-28T02:59:22.095Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-28T02:59:22.100Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/juuuuunii-portfolio  
+ 
+[debug] [2019-01-28T02:59:23.416Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'juuuuunii-portfolio'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-01-28T02:59:23.431Z] >>> HTTP REQUEST PUT https://juuuuunii-portfolio.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2019-01-28T02:59:24.461Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database juuuuunii-portfolio is valid
+[debug] [2019-01-28T02:59:24.472Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/juuuuunii-portfolio/versions  
+
