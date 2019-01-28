@@ -239,6 +239,17 @@ body {background-color: #f9f9fb;}
 .txt_li {text-align: right; position: absolute; top: 5%; left: 7%;}
 .txt_li .more_bott {position: absolute; top: 15%; left: -13%;}
 
+
+/*************** footer ****************/
+footer {background-color: #555;  padding: 2% 0; margin-top:2rem;}
+footer ul {width: 95%; margin: 0 auto;}
+footer li {float: left; color: #fff;}
+footer > ul > :first-child {width: 90%; float: left;}
+footer > ul > :first-child p {display: inline-block; font-size: .7vw; font-weight:500; background-color: #999; padding: .2% .5%; margin-top: 1rem;}
+footer > ul > :last-child {width: 10%; float: right; text-align: right; margin-top: 1%;}
+footer > ul > :last-child img {width: 20%;}
+
+
 @media screen and (max-width:1260px) {
 	#portfolio {width: 70%;}
 	.tit_line > h3 {top: -7px;}
